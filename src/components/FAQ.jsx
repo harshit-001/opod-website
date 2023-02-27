@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { FaqList } from '../assets/utils'
 import { Title } from '../GlobalStyle'
 
 const FAQ = () => {
-    const [showAns, setShowAns] = useState(FaqList.map(_ => false));
-    var updatedList=[]
-    const handleClick= (index) => {
-        updatedList= [...showAns]
-        updatedList[index] = !updatedList[index]
-        setShowAns([...updatedList])
-    }
+    // const [showAns, setShowAns] = useState(FaqList.map(_ => false));
+    // var updatedList=[]
+    // const handleClick= (index) => {
+    //     updatedList= [...showAns]
+    //     updatedList[index] = !updatedList[index]
+    //     setShowAns([...updatedList])
+    // }
   return (
     <FaqWrapper>
         <Title isWhiteBg={true}>
