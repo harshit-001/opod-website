@@ -34,7 +34,18 @@ font-family : ${({theme}) => theme.fontFamily.latin};
 
 const DealListContainer = styled.div`
 display:flex;
-gap:0.8rem;
-justify-content: center;`
+gap:1.5rem;
+justify-content: center;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    flex-direction: column;
+
+    div:first-child{
+        align-self:end;
+    }
+    div:nth-child(2){
+        align-self:start;
+    }
+ }`
 
 export default Deal

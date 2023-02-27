@@ -25,14 +25,25 @@ flex-direction : column;
 gap: 2rem;
 padding-bottom: 3rem;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
-background-size:contain;
 padding: 4rem;
-font-family : ${({theme}) => theme.fontFamily.latin}; 
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+   gap: 10rem;
+   padding-top: 10rem;
+   padding-bottom: 20rem;
+}
+
 `
 const OfferListContainer = styled.div`
 display:flex;
 gap:2rem;
 justify-content: space-around;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    display: grid;
+    grid-template-columns : auto auto;
+    gap : 20rem 1rem;
+ }
 `
 
 export default Offer

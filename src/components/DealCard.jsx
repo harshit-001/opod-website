@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Button}  from '../GlobalStyle'
 
 const DealCard = ({item,index}) => {
   return (
@@ -12,7 +13,7 @@ const DealCard = ({item,index}) => {
         item.offerList.map((item,index) => <li key={index}><span>{item}</span></li>)
     }
     </DealList>
-    <Button>
+    <Button textBold>
        { item.btnTitle}
     </Button>
     {index === 0 ?
@@ -37,14 +38,32 @@ position:relative;
 
 .img-rocket{
     position:absolute;
-    bottom:-160px;
-    left:-300px;
+    bottom:-32%;
+    left:-83%;
 }
 .img-girl{
     position:absolute;
-    bottom:-100px;
-    right:-130px;
+    bottom:-19%;
+    right:-35%;
 }
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    margin-right : ${({index}) => `${(index+1)*3}rem`};
+    width: 45rem;
+
+    .img-rocket{
+        position:absolute;
+        width: 300px;
+        bottom:-16%;
+        left:-80%;
+    }
+    .img-girl{
+        position:absolute;
+        width: 120px;
+        bottom:-19%;
+        right:-35%;
+    }
+ }
 `
 const DealTitle= styled.h4`
 font-size: 3.6rem;
@@ -61,13 +80,5 @@ li{
 }
 `
 
-const Button= styled.button`
-background:${({theme}) => theme.colors.btnBackground};
-padding: 1rem 3rem;
-color: ${({theme}) => theme.colors.text.white};
-font-weight: ${({theme}) => theme.weight.bold};
-font-size: 2.6rem;
-border-radius : 2rem;  
-border: none;`
 
 export default DealCard

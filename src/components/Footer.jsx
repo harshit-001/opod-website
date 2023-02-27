@@ -8,19 +8,19 @@ const Footer = () => {
     <FooterWrapper>
       <TopContainer>
       <NavLink to="/" >
-        <img src = "./images/Logo.svg" alt="logo" />
+        <img className= "logo" src = "./images/Logo.svg" alt="logo" />
       </NavLink>
         <Company>
           <h3>Company</h3>
           <LinkWrapper>
           <NavLink to="/" >
-        About Us
+        Home
       </NavLink>
       <NavLink to="/" >
-       Careers
+       Blog
       </NavLink>
       <NavLink to="/" >
-        Blog
+        Contact Us
       </NavLink>
           </LinkWrapper>
         </Company>
@@ -51,7 +51,7 @@ const Footer = () => {
         <p>End user agreement</p>
         <p>Credits and Gratitude</p>
       </LinkContainer>
-     <SocialLinks />
+     <SocialLinks isFooter={true}/>
      <Hr />
      <Rights>
      ©2022 HWO MEDIA Pvt. Ltd. All Rights Reserved
@@ -63,7 +63,7 @@ const Footer = () => {
 const FooterWrapper = styled.section`
 display:flex;
 flex-direction:column;
-gap: 2rem;
+gap: 3rem;
 padding : 2rem 8rem;
 background : ${({theme}) => theme.colors.footer_bg};
 color: ${({theme}) => theme.colors.text.white};
@@ -71,13 +71,39 @@ color: ${({theme}) => theme.colors.text.white};
 h3{
   font-size: 2.6rem;
   font-weight : 500;
- 
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  background-color : ${({theme}) => theme.colors.text.purple};
+  padding: 4rem 12rem;
+  gap: 4rem;
+  h3:first-child{
+    font-size: 4rem;  
+  }
+  h3:nth-child(2){
+    font-size: 2.4rem;  
+  }
 }`
 
 const TopContainer = styled.div`
 display:flex;
 justify-content: space-around;
 gap:2rem;
+
+.logo{
+  width:18rem;
+  vertical-align:center;
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  flex-direction: column;
+  div:nth-child(3),
+  div:nth-child(2),
+  div:nth-child(1){
+    order:2;
+  }
+  gap: 4rem;
+}
 `
 
 const Company = styled.div`
@@ -100,6 +126,8 @@ a{
 const SupportImageContainer = styled.div`
 display: grid;
 grid-template-columns : auto auto;
+gap : 0.5rem;
+width: fit-content;
 
 img{
   width: 4.4rem;
@@ -108,7 +136,12 @@ img{
 const Supported = styled.div`
 display:flex;
 flex-direction:column;
-gap:1rem;`
+align-items:center;
+gap:1rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+ align-items:start;
+}`
 
 const Download = styled.div`
 display:flex;
@@ -125,15 +158,23 @@ const DownloadTitle = styled.h4`
   span{
     color: ${({ theme}) => theme.colors.text.yellow};
   }
+
+  
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  font-size: 4rem;
+  text-align: start;
+ }
 `
 
 const DownloadLinkContainer = styled.div`
 display:flex;
 gap: 2rem;
+align-items: center;
 
 img{
   width: 9.3rem;
-}`
+}
+`
 
 const DownloadLeft = styled.div`
 display:flex;
@@ -150,6 +191,10 @@ justify-content: space-around;
 
 p{
   font-size: 1.6rem;
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+ flex-direction: column;
 }
 `
 const Hr= styled.hr`

@@ -18,6 +18,20 @@ const Spend = () => {
    </SpendWrapper>
   )
 }
+
+const SpendContent = styled(Title)`
+position: absolute;
+top: 2rem;
+right: 5rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+ position: static;
+ margin: 4rem 0;
+ grid-area : title;
+}
+
+`
+
 const SpendWrapper = styled.section`
 height : fit-content;
 background : ${({theme}) => `url(${theme.bgimage.white})`};
@@ -27,12 +41,16 @@ justify-content:center;
 padding: 5rem;
 position: relative;
 font-family: ${({theme}) => theme.fontFamily.latin};
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+   display: grid;
+   grid-template-areas:
+    'title title'
+    'image1 image2'
+    'image3 image4';
+   gap : 2rem;
+}
 `
 
-const SpendContent = styled(Title)`
-position: absolute;
-top: 2rem;
-right: 5rem;
-`
 
 export default Spend

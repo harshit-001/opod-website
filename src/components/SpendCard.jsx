@@ -20,15 +20,40 @@ align-items:center;
 width: 30rem;
 
 img{
-    width:30rem; 
-    height:28rem;
+    width: 90%
+    height:auto;
+}
+
+@media (max-width : ${({theme}) => theme.media.tab}){
+    margin : 0;
+    grid-area : ${({index}) => `image${index+1}`};
+    width: 25rem;
+ 
+    img{
+     width: 150%;
+    }
+ }
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+   margin : 0;
+   grid-area : ${({index}) => `image${index+1}`};
+   width: 25rem;
+
+   img{
+    width: 150%;
+   }
 }
 `
 
 export const SpendPara = styled.p`
 font-size: 2.6rem;
 font-weight : ${({theme}) => theme.weight.normal};
-text-align: center;`
+text-align: center;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    font-size: 2.4rem;
+    font-weight : ${({theme}) => theme.weight.bold};
+ }`
 
 
 export default SpendCard

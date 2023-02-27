@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { Animation } from './TextAnimation'
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
                     OPOD AUDIO
                 </HeroHeading>
                 <HeroSubHeading>
-                    Get Informed <Span>in 9 languages</Span>
+                    Get Informed <Span><Animation /></Span>
                 </HeroSubHeading>
                 <HeroPara>
                 With OPOD's short insightful audio content, you can stay up-to-date with the latest news and detailed analysis, on the go!
@@ -32,10 +33,18 @@ const Hero = () => {
   )
 }
 
+const Span = styled.span`
+color: ${({theme}) => theme.colors.text.yellow};
+word-break: no-break;
+`
+
+const SwipeAnimation = keyframes`
+0%{bottom : 2rem;}
+100% {bottom: 0rem;}`
+
 const HeroWrapper = styled.section`
 display: flex;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
-background-size:contain;
 height : 90vh;
 padding : 5rem;
 color : ${({theme}) => theme.colors.text.white};
@@ -46,6 +55,29 @@ position: relative;
     bottom: 2rem;
     left: 50%;
     right:50%;
+    animation-name :${SwipeAnimation};
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+    padding : 8rem;
+
+    ${Span}{
+        display:block;
+        margin-top: 2rem;
+    }
+
+    .swipe{
+      left: 50%;
+      right:50%;
+      transform: translateX(-50%);
+    }
 }
 `
 const HeroLeftContainer = styled.div`
@@ -55,29 +87,41 @@ justify-content : center;
 flex-direction : column;
 padding : 25rem 7rem 20rem 11rem;
 gap: 1rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    flex-direction: column;
+    gap: 1rem;
+    padding : 0 10rem;
+}
 `
 
 const HeroHeading = styled.h1`
 font-size : 6.4rem;
 font-weight :  ${({theme}) => theme.weight.bold};
 font-family :  ${({theme}) => theme.fontFamily.latin};
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    font-size : 8rem;
+}
 `
 
 const HeroSubHeading = styled.h3`
 font-size : 4rem;
 font-weight :  ${({theme}) => theme.weight.bold};
 font-family :  ${({theme}) => theme.fontFamily.latin};
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+   padding-bottom : 2rem;
+}
 `
 
-const Span = styled.span`
-color: ${({theme}) => theme.colors.text.yellow};
-word-break: no-break;
-`
 
 const HeroPara = styled.p`
 font-size : 1.4rem;
 font-weight :  ${({theme}) => theme.weight.normal};
 font-family :  ${({theme}) => theme.fontFamily.devnagri};
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    font-size : 2.4rem;
+}
 `
 
 const HeroRightContainer = styled.div`
@@ -87,8 +131,13 @@ justify-content: start;
 padding-bottom: 5rem;
 
 img{
-    width:80%;
+    width:90%;
     height: auto;
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    padding : 10rem 0rem;
+    margin-bottom: 3rem;
 }
 `
 
@@ -102,11 +151,18 @@ margin-top: 3rem;
 const HeroDownloadText = styled.p`
 font-size : 1.4rem;
 color : ${({theme}) => theme.colors.text.white};
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    font-size : 2.8rem;
+}
 `
 
 const HeroDownloadLink = styled.div`
 display:flex;
 gap: 1rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    justify-content:center;
+}
 `
 
 

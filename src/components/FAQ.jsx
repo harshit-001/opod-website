@@ -19,11 +19,11 @@ const FAQ = () => {
         <FaqListWrapper>
             {
                 FaqList.map((item,index) => (
-                    <QuesWrapper>
+                    <QuesWrapper key={index}>
                         <QuesPara>
-                            {item.ques} <span onClick={() => handleClick(index)}><img src={`./images/${showAns[index] ? "up" : "down"}-arrow.svg`} alt="" /></span>
+                            {item.ques}
                         </QuesPara>
-                        <AnsPara isVisible={showAns[index]}>
+                        <AnsPara>
                         {item.ans}
                         </AnsPara>
                     </QuesWrapper>
@@ -39,19 +39,39 @@ display:flex;
 flex-direction:column;
 gap: 3rem;
 align-items:center;
-padding: 3rem;`
+padding: 3rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    padding : 2rem 8rem;
+}`
 
 const FaqListWrapper = styled.div`
 display: grid;
 grid-template-columns : auto auto;
 gap: 2rem 6rem;
-font-family: ${({theme}) => theme.fontFamily.devnagri}`
+font-family: ${({theme}) => theme.fontFamily.devnagri};
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    display: flex;
+    flex-direction: column;
+    gap : 2rem;
+    margin-bottom: 4rem;
+}`
 
 const QuesWrapper = styled.div`
 display:flex;
 flex-direction:column;
 align-items:start;
-width: 59rem;`
+gap: 1rem;
+width: 59rem;
+
+@media (max-width : ${({theme}) => theme.media.tab}){
+    width : 100%;
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+    width : 100%;
+}`
 
 const QuesPara = styled.p`
 color: ${({theme}) => theme.colors.text.purple};
@@ -70,7 +90,6 @@ img{
 
 const AnsPara = styled.p`
 fontweight : ${({theme}) => theme.weight.normal};
-font-size: 1.4rem;
-display: ${({isVisible}) => isVisible ? 'block' : 'none'};`
+font-size: 1.4rem;`
 
 export default FAQ

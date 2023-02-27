@@ -27,6 +27,16 @@ img{
     width:20rem; 
     height:20rem;
 }
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+   width: 25rem;
+   gap:2rem;
+
+   img{
+    width:100%; 
+    height:auto;
+}
+ }
 `
 
 const OfferTitle = styled.p`
@@ -37,6 +47,7 @@ text-align: center;`
 
 const OfferPara = styled(SpendPara)`
 color: ${({theme}) => theme.colors.text.white};
+font-weight : ${({theme}) => theme.weight.normal};
 `
 
 export default OfferCard

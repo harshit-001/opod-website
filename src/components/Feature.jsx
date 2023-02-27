@@ -11,10 +11,19 @@ const Feature = () => {
         What does <Span> OPOD Mean? </Span>
         </Title>
         <FeatureImage>
-        <img src='./images/FeatureTitle.svg' alt='feature' />
+        <div>
+        <img src='./images/FeatureTitle1.svg' alt='feature' />
         <FeatureContent isWhiteBg={false}>
         Optimising your digital <FeatureSpan  isWhiteBg={false}>consumption </FeatureSpan>
         </FeatureContent>
+        </div>
+        <hr />
+        <div>
+        <img src='./images/FeatureTitle2.svg' alt='feature' />
+        <FeatureContent isWhiteBg={false}>
+        Short audio snippets of <FeatureSpan  isWhiteBg={false}>10-30 secs </FeatureSpan>
+        </FeatureContent>
+        </div>
         </FeatureImage>
         <FeatureListContainer>
             <FeatureListTitle>
@@ -35,22 +44,51 @@ display:flex;
 flex-direction: column;
 gap: 6rem;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
-background-size:contain;
 padding: 2rem 3rem;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  padding : 5rem 8rem;
+}
 `
 
 const FeatureImage = styled.div`
 display:flex;
-flex-direction: column;
-gap: 1rem;
+gap: 4rem;
 justify-content: center;
 align-items: center;
 
-img{
+hr{
+  height: 180px;
+  width:0;
+  border: 1px dashed white;
+}
+
+div{
+  width: 23%;
+  margin:auto;
+  img{
     width: 33rem;
     height: 11.4rem;
-
+  } 
 }
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  hr{
+    display:none;
+  }
+
+  div:first-child{
+    display:none;
+  }
+
+  div:nth-child(3){
+    width: 70%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  }
+}
+
 `
 
 const FeatureContent= styled(Title)`
@@ -67,15 +105,26 @@ gap: 1rem;
 align-items:center;
 
 .list-wrapper{
-display:flex;
-gap:2rem;
-justify-content: center;
-}`
+   display:flex;
+   gap:2rem;
+   justify-content: center;
+   @media (max-width : ${({theme}) => theme.media.mobile}){
+     gap:0.5rem;
+     flex-wrap : wrap;
+   }
+}
+`
 
 const FeatureListTitle = styled.p`
 font-weight : ${({theme}) => theme.weight.bold};
 font-size: 3.6rem;
-color:  ${({theme}) => theme.colors.text.white};`
+color:  ${({theme}) => theme.colors.text.white};
+text-transform: uppercase;
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  font-size: 7.2rem;
+  margin-bottom : 4rem;
+}`
 
 
 

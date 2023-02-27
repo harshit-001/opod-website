@@ -1,18 +1,18 @@
 export const spendArray = [
   {
-    image: "./images/character1.svg",
+    image: "./images/CHAR1.png",
     content: "PUT 0.3% OF YOUR DAY TO BEST USE",
   },
   {
-    image: "./images/character2.svg",
+    image: "./images/CHAR2.png",
     content: "STAY INFORMED WHILE MULTITASKING",
   },
   {
-    image: "./images/character3.svg",
+    image: "./images/CHAR3.png",
     content: "MAKE SCROLLING TIME 100% PRODUCTIVE",
   },
   {
-    image: "./images/character4.svg",
+    image: "./images/CHAR4.png",
     content: "Add 300+ POD COINS to your wallet",
   },
 ];
@@ -118,5 +118,71 @@ export const FaqList = [
   {
     ques: "How do I share my feedback with you?",
     ans: "We love to hear from you! You can write to us with your detailed feedback, under the Contact Us section.",
+  },
+];
+
+export const Blogs = [
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
+  },
+  {
+    blogImage: "./images/blog-image.png",
+    blogHeading: "The Daily Scoop",
+    blogContent: "Emma Johnson writes about the latest happenings in the .",
+    writerImage: "./images/writer.png",
+    name: "Emma Johnson",
   },
 ];

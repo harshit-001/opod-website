@@ -2,11 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const SocialLinks = () => {
+const SocialLinks = ({isFooter = false}) => {
   return (
     <nav>
     <div>
-        <SocialList>
+        <SocialList isFooter={isFooter}>
             <li>
                 <NavLink to="/">
                     <img src="./images/twitter.svg" alt="twt" />
@@ -35,10 +35,31 @@ const SocialLinks = () => {
 
 const SocialList = styled.ul`
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
   color : ${({theme}) => theme.colors.text};
   justify-content: center;
   align-items: center;
+   li{
+        padding: 1.2rem;
+        border-radius: 50%;
+
+        &:nth-child(2){
+            padding: 1.2rem 1.6rem;
+        }
+
+        &:hover{
+            background-color : ${({theme}) => theme.colors.text.purple};
+          }
+   }
+
+   @media (max-width : ${({theme}) => theme.media.mobile} ){
+    img{
+        width: ${({isFooter}) => isFooter ? '1.4rem' : '3rem'} ;
+        height: ${({isFooter}) => isFooter ? '1.4rem' : '3rem'} ;
+    }
+
+   
+  }
 `
 
 export default SocialLinks
