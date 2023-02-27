@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import BlogPage from "./components/BlogPage";
-import Blog from "./components/BlogPage";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
