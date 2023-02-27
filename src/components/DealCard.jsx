@@ -74,10 +74,21 @@ text-align: center;`
 const DealList = styled.ul`
 font-weight:${({theme}) => theme.weight.normal};
 list-style: circle;
+line-height: 31px;
 li{
-   font-size: 2.6rem;
-   color: black;
+    font-size: 2.6rem;
+    position: relative;
+    list-style:none;
+ }
+
+li::before {
+    content: "•"; 
+    color: black;
+    position: absolute;
+    left: -15px
 }
+
+
 `
 
 
