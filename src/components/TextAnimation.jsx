@@ -4,16 +4,18 @@ export const Animation = () => {
   return (
     <TypeAnimation
       sequence={[
-        'in 9 languages', // Types 'One'
-        1000, // Waits 1s
-        '10-30 second audio', // Deletes 'One' and types 'Two'
-        1000, // Waits 2s
+        'in 9 languages', 
+        3000,
+        '10-30 sec audio',
+        3000,
         'with context',
-        1000, // Types 'Three' without deleting 'Two'
+        3000, 
         () => {
-          console.log('Done typing!'); // Place optional callbacks anywhere in the array
+          console.log('Done typing!'); 
         }
       ]}
+      speed={5}
+      deletionSpeed={5}
       wrapper="span"
       cursor={true}
       repeat={Infinity}

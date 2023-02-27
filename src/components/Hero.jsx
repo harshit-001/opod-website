@@ -85,7 +85,7 @@ flex: 0.4;
 display:flex;
 justify-content : center;
 flex-direction : column;
-padding : 25rem 7rem 20rem 11rem;
+padding : 12rem 7rem 20rem 8rem;
 gap: 1rem;
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
