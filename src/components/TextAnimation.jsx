@@ -1,18 +1,18 @@
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 export const Animation = () => {
   return (
     <TypeAnimation
       sequence={[
-        'in 9 languages', 
+        "in 9 languages",
         3000,
-        '10-30 sec audio',
+        "10-30 sec audio",
         3000,
-        'with context',
-        3000, 
+        "with context",
+        3000,
         () => {
-          console.log('Done typing!'); 
-        }
+          console.log("Done typing!");
+        },
       ]}
       speed={5}
       deletionSpeed={5}

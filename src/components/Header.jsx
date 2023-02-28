@@ -1,33 +1,47 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import Navbar from './Navbar'
-import SocialLinks from './SocialLinks'
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import SocialLinks from "./SocialLinks";
 
 const Header = () => {
-  const [openMenu,setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
-   <HeaderWrapper>
-      <NavLink to="/" >
-        <img className= 'desktop-logo' src = "./images/Logo.svg" alt="logo" />
-        <img className='mobile-logo' src= './images/LOGO_MOBILE.svg' alt='logo' />
+    <HeaderWrapper>
+      <NavLink to="/">
+        <img className="desktop-logo" src="./images/Logo.svg" alt="logo" />
+        <img
+          className="mobile-logo"
+          src="./images/LOGO_MOBILE.svg"
+          alt="logo"
+        />
       </NavLink>
-      <div className={openMenu ? '' : 'hidden'}>
-      <NavWrapper className={openMenu ? 'active' : ''}>
-         <Navbar  openMenu ={openMenu} setOpenMenu ={setOpenMenu}/>
-         <SocialLinks />
-      </NavWrapper>
+      <div className={openMenu ? "" : "hidden"}>
+        <NavWrapper className={openMenu ? "active" : ""}>
+          <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
+          <SocialLinks />
+        </NavWrapper>
       </div>
-      <div className='mobile-btn'>
-        {
-          openMenu ? <img src='./images/Close.png' alt="close" className={openMenu ? 'activeBtn' : ''} onClick={() => setOpenMenu(!openMenu)} /> 
-          : <img src='./images/HamBurger.svg' alt="burger"  onClick={() => setOpenMenu(!openMenu)} />
-        }     
-       </div>
-   </HeaderWrapper>
-  )
-}
+      <div className="mobile-btn">
+        {openMenu ? (
+          <img
+            src="./images/Close.png"
+            alt="close"
+            className={openMenu ? "activeBtn" : ""}
+            onClick={() => setOpenMenu(!openMenu)}
+          />
+        ) : (
+          <img
+            src="./images/HamBurger.svg"
+            alt="burger"
+            onClick={() => setOpenMenu(!openMenu)}
+          />
+        )}
+      </div>
+    </HeaderWrapper>
+  );
+};
 
 const NavWrapper = styled.div`
 display:flex;
@@ -35,21 +49,21 @@ justify-content : space-between;
 align-items : center;
 gap: 10rem;
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
+@media (max-width : ${({ theme }) => theme.media.mobile}){
   display: none;
 }
 
 }
-`
+`;
 
 const HeaderWrapper = styled.header`
-    background-color: ${({theme}) => theme.colors.bg};
+    background-color: ${({ theme }) => theme.colors.bg};
     display: flex;
     height : 10vh;
     justify-content : space-between;
     padding : 0 4.8rem;
     align-items : center;
-    color : ${({theme}) => theme.colors.text.white};
+    color : ${({ theme }) => theme.colors.text.white};
     position: sticky;
     top:0;
     z-index: 100;
@@ -62,11 +76,11 @@ const HeaderWrapper = styled.header`
       display:none;
     }
 
-    @media (max-width : ${({theme}) => theme.media.tab}){
+    @media (max-width : ${({ theme }) => theme.media.tab}){
       height: 7vh;
     }
 
-    @media (max-width : ${({theme}) => theme.media.mobile}){
+    @media (max-width : ${({ theme }) => theme.media.mobile}){
       height: 5vh;
 
       .hidden{
@@ -79,7 +93,7 @@ const HeaderWrapper = styled.header`
        position: absolute;
        top:0;
        left:0;
-       background-color: ${({theme}) => theme.colors.text.purple};
+       background-color: ${({ theme }) => theme.colors.text.purple};
        transform: translateX(100%);
        display:flex;
        flex-direction: column;
@@ -130,8 +144,6 @@ const HeaderWrapper = styled.header`
     
     
  }
-`
+`;
 
-
-
-export default Header
+export default Header;
