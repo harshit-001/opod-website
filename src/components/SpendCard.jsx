@@ -45,6 +45,7 @@ export const SpendPara = styled.p`
   font-size: 2.6rem;
   font-weight: ${({ theme }) => theme.weight.normal};
   text-align: center;
+  text-transform: uppercase;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 2.4rem;
