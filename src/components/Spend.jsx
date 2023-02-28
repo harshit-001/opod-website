@@ -24,8 +24,8 @@ position: absolute;
 top: 2rem;
 right: 5rem;
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
- position: static;
+@media (max-width : ${({theme}) => theme.media.tab}){
+ position:static;
  margin: 4rem 0;
  grid-area : title;
 }
@@ -42,13 +42,20 @@ padding: 5rem;
 position: relative;
 font-family: ${({theme}) => theme.fontFamily.latin};
 
+@media (max-width : ${({theme}) => theme.media.tab}){
+   display:grid;
+   grid-template-areas:
+   'title title title title'
+   'image1 image2 image3 image4';
+   gap: 0 2rem;
+}
+
 @media (max-width : ${({theme}) => theme.media.mobile}){
-   display: grid;
    grid-template-areas:
     'title title'
     'image1 image2'
     'image3 image4';
-   gap : 2rem;
+   gap : 2rem 4rem;
 }
 `
 

@@ -20,7 +20,7 @@ align-items:center;
 width: 30rem;
 
 img{
-    width: 90%
+    width: 90%;
     height:auto;
 }
 
@@ -30,13 +30,11 @@ img{
     width: 25rem;
  
     img{
-     width: 150%;
+     width: 130%;
     }
  }
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
-   margin : 0;
-   grid-area : ${({index}) => `image${index+1}`};
    width: 25rem;
 
    img{

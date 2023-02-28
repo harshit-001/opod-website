@@ -42,11 +42,12 @@ display: flex;
 align-items: center;
 padding: 5rem;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
+background-color:  ${({theme}) => theme.colors.text.purple};
 color : ${({theme}) => theme.colors.text.white};
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
   flex-direction: column;
-  gap: 2rem;
+  gap: 10rem;
 }
 `
 
@@ -58,8 +59,9 @@ align-self: baseline;
 gap:2rem;
 padding : 5rem 20rem;
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
+@media (max-width : ${({theme}) => theme.media.tab}){
   padding:0;
+  margin:auto;
 }`
 
 const BlogRight= styled.div`
@@ -83,8 +85,9 @@ font-family :  ${({theme}) => theme.fontFamily.latin};
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
     font-size : 8rem;
-    width: 60%;
+    width: 80%;
     margin:auto;
+    text-align:center;
 }
 `
 
@@ -131,17 +134,21 @@ div{
   gap:1rem;
 }
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
+@media (max-width : ${({theme}) => theme.media.tab}){
   flex-direction: column;
   gap: 3rem;
   width: 90%;
-  margin:auto;
+  margin:auto 0;
 
   div{
     display:flex;
     flex-direction:column;
     gap:1rem;
   }
+}
+
+@media (max-width : ${({theme}) => theme.media.mobile}){
+  margin:auto;
 }`
 
 const BlogListWrapper= styled.div`

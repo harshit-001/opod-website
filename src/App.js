@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import "./App.css";
 import BlogPage from "./components/BlogPage";
 import Contact from "./components/Contact";
+import Cookie from "./components/Cookie";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -62,6 +63,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
         </Routes>
         <Footer />
+        <Cookie />
       </ThemeProvider>
     </>
   );

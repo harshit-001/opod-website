@@ -47,15 +47,31 @@ position:relative;
     right:-35%;
 }
 
+@media (max-width : ${({theme}) => theme.media.tab}){
+   width:40rem;
+
+   .img-rocket{
+    width:400px;
+    bottom:-29%;
+    left:-80%;
+   }
+
+   .img-girl{
+    position:absolute;
+    width: 165px;
+    bottom:-16%;
+    right:-35%;
+}
+}
+
 @media (max-width : ${({theme}) => theme.media.mobile}){
     margin-right : ${({index}) => `${(index+1)*3}rem`};
-    width: 45rem;
+    width:45rem;
 
     .img-rocket{
         position:absolute;
         width: 300px;
         bottom:-16%;
-        left:-80%;
     }
     .img-girl{
         position:absolute;
@@ -74,7 +90,7 @@ text-align: center;`
 const DealList = styled.ul`
 font-weight:${({theme}) => theme.weight.normal};
 list-style: circle;
-line-height: 31px;
+
 li{
     font-size: 2.6rem;
     position: relative;
@@ -85,8 +101,16 @@ li::before {
     content: "•"; 
     color: black;
     position: absolute;
-    left: -15px
+    left: -10px
 }
+
+@media (min-width : ${({theme}) => theme.media.mobile}){
+    line-height: 31px;
+
+    li::before {
+        left: -15px
+    }
+ }
 
 
 `

@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
 
     @media (max-width : ${({ theme }) => theme.media.tab}){
-      font-size : 50%;
+      font-size : 45%;
     }
 
     @media (max-width : ${({ theme }) => theme.media.mobile}){
@@ -41,7 +41,7 @@ export const Title = styled.h2`
   text-align: center;
   text-transform: uppercase;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
     font-size: 4rem;
     margin: 3rem 0;
   }

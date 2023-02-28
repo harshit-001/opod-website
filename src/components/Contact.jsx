@@ -117,7 +117,7 @@ label{
   input{
     vertical-align: baseline;
 
-    @media (max-width : ${({theme}) => theme.media.mobile}){
+    @media (max-width : ${({theme}) => theme.media.tab}){
       vertical-align: middle;
     }
   }

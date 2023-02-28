@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FeatureCard = ({item}) => {
+const FeatureCard = ({item,index}) => {
   return (
     <FeatureCardWrapper>
         <img src={item.image} alt="fearue" />
-        <FeatureListContent>
+        <FeatureListContent isSecond= {index===1}>
             {item.content}
         </FeatureListContent>
     </FeatureCardWrapper>
@@ -38,11 +38,12 @@ const FeatureListContent = styled.p`
 font-size: 2rem;
 text-align: center;
 color : ${({theme}) => theme.colors.text.white};
-width: 10rem;
+width: ${({isSecond}) => isSecond ? '10rem' : '14rem'};
+
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
-    font-size:1.6rem;
-    width: 11rem;
+    font-size: 1.6rem;
+    width: ${({isSecond}) => isSecond ? '8rem' : '14rem'};
     padding-top: 1rem;
 }
 `

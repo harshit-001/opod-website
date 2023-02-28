@@ -27,7 +27,7 @@ padding-bottom: 3rem;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
 padding: 4rem;
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
+@media (max-width : ${({theme}) => theme.media.tab}){
    gap: 10rem;
    padding-top: 10rem;
    padding-bottom: 20rem;

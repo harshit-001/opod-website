@@ -35,7 +35,10 @@ const Hero = () => {
 
 const Span = styled.span`
 color: ${({theme}) => theme.colors.text.yellow};
-word-break: no-break;
+
+@media (max-width : ${({theme}) => theme.media.tab}){
+   display:block;
+}
 `
 
 const SwipeAnimation = keyframes`
@@ -59,6 +62,10 @@ position: relative;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
+
+@media (max-width : ${({theme}) => theme.media.tab}){
+    height: fit-content;
+  }
 
 
 @media (max-width : ${({theme}) => theme.media.mobile}){

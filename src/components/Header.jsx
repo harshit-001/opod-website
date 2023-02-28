@@ -62,6 +62,10 @@ const HeaderWrapper = styled.header`
       display:none;
     }
 
+    @media (max-width : ${({theme}) => theme.media.tab}){
+      height: 7vh;
+    }
+
     @media (max-width : ${({theme}) => theme.media.mobile}){
       height: 5vh;
 

@@ -51,11 +51,15 @@ grid-template-columns : auto auto;
 gap: 2rem 6rem;
 font-family: ${({theme}) => theme.fontFamily.devnagri};
 
+@media (max-width : ${({theme}) => theme.media.tab}){
+    padding : 2rem 8rem;
+    margin-bottom: 4rem;
+}
+
 @media (max-width : ${({theme}) => theme.media.mobile}){
     display: flex;
     flex-direction: column;
     gap : 2rem;
-    margin-bottom: 4rem;
 }`
 
 const QuesWrapper = styled.div`

@@ -31,7 +31,7 @@ const Feature = () => {
             </FeatureListTitle>
             <div className='list-wrapper'>
             {
-                featureArray.map((item,index) => <FeatureCard key={index} item={item}/> )
+                featureArray.map((item,index) => <FeatureCard key={index} item={item} index={index}/> )
             }
             </div>
         </FeatureListContainer>
@@ -46,7 +46,7 @@ gap: 6rem;
 background : ${({theme}) => `url(${theme.bgimage.purple})`};
 padding: 2rem 3rem;
 
-@media (max-width : ${({theme}) => theme.media.mobile}){
+@media (max-width : ${({theme}) => theme.media.tab}){
   padding : 5rem 8rem;
 }
 `
@@ -70,7 +70,12 @@ div{
     width: 33rem;
     height: 11.4rem;
   } 
+
+  @media (max-width : ${({theme}) => theme.media.tab}){
+    width:32%;
+  }
 }
+
 
 @media (max-width : ${({theme}) => theme.media.mobile}){
   hr{
@@ -121,9 +126,13 @@ font-size: 3.6rem;
 color:  ${({theme}) => theme.colors.text.white};
 text-transform: uppercase;
 
+@media (max-width : ${({theme}) => theme.media.tab}){
+  font-size: 6.2rem;
+  margin-bottom : 4rem;
+}
+
 @media (max-width : ${({theme}) => theme.media.mobile}){
   font-size: 7.2rem;
-  margin-bottom : 4rem;
 }`
 
 
