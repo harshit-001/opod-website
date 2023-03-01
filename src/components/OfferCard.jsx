@@ -25,12 +25,12 @@ const OfferCardWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    width: 25rem;
+    width: 27rem;
     gap: 2rem;
 
     img {
-      width: 100%;
-      height: auto;
+      width: 26rem;
+      height: 26rem;
     }
   }
 `;
@@ -45,6 +45,7 @@ const OfferTitle = styled.p`
 const OfferPara = styled(SpendPara)`
   color: ${({ theme }) => theme.colors.text.white};
   font-weight: ${({ theme }) => theme.weight.normal};
+  text-transform: lowercase;
 `;
 
 export default OfferCard;

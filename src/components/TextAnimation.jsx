@@ -6,7 +6,7 @@ export const Animation = () => {
       sequence={[
         "in 9 languages",
         3000,
-        "10-30 sec audio",
+        "30 sec audio",
         3000,
         "with context",
         3000,

@@ -71,7 +71,7 @@ const Contact = () => {
             </div>
             <div>
               <Label>My contact number is</Label>
-              <Input placeholder="9994443332" type={"number"} required />
+              <Input placeholder="9994443332" type={"text"} required />
             </div>
             <Button isFullWidth={false} type="submit">
               Send
@@ -169,7 +169,7 @@ const RadioWrapper = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 500;
 
   &::after {

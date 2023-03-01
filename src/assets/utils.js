@@ -42,7 +42,7 @@ export const offerArray = [
 
 export const dealArray = [
   {
-    title: "BRANDS AND START UP",
+    title: "What's in it for BRANDS?",
     offerList: [
       "user-friendly interface",
       "an ultimate destination for innovative brands",
@@ -74,11 +74,12 @@ export const featureArray = [
   },
   {
     image: "./images/feature3.svg",
-    content: "Only Insights,No Blah!",
+    content: `Only Insights, 
+              No Blah!`,
   },
   {
     image: "./images/feature4.svg",
-    content: "cost-effective deals",
+    content: "Cost-effective deals",
   },
   {
     image: "./images/feature5.svg",

@@ -99,6 +99,9 @@ const FeatureContent = styled(Title)`
 `;
 const FeatureSpan = styled(Span)`
   font-size: 2.6rem;
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    display: block;
+  }
 `;
 
 const FeatureListContainer = styled.div`

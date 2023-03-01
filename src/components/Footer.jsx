@@ -33,8 +33,20 @@ const Footer = () => {
           </DownloadTitle>
           <DownloadLinkContainer>
             <DownloadLeft>
-              <img src="./images/play_store.svg" alt="play store" />
-              <img src="./images/app_store.svg" alt="app store" />
+              <a
+                href="https://play.google.com/store/apps/details?id=com.opod.news"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/play_store.svg" alt="play store" />
+              </a>
+              <a
+                href="https://apps.apple.com/us/app/opod-audio/id1669008780"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/app_store.svg" alt="app store" />
+              </a>
             </DownloadLeft>
             <img src="./images/QRcode.svg" alt="app store" />
           </DownloadLinkContainer>
@@ -191,6 +203,7 @@ const LinkContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex-direction: column;
+    gap: 3rem;
   }
 `;
 const Hr = styled.hr`

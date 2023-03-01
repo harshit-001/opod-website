@@ -5,7 +5,7 @@ const FeatureCard = ({ item, index }) => {
   return (
     <FeatureCardWrapper>
       <img src={item.image} alt="fearue" />
-      <FeatureListContent isSecond={index === 1}>
+      <FeatureListContent isSecond={index === 1 || index === 4}>
         {item.content}
       </FeatureListContent>
     </FeatureCardWrapper>
@@ -39,11 +39,11 @@ const FeatureListContent = styled.p`
   font-size: 2rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.text.white};
-  width: ${({ isSecond }) => (isSecond ? "10rem" : "14rem")};
+  width: ${({ isSecond }) => (isSecond ? "10rem" : "13rem")};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 1.6rem;
-    width: ${({ isSecond }) => (isSecond ? "8rem" : "14rem")};
+    width: ${({ isSecond }) => (isSecond ? "8rem" : "11rem")};
     padding-top: 1rem;
   }
 `;

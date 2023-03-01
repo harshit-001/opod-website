@@ -20,8 +20,20 @@ const Hero = () => {
         <HeroDownload>
           <HeroDownloadText>Available to download at:</HeroDownloadText>
           <HeroDownloadLink>
-            <img src="./images/play_store.svg" alt="play store" />
-            <img src="./images/app_store.svg" alt="app store" />
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/play_store.svg" alt="play store" />
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/opod-audio/id1669008780"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/app_store.svg" alt="app store" />
+            </a>
           </HeroDownloadLink>
         </HeroDownload>
       </HeroLeftContainer>

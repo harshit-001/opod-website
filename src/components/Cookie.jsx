@@ -16,6 +16,7 @@ const Cookie = () => {
         height: "100px",
         fontSize: "2.6rem",
         padding: "1rem",
+        paddingBottom: "3rem",
       }}
       buttonStyle={{
         backgroundColor: "#2F1562",
