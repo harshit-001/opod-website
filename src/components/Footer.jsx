@@ -53,11 +53,41 @@ const Footer = () => {
         </Download>
       </TopContainer>
       <LinkContainer>
-        <p>Privacy Policy</p>
-        <p>Contact Us</p>
-        <p>Terms & Conditions</p>
-        <p>End user agreement</p>
-        <p>Credits and Gratitude</p>
+        <a
+          href="https://opod.in/legal/opod_privacy_policy.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>Privacy Policy</p>
+        </a>
+
+        <NavLink to="contact">
+          <p>Contact Us</p>
+        </NavLink>
+
+        <a
+          href="https://opod.in/legal/opod_terms_and_conditions.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>Terms & Conditions</p>
+        </a>
+
+        <a
+          href="https://opod.in/legal/opod_end_user_agreement.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>End user agreement</p>
+        </a>
+
+        <a
+          href="https://opod.in/legal/opod_gratitude_and_thanks.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>Credits and Gratitude</p>
+        </a>
       </LinkContainer>
       <SocialLinks isFooter={true} />
       <Hr />

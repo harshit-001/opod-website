@@ -8,24 +8,40 @@ const SocialLinks = ({ isFooter = false }) => {
       <div>
         <SocialList isFooter={isFooter}>
           <li>
-            <NavLink to="/">
+            <a
+              href="https://twitter.com/AudioOpod"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/twitter.svg" alt="twt" />
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/">
+            <a
+              href="https://www.facebook.com/hello.OPOD"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/facebook.svg" alt="twt" />
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/">
+            <a
+              href="https://www.linkedin.com/company/opod-audio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/linkidin.svg" alt="twt" />
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/">
+            <a
+              href="https://www.instagram.com/hello_opod/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/insta.svg" alt="twt" />
-            </NavLink>
+            </a>
           </li>
         </SocialList>
       </div>
