@@ -30,6 +30,7 @@ const FaqWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  height: 90vh;
   align-items: center;
   padding: 3rem;
 

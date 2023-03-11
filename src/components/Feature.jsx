@@ -43,6 +43,7 @@ const FeatureWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 6rem;
+  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
   padding: 2rem 3rem;
 

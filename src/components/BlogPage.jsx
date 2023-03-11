@@ -26,9 +26,9 @@ const BlogPage = () => {
               required
             />
           </div>
-          <Button isFullWidth={true} type="submit">
-            Send
-          </Button>
+          <BlogButton isFullWidth={true} type="submit">
+            Subscribe
+          </BlogButton>
         </BlogFormWrapper>
       </BlogLeft>
       <BlogRight>
@@ -46,6 +46,7 @@ const BlogWrapper = styled.section`
   display: flex;
   align-items: center;
   padding: 5rem;
+  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
   background-color: ${({ theme }) => theme.colors.text.purple};
   color: ${({ theme }) => theme.colors.text.white};
@@ -168,6 +169,16 @@ const BlogListWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 4rem;
   }
+`;
+
+const BlogButton = styled.button`
+  height: fit-content;
+  align-self: end;
+  padding: 0.6rem;
+  font-family: ${({ theme }) => theme.fontFamily.devnagri};
+  border-radius: 10px;
+  background: ${({ theme }) => theme.colors.btnBackground};
+  color: ${({ theme }) => theme.colors.text.white};
 `;
 
 export default BlogPage;

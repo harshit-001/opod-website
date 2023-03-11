@@ -21,7 +21,7 @@ function App() {
         yellow: "#FBD362",
       },
       white: "#fff",
-      black: " #212529",
+      black: "#000000",
       btnBackground: "#6D44BC",
       dealCardBackground: "#D1BEEA",
       helper: "#8490ff",

@@ -19,8 +19,8 @@ const Spend = () => {
 
 const SpendContent = styled(Title)`
   position: absolute;
-  top: 2rem;
-  right: 5rem;
+  top: 5rem;
+  right: 15rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     position: static;
@@ -30,12 +30,11 @@ const SpendContent = styled(Title)`
 `;
 
 const SpendWrapper = styled.section`
-  height: fit-content;
+  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.white})`};
   background-size: contain;
   display: flex;
   justify-content: center;
-  padding: 5rem;
   position: relative;
   font-family: ${({ theme }) => theme.fontFamily.latin};
 

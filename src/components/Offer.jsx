@@ -22,9 +22,10 @@ const Offer = () => {
 const OfferWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 3rem;
-  background: ${({ theme }) => `url(${theme.bgimage.purple})`};
+  gap: 10rem;
+  height: 90vh;
+  background-image: ${({ theme }) => `url(${theme.bgimage.purple})`};
+  background-size: cover;
   padding: 4rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {

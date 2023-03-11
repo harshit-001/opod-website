@@ -11,11 +11,12 @@ const SpendCard = ({ item, index }) => {
 };
 
 const CardWrapper = styled.div`
-  margin-top: ${({ index }) => `${(index + 1) * 5}rem`};
+  margin-top: ${({ index }) => `${(index + 1) * 6}rem`};
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30rem;
+  color: ${({ theme }) => theme.colors.black};
 
   img {
     width: 90%;
@@ -42,10 +43,11 @@ const CardWrapper = styled.div`
 `;
 
 export const SpendPara = styled.p`
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: ${({ theme }) => theme.weight.normal};
   text-align: center;
   text-transform: uppercase;
+  padding: 0 2rem;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 2.4rem;

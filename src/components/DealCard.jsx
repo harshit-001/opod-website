@@ -33,21 +33,22 @@ const DealCardWrapper = styled.div`
   gap: 2rem;
   background: ${({ theme }) => theme.colors.dealCardBackground};
   margin-top: ${({ index }) => `${(index + 1) * 3}rem`};
-  padding: 6rem 5rem;
-  width: 38rem;
+  padding: 2rem 3rem;
+  width: 35rem;
   height: fit-content;
   border-radius: 3.8rem;
   position: relative;
 
   .img-rocket {
     position: absolute;
-    bottom: -32%;
-    left: -83%;
+    width: 40rem;
+    bottom: -33%;
+    left: -70%;
   }
   .img-girl {
     position: absolute;
-    bottom: -19%;
-    right: -35%;
+    bottom: -18%;
+    right: -50%;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
@@ -109,7 +110,7 @@ const DealList = styled.ul`
   }
 
   @media (min-width: ${({ theme }) => theme.media.mobile}) {
-    line-height: 31px;
+    line-height: 25px;
 
     li::before {
       left: -15px;

@@ -87,7 +87,7 @@ const Contact = () => {
 };
 
 const ContactContainer = styled.section`
-  height: fit-content;
+  height: 90vh;
   padding: 5rem;
   text-align: start;
   font-weight: 600;

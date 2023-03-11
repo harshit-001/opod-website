@@ -23,6 +23,7 @@ const DealWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.white})`};
   background-size: contain;
   padding: 4rem;
