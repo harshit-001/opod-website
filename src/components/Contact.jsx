@@ -196,6 +196,10 @@ const Input = styled.input`
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 5px;
+
+  &:focus{
+    border: 1px solid ${({ theme }) => theme.colors.text.purple};
+  }
 `;
 
 const TextArea = styled.textarea`

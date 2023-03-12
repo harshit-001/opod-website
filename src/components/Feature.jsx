@@ -104,7 +104,7 @@ const FeatureImage = styled.div`
     }
 
     .o-image{
-      width: 9rem;
+      width: 8rem;
     }
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {

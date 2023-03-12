@@ -58,17 +58,17 @@ const Span = styled.span`
 const SwipeAnimation = keyframes`
   0%,
   100% {
-    transform: translate(0, 0);
+    bottom: 0;
   }
 
   50% {
-    transform: translate(0, 2rem);
+    bottom: 2rem;
+  };
   }`;
 
 const HeroWrapper = styled.section`
   display: flex;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`} fixed;
-
   height: 90vh;
   padding: 5rem;
   color: ${({ theme }) => theme.colors.text.white};
@@ -85,6 +85,12 @@ const HeroWrapper = styled.section`
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     height: fit-content;
     background-size: cover;
+
+    .swipe {
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -97,12 +103,6 @@ const HeroWrapper = styled.section`
     ${Span} {
       display: block;
       margin-top: 2rem;
-    }
-
-    .swipe {
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
     }
   }
 `;
