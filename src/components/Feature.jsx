@@ -1,30 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { featureArray } from "../assets/utils";
 import { Span, Title } from "../GlobalStyle";
 import FeatureCard from "./FeatureCard";
 
 const Feature = () => {
+
+  const [image, setImage] = useState({
+    first: false,
+    second: true
+  })
+
+  const handleImageClick=(tag) =>{
+      tag==="first" ? setImage({first: true, second:false}) : setImage({first: false, second:true})
+  }
+
   return (
     <FeatureWrapper>
       <Title>
         What does <Span> OPOD Mean? </Span>
       </Title>
       <FeatureImage>
-        <div>
-          <img src="./images/FeatureTitle1.svg" alt="feature" />
+        <div className="first-image">
+          <div className="opod-image">
+             <img className="o-image" src="./images/o-selected.svg" alt="feature" />
+              <img src="./images/pod-unselected.svg" alt="feature" />
+          </div>
+         
           <FeatureContent isWhiteBg={false}>
             Optimising your digital{" "}
             <FeatureSpan isWhiteBg={false}>consumption </FeatureSpan>
           </FeatureContent>
         </div>
         <hr />
-        <div>
-          <img src="./images/FeatureTitle2.svg" alt="feature" />
-          <FeatureContent isWhiteBg={false}>
-            Short audio snippets of{" "}
-            <FeatureSpan isWhiteBg={false}>10-30 secs </FeatureSpan>
-          </FeatureContent>
+        <div className="sec-image">
+          <div className="opod-image">
+               <img className="o-image" src={`./images/o-${image.first ? "selected" : "unselected"}.svg`} alt="feature" 
+               onClick={()=> handleImageClick("first")
+              } />
+                <img src={`./images/pod-${image.second ? "selected" : "unselected"}.svg`} alt="feature" 
+                 onClick={()=> handleImageClick("second")
+              }/>
+          </div>
+            {
+              image.first ? (<FeatureContent isWhiteBg={false}>
+            Optimising your digital <br/> <FeatureSpan>consumption</FeatureSpan>
+          </FeatureContent>) : (<FeatureContent isWhiteBg={false}>
+             Short audio snippets of <br/><FeatureSpan>10-30 secs</FeatureSpan>
+          </FeatureContent>)
+          }
+        
         </div>
       </FeatureImage>
       <FeatureListContainer>
@@ -35,6 +60,8 @@ const Feature = () => {
           ))}
         </div>
       </FeatureListContainer>
+       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
+        <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
     </FeatureWrapper>
   );
 };
@@ -45,16 +72,18 @@ const FeatureWrapper = styled.section`
   gap: 6rem;
   height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
-  padding: 2rem 3rem;
+  padding: 4rem 3rem;
+  position: relative;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
+    height: fit-content;
     padding: 5rem 8rem;
   }
 `;
 
 const FeatureImage = styled.div`
   display: flex;
-  gap: 4rem;
+  gap: 10rem;
   justify-content: center;
   align-items: center;
 
@@ -64,14 +93,32 @@ const FeatureImage = styled.div`
     border: 1px dashed white;
   }
 
-  div {
-    width: 23%;
-    margin: auto;
+  .opod-image{
+    display:flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
     img {
       width: 33rem;
       height: 11.4rem;
     }
 
+    .o-image{
+      width: 9rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      gap:0;
+
+      img {
+      width: 27rem;
+      }
+    }
+  }
+
+  .first-image,.sec-image {
+    width: 26%;
+    
     @media (max-width: ${({ theme }) => theme.media.tab}) {
       width: 32%;
     }
@@ -82,11 +129,11 @@ const FeatureImage = styled.div`
       display: none;
     }
 
-    div:first-child {
+    .first-image {
       display: none;
     }
 
-    div:nth-child(3) {
+    .sec-image {
       width: 70%;
       display: flex;
       flex-direction: column;

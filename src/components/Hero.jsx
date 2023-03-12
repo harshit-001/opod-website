@@ -14,7 +14,7 @@ const Hero = () => {
           </Span>
         </HeroSubHeading>
         <HeroPara>
-          With OPOD's short insightful audio content, you can stay up-to-date
+          With OPOD's short insightful audio content,<br/> you can stay up-to-date
           with the latest news and detailed analysis, on the go!
         </HeroPara>
         <HeroDownload>
@@ -41,6 +41,8 @@ const Hero = () => {
         <img className="foreImage" src="./images/Hero_Img.svg" alt="Mobile" />
       </HeroRightContainer>
       <img className="swipe" src="./images/swipe.svg" alt="Mobile" />
+       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
+        <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
     </HeroWrapper>
   );
 };
@@ -59,7 +61,8 @@ const SwipeAnimation = keyframes`
 
 const HeroWrapper = styled.section`
   display: flex;
-  background: ${({ theme }) => `url(${theme.bgimage.purple})`};
+  background: ${({ theme }) => `url(${theme.bgimage.purple})`} fixed;
+
   height: 90vh;
   padding: 5rem;
   color: ${({ theme }) => theme.colors.text.white};
@@ -73,18 +76,21 @@ const HeroWrapper = styled.section`
     animation-name: ${SwipeAnimation};
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     height: fit-content;
+    background-size: cover;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex-direction: column;
-    height: fit-content;
     align-items: center;
     text-align: center;
     padding: 8rem;
+    background-attachment: scroll;
 
     ${Span} {
       display: block;
@@ -177,8 +183,15 @@ const HeroDownloadLink = styled.div`
   display: flex;
   gap: 1rem;
 
+  img{
+    width: 150px;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     justify-content: center;
+    img{
+    width: 120px;
+  }
   }
 `;
 

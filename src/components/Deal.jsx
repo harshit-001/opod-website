@@ -29,6 +29,10 @@ const DealWrapper = styled.section`
   padding: 4rem;
   padding-bottom: 10rem;
   font-family: ${({ theme }) => theme.fontFamily.latin};
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    height: fit-content;
+  }
 `;
 
 const DealListContainer = styled.div`

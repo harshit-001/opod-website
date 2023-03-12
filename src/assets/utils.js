@@ -57,7 +57,7 @@ export const dealArray = [
       "a selection of one-of-a-kind products",
       "specially curated deals just for you",
       "elevate your lifestyle with every deal",
-      "Budget friendly deals for every occasion",
+      "budget friendly deals for every occasion",
     ],
     btnTitle: "Download Now",
   },

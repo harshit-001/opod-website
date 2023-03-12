@@ -42,13 +42,13 @@ const DealCardWrapper = styled.div`
   .img-rocket {
     position: absolute;
     width: 40rem;
-    bottom: -33%;
-    left: -70%;
+    bottom: -32%;
+    left: -68%;
   }
   .img-girl {
     position: absolute;
-    bottom: -18%;
-    right: -50%;
+    bottom: -16%;
+    right: -52%;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
@@ -56,31 +56,34 @@ const DealCardWrapper = styled.div`
 
     .img-rocket {
       width: 400px;
-      bottom: -29%;
+      bottom: -40%;
       left: -80%;
     }
 
     .img-girl {
       position: absolute;
       width: 165px;
-      bottom: -16%;
-      right: -35%;
+      bottom: -24%;
+      right: -40%;
     }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
-    width: 45rem;
+    width: 50rem;
+    height: 56rem;
+    padding: 10rem;
 
     .img-rocket {
       position: absolute;
       width: 300px;
-      bottom: -16%;
+      bottom: -14%;
+      left:-65%;
     }
     .img-girl {
       position: absolute;
       width: 120px;
-      bottom: -19%;
+      bottom: -18%;
       right: -35%;
     }
   }
@@ -95,9 +98,10 @@ const DealTitle = styled.h4`
 const DealList = styled.ul`
   font-weight: ${({ theme }) => theme.weight.normal};
   list-style: circle;
+  
 
   li {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     position: relative;
     list-style: none;
   }
@@ -108,9 +112,11 @@ const DealList = styled.ul`
     position: absolute;
     left: -10px;
   }
+  line-height: 2.7rem;
+    margin-left: 2rem;
 
   @media (min-width: ${({ theme }) => theme.media.mobile}) {
-    line-height: 25px;
+    
 
     li::before {
       left: -15px;

@@ -15,6 +15,8 @@ const Offer = () => {
           <OfferCard item={item} key={index} />
         ))}
       </OfferListContainer>
+       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
+        <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
     </OfferWrapper>
   );
 };
@@ -27,11 +29,13 @@ const OfferWrapper = styled.section`
   background-image: ${({ theme }) => `url(${theme.bgimage.purple})`};
   background-size: cover;
   padding: 4rem;
+  position: relative;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     gap: 10rem;
     padding-top: 10rem;
     padding-bottom: 20rem;
+     height: fit-content;
   }
 `;
 const OfferListContainer = styled.div`

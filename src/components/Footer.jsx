@@ -25,6 +25,12 @@ const Footer = () => {
             <img src="./images/Supporter2.svg" alt="2" />
             <img src="./images/Supporter3.svg" alt="3" />
             <img src="./images/Supporter4.svg" alt="4" />
+            <div className="support-div">
+              <img src="./images/Supporter5.png" alt="5" />
+            </div>
+            <div className="support-div">
+               <img src="./images/Supporter6.png" alt="6" />
+            </div>
           </SupportImageContainer>
         </Supported>
         <Download>
@@ -109,10 +115,13 @@ const FooterWrapper = styled.section`
     font-weight: 500;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    background-color: ${({ theme }) => theme.colors.text.purple};
+   @media (max-width: ${({ theme }) => theme.media.tab}) {
     padding: 4rem 12rem;
     gap: 4rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    background-color: ${({ theme }) => theme.colors.text.purple};
     h3:first-child {
       font-size: 4rem;
     }
@@ -161,12 +170,19 @@ const LinkWrapper = styled.div`
 
 const SupportImageContainer = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   gap: 0.5rem;
   width: fit-content;
 
   img {
     width: 4.4rem;
+  }
+
+  .support-div{
+    background: white;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
   }
 `;
 

@@ -101,6 +101,10 @@ const ContactContainer = styled.section`
   input {
     margin-right: 0.5rem;
   }
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    height: fit-content;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -116,7 +120,7 @@ const ContactLeft = styled.div`
   flex: 0.5;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 const ContactTitle = styled(Title)`
@@ -165,6 +169,11 @@ const RadioWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
+
+    form {
+    gap: 1rem;
+    flex-direction: column;
+  }
   }
 `;
 
@@ -179,7 +188,8 @@ const Label = styled.label`
 
 const Input = styled.input`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.text.purple};
+  border: 1px solid ${({ theme }) => theme.colors.text.light_purple};
+  border-radius: 1rem;
   padding: 1rem;
   margin-top: 5px;
 `;

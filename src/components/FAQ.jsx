@@ -29,10 +29,15 @@ const FAQ = () => {
 const FaqWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5rem;
   height: 90vh;
   align-items: center;
   padding: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    height: fit-content;
+  }
+  
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 2rem 8rem;
@@ -42,7 +47,7 @@ const FaqWrapper = styled.section`
 const FaqListWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  gap: 2rem 6rem;
+  gap: 4rem 6rem;
   font-family: ${({ theme }) => theme.fontFamily.devnagri};
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
@@ -51,9 +56,10 @@ const FaqListWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
   }
 `;
 
@@ -65,10 +71,6 @@ const QuesWrapper = styled.div`
   width: 59rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
-    width: 100%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 100%;
   }
 `;
@@ -90,8 +92,12 @@ const QuesPara = styled.p`
 `;
 
 const AnsPara = styled.p`
-  fontweight: ${({ theme }) => theme.weight.normal};
+  font-weight: ${({ theme }) => theme.weight.normal};
   font-size: 1.4rem;
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    font-size: 1.7rem;
+  }
 `;
 
 export default FAQ;

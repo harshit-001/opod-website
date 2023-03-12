@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     background-size:cover;
   }
 
+  ::-webkit-scrollbar {
+  display: none;
+}
+
   html{
     font-size: 62.5%;
 
@@ -29,6 +33,22 @@ export const GlobalStyle = createGlobalStyle`
 
   ul{
     list-style: none
+  }
+
+   .leftpod{
+    position:absolute;
+    opacity:0.1;
+    height: 20rem;
+    top: 2rem;
+    left: 5rem;
+  }
+
+   .rightpod{
+    position:absolute;
+    opacity: 0.1;
+    height: 15rem;
+    bottom: 0;
+    right: 5rem;
   }
 
 `;
@@ -54,7 +74,7 @@ export const Span = styled.span`
 
 export const Button = styled.button`
   background: ${({ theme }) => theme.colors.btnBackground};
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
   color: ${({ theme }) => theme.colors.text.white};
   font-weight: ${({ theme, textBold }) =>
     textBold ? theme.weight.bold : theme.weight.normal};
@@ -63,4 +83,9 @@ export const Button = styled.button`
   border: none;
   width: ${({ isFullWidth = true }) => (isFullWidth ? "100%" : "fit-content")};
   text-transform: uppercase;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  
+   width: 100%;
+  }
 `;

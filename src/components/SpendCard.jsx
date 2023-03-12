@@ -26,7 +26,7 @@ const CardWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     margin: 0;
     grid-area: ${({ index }) => `image${index + 1}`};
-    width: 25rem;
+    width: 26rem;
 
     img {
       width: 130%;
@@ -34,7 +34,7 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    width: 25rem;
+    width: 30rem;
 
     img {
       width: 150%;

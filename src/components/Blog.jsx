@@ -21,7 +21,6 @@ const Blog = ({ blog }) => {
 
 const BlogContainer = styled.div`
   display: flex;
-  gap: 1rem;
   align-items: center;
 
   img {
@@ -31,7 +30,7 @@ const BlogContainer = styled.div`
 `;
 
 const BlogImage = styled.div`
-  flex: 0.3;
+  flex: 0.25;
 
   img {
     border-radius: 20%;
@@ -45,13 +44,14 @@ const BlogImage = styled.div`
 `;
 
 const BlogContent = styled.div`
-  flex: 0.7;
+  flex: 0.4;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
+    flex:1;
   }
 `;
 

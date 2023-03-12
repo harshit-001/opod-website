@@ -12,7 +12,7 @@ const SocialLinks = ({ isFooter = false }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/twitter.svg" alt="twt" />
+              <img width='18px' height='18px' src="./images/twitter.svg" alt="twt" />
             </a>
           </li>
           <li>
@@ -21,7 +21,7 @@ const SocialLinks = ({ isFooter = false }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/facebook.svg" alt="twt" />
+              <img width='18px' height='18px' src="./images/facebook.svg" alt="twt" />
             </a>
           </li>
           <li>
@@ -56,11 +56,7 @@ const SocialList = styled.ul`
   align-items: center;
   li {
     padding: 1.2rem;
-    border-radius: 50%;
-
-    &:nth-child(2) {
-      padding: 1.2rem 1.6rem;
-    }
+    border-radius: 20%;
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.text.purple};

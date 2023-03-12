@@ -39,19 +39,22 @@ const SpendWrapper = styled.section`
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
+    height: 40vh;
     display: grid;
     grid-template-areas:
       "title title title title"
       "image1 image2 image3 image4";
-    gap: 0 2rem;
+    gap: 0 0.7rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    height: fit-content;
     grid-template-areas:
       "title title"
       "image1 image2"
       "image3 image4";
-    gap: 2rem 4rem;
+    gap: 3rem 0;
+    padding-bottom: 3rem;
   }
 `;
 
