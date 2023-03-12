@@ -57,6 +57,10 @@ const Contact = () => {
             </form>
           </RadioWrapper>
           <form>
+             <div>
+              <Label required={true}>My message</Label>
+              <TextArea placeholder="your message...." type={"text"} required />
+            </div>
             <div>
               <Label required={true}>My full name</Label>
               <Input placeholder="John Doe" type={"text"} required />
@@ -193,6 +197,14 @@ const Input = styled.input`
   padding: 1rem;
   margin-top: 5px;
 `;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.colors.text.light_purple};
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 5px;
+`
 const ContactRight = styled.div`
   flex: 0.5;
   display: flex;

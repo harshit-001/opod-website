@@ -56,8 +56,14 @@ const Span = styled.span`
 `;
 
 const SwipeAnimation = keyframes`
-0%{bottom : 2rem;}
-100% {bottom: 0rem;}`;
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 2rem);
+  }`;
 
 const HeroWrapper = styled.section`
   display: flex;
@@ -73,11 +79,7 @@ const HeroWrapper = styled.section`
     bottom: 2rem;
     left: 50%;
     right: 50%;
-    animation-name: ${SwipeAnimation};
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
+    animation: ${SwipeAnimation} 1s ease-in-out infinite;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
