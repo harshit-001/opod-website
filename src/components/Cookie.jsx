@@ -1,8 +1,10 @@
 import React from "react";
 import CookieConsent from "react-cookie-consent";
+import styled from "styled-components";
 
 const Cookie = () => {
   return (
+    <CookieWrapper>
     <CookieConsent
       location="bottom"
       buttonText="Accept All Cookies"
@@ -44,7 +46,16 @@ const Cookie = () => {
       cookies on your device to enhance site navigation, analyze site usage, and
       assist in our marketing efforts.
     </CookieConsent>
+    </CookieWrapper>
   );
 };
 
+
+const CookieWrapper = styled.div`
+padding: 3rem;
+
+@media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 6rem 0rem ;
+  }
+`
 export default Cookie;
