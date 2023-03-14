@@ -46,7 +46,13 @@ const OfferListContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 20rem 1rem;
+    gap: 10rem 1rem;
+  }
+
+  @media (max-width: 360px) {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
   }
 `;
 

@@ -33,6 +33,10 @@ const OfferCardWrapper = styled.div`
       height: 26rem;
     }
   }
+
+   @media (max-width: 360px) {
+    width: 80%;
+  }
 `;
 
 const OfferTitle = styled.p`

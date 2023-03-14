@@ -81,11 +81,11 @@ export const Button = styled.button`
   font-size: 2.6rem;
   border-radius: 2rem;
   border: none;
-  width: ${({ isFullWidth = true }) => (isFullWidth ? "100%" : "fit-content")};
+  width: fit-content;
   text-transform: uppercase;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-  
-   width: 100%;
+    width: 100%;
+    padding: 2rem 4rem;
   }
 `;

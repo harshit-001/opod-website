@@ -106,7 +106,7 @@ const FooterWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 2rem 8rem;
+  padding: 4rem 8rem;
   background: ${({ theme }) => theme.colors.footer_bg};
   color: ${({ theme }) => theme.colors.text.white};
 

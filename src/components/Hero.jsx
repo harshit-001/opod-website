@@ -69,6 +69,7 @@ const SwipeAnimation = keyframes`
 const HeroWrapper = styled.section`
   display: flex;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`} fixed;
+  background-size: cover;
   height: 90vh;
   padding: 5rem;
   color: ${({ theme }) => theme.colors.text.white};
@@ -105,6 +106,7 @@ const HeroWrapper = styled.section`
       margin-top: 2rem;
     }
   }
+
 `;
 const HeroLeftContainer = styled.div`
   flex: 0.4;
@@ -118,6 +120,10 @@ const HeroLeftContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
     padding: 0 10rem;
+  }
+
+   @media (max-width: 360px) {
+    padding: 0;
   }
 `;
 

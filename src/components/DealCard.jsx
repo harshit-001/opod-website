@@ -76,13 +76,33 @@ const DealCardWrapper = styled.div`
 
     .img-rocket {
       position: absolute;
-      width: 300px;
+      width: 60rem;
       bottom: -14%;
       left:-65%;
     }
     .img-girl {
       position: absolute;
-      width: 120px;
+      width: 24rem;
+      bottom: -18%;
+      right: -35%;
+    }
+  }
+
+   @media (max-width:360px) {
+    margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
+    max-width: 80%;
+    height: 56rem;
+    padding: 5rem;
+
+    .img-rocket {
+      position: absolute;
+      width: 60rem;
+      bottom: -14%;
+      left:-86%;
+    }
+    .img-girl {
+      position: absolute;
+      width: 24rem;
       bottom: -18%;
       right: -35%;
     }

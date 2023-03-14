@@ -45,7 +45,7 @@ function App() {
       bold: 600,
       bolder: 700,
     },
-    media: { mobile: "768px", tab: "998px" },
+    media: { mobile: "767px", tab: "998px" },
     bgimage: {
       purple: "./images/Hero_BG.svg",
       white: "./images/White_Bg.svg",
