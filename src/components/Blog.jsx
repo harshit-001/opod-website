@@ -31,12 +31,14 @@ const BlogContainer = styled.div`
 
 const BlogImage = styled.div`
   flex: 0.25;
+ 
 
   img {
     border-radius: 20%;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+     margin: 0;
     img {
       padding: 3rem;
     }
@@ -49,7 +51,7 @@ const BlogContent = styled.div`
   flex-direction: column;
   gap: 0.8rem;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: 1200px) {
     gap: 2rem;
     flex:1;
   }

@@ -23,7 +23,6 @@ const DealWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.white})`};
   background-size: contain;
   padding: 4rem;
@@ -37,7 +36,7 @@ const DealWrapper = styled.section`
 
 const DealListContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

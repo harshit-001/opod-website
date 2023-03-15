@@ -17,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
   html{
     font-size: 62.5%;
 
+     @media (max-width : 1200px){
+      font-size : 50%;
+    }
+
     @media (max-width : ${({ theme }) => theme.media.tab}){
       font-size : 45%;
     }
@@ -38,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
    .leftpod{
     position:absolute;
     opacity:0.1;
-    height: 20rem;
+    height: 25rem;
     top: 2rem;
     left: 5rem;
   }

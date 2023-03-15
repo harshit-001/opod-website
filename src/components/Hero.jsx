@@ -14,8 +14,9 @@ const Hero = () => {
           </Span>
         </HeroSubHeading>
         <HeroPara>
-          With OPOD's short insightful audio content,<br/> you can stay up-to-date
-          with the latest news and detailed analysis, on the go!
+          With OPOD's short insightful audio content,
+          <br /> you can stay up-to-date with the latest news and detailed
+          analysis, on the go!
         </HeroPara>
         <HeroDownload>
           <HeroDownloadText>Available to download at:</HeroDownloadText>
@@ -41,8 +42,8 @@ const Hero = () => {
         <img className="foreImage" src="./images/Hero_Img.svg" alt="Mobile" />
       </HeroRightContainer>
       <img className="swipe" src="./images/swipe.svg" alt="Mobile" />
-       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
-        <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
+      <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
+      <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
     </HeroWrapper>
   );
 };
@@ -63,11 +64,12 @@ const SwipeAnimation = keyframes`
 
   50% {
     bottom: 2rem;
-  };
-  }`;
+  }
+`;
 
 const HeroWrapper = styled.section`
   display: flex;
+  justify-content: center;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`} fixed;
   background-size: cover;
   height: 90vh;
@@ -86,6 +88,7 @@ const HeroWrapper = styled.section`
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     height: fit-content;
     background-size: cover;
+    padding: 15rem 10rem;
 
     .swipe {
       left: 50%;
@@ -106,15 +109,18 @@ const HeroWrapper = styled.section`
       margin-top: 2rem;
     }
   }
-
 `;
 const HeroLeftContainer = styled.div`
-  flex: 0.4;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 12rem 7rem 20rem 8rem;
   gap: 1rem;
+  margin-right: 15rem;
+
+   @media (max-width: 1200px) {
+    margin-right:0;
+    margin-left:40px;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex-direction: column;
@@ -122,7 +128,7 @@ const HeroLeftContainer = styled.div`
     padding: 0 10rem;
   }
 
-   @media (max-width: 360px) {
+  @media (max-width: 360px) {
     padding: 0;
   }
 `;
@@ -138,6 +144,7 @@ const HeroHeading = styled.h1`
 
 const HeroSubHeading = styled.h3`
   font-size: 4rem;
+  width: 52rem;
   font-weight: ${({ theme }) => theme.weight.bold};
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
@@ -156,14 +163,17 @@ const HeroPara = styled.p`
 `;
 
 const HeroRightContainer = styled.div`
-  flex: 0.6;
   display: flex;
   justify-content: start;
   padding-bottom: 5rem;
 
   img {
-    width: 90%;
+    width: 95%;
     height: auto;
+
+     @media (max-width: 1200px) {
+    width:85%;
+  }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -191,15 +201,15 @@ const HeroDownloadLink = styled.div`
   display: flex;
   gap: 1rem;
 
-  img{
+  img {
     width: 150px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     justify-content: center;
-    img{
-    width: 120px;
-  }
+    img {
+      width: 120px;
+    }
   }
 `;
 

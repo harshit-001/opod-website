@@ -166,8 +166,7 @@ const Contact = () => {
 };
 
 const ContactContainer = styled.section`
-  height: 90vh;
-  padding: 5rem;
+  padding: 5rem 15rem;
   text-align: start;
   font-weight: 600;
 

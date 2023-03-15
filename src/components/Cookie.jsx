@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const Cookie = () => {
   return (
-    <CookieWrapper>
     <CookieConsent
       location="bottom"
       buttonText="Accept All Cookies"
@@ -17,8 +16,7 @@ const Cookie = () => {
         color: "black",
         height: "inherit",
         fontSize: "2.6rem",
-        padding: "1rem",
-        paddingBottom: "1rem",
+        padding: "5rem 1rem"
       }}
       buttonStyle={{
         backgroundColor: "#2F1562",
@@ -46,29 +44,8 @@ const Cookie = () => {
       cookies on your device to enhance site navigation, analyze site usage, and
       assist in our marketing efforts.
     </CookieConsent>
-    </CookieWrapper>
   );
 };
 
 
-const CookieWrapper = styled.div`
-padding: 3rem;
-height: 120px;
-
-
-@media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding-bottom : 12rem 0rem ;
-
-    div{
-      flex-direction:column;
-      align-items: center !important;
-      flex-wrap: nowrap !important;
-
-      div: first-child{
-        flex: auto !important;
-        margin : 8px !important;
-      }
-    }
-}
-`
 export default Cookie;

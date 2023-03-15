@@ -70,13 +70,11 @@ const FeatureWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
-  padding: 4rem 3rem;
+  padding: 5rem 3rem;
   position: relative;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
-    height: fit-content;
     padding: 5rem 8rem;
   }
 `;

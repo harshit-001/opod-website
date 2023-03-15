@@ -119,26 +119,10 @@ const BlogWrapper = styled.section`
   display: flex;
   align-items: center;
   padding: 5rem;
-  height: 90vh;
   position: relative;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
   background-color: ${({ theme }) => theme.colors.text.purple};
 
-  .leftpod {
-    position: absolute;
-    opacity: 0.1;
-    height: 20rem;
-    top: 2rem;
-    left: 5rem;
-  }
-
-  .rightpod {
-    position: absolute;
-    opacity: 0.1;
-    height: 15rem;
-    bottom: 0;
-    right: 5rem;
-  }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     height: fit-content;
@@ -156,16 +140,16 @@ const BlogLeft = styled.div`
   flex-direction: column;
   align-self: center;
   gap: 2rem;
-  padding: 5rem 10rem;
+  padding: 0 7rem 5rem 12rem;
   position: relative;
   z-index: 5;
   color: ${({ theme }) => theme.colors.text.white};
 
   .lang-image {
     position: absolute;
-    opacity: 0.5;
-    top: -6rem;
-    left: 0.8rem;
+    opacity: 0.4;
+    top: -12rem;
+    left: 1rem;
     z-index: -2;
   }
 

@@ -13,7 +13,7 @@ const DealCard = ({ item, index }) => {
           </li>
         ))}
       </DealList>
-      <Button textBold>{item.btnTitle}</Button>
+      <Button textBold style={{width : '28rem'}}>{item.btnTitle}</Button>
       {index === 0 ? (
         <img
           className="img-rocket"
@@ -33,22 +33,32 @@ const DealCardWrapper = styled.div`
   gap: 2rem;
   background: ${({ theme }) => theme.colors.dealCardBackground};
   margin-top: ${({ index }) => `${(index + 1) * 3}rem`};
-  padding: 2rem 3rem;
-  width: 35rem;
-  height: fit-content;
-  border-radius: 3.8rem;
+  padding: 3rem;
+  width: 42rem;
+  height: 52.5rem;
+  border-radius: 38px;
   position: relative;
+  align-items:center;
 
   .img-rocket {
     position: absolute;
-    width: 40rem;
-    bottom: -32%;
-    left: -68%;
+    height: 40rem;
+    bottom: -25%;
+    left: -65%;
   }
   .img-girl {
     position: absolute;
-    bottom: -16%;
-    right: -52%;
+    bottom: -19%;
+    right: -39%;
+  }
+
+   @media (max-width: 1200px) {
+    .img-girl {
+      width:20rem;
+      position: absolute;
+      bottom: -19%;
+      right: -30%;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
@@ -56,15 +66,15 @@ const DealCardWrapper = styled.div`
 
     .img-rocket {
       width: 400px;
-      bottom: -40%;
+      bottom: -25%;
       left: -80%;
     }
 
     .img-girl {
       position: absolute;
-      width: 165px;
-      bottom: -24%;
-      right: -40%;
+      width: 132px;
+      bottom: -19%;
+      right: -26%;
     }
   }
 
@@ -72,7 +82,7 @@ const DealCardWrapper = styled.div`
     margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
     width: 50rem;
     height: 56rem;
-    padding: 10rem;
+    padding: 6rem;
 
     .img-rocket {
       position: absolute;
@@ -90,7 +100,7 @@ const DealCardWrapper = styled.div`
 
    @media (max-width:360px) {
     margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
-    max-width: 80%;
+    max-width: 75%;
     height: 56rem;
     padding: 5rem;
 
@@ -98,7 +108,7 @@ const DealCardWrapper = styled.div`
       position: absolute;
       width: 60rem;
       bottom: -14%;
-      left:-86%;
+      left:-78%;
     }
     .img-girl {
       position: absolute;
@@ -110,6 +120,7 @@ const DealCardWrapper = styled.div`
 `;
 const DealTitle = styled.h4`
   font-size: 3.6rem;
+  line-height: 4rem;
   font-weight: ${({ theme }) => theme.weight.bolder};
   color: ${({ theme }) => theme.colors.text.purple};
   text-align: center;
@@ -118,7 +129,8 @@ const DealTitle = styled.h4`
 const DealList = styled.ul`
   font-weight: ${({ theme }) => theme.weight.normal};
   list-style: circle;
-  
+  margin-bottom: 6rem;
+  width:80%;
 
   li {
     font-size: 2.5rem;
@@ -132,14 +144,13 @@ const DealList = styled.ul`
     position: absolute;
     left: -10px;
   }
-  line-height: 2.7rem;
+  line-height: 3rem;
     margin-left: 2rem;
 
   @media (min-width: ${({ theme }) => theme.media.mobile}) {
     
-
     li::before {
-      left: -15px;
+      left: -20px;
     }
   }
 `;

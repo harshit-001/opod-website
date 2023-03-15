@@ -30,12 +30,10 @@ const FaqWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  height: 90vh;
   align-items: center;
-  padding: 3rem;
+  padding: 5rem 8rem 10rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
-    height: fit-content;
   }
   
 
@@ -68,7 +66,6 @@ const QuesWrapper = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 1rem;
-  width: 59rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     width: 100%;

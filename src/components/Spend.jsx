@@ -30,21 +30,21 @@ const SpendContent = styled(Title)`
 `;
 
 const SpendWrapper = styled.section`
-  height: 90vh;
   background: ${({ theme }) => `url(${theme.bgimage.white})`};
   background-size: contain;
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 0 4rem 4rem;
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
-    height: 40vh;
     display: grid;
     grid-template-areas:
-      "title title title title"
-      "image1 image2 image3 image4";
-    gap: 0 0.7rem;
+      "title title"
+      "image1 image2"
+      "image3 image4";
+    gap: 5rem 20rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

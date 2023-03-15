@@ -164,6 +164,7 @@ const LinkWrapper = styled.div`
   gap: 1rem;
 
   a {
+    font-size: 1.4rem;
     color: ${({ theme }) => theme.colors.text.yellow};
   }
 `;

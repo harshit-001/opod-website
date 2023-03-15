@@ -11,7 +11,7 @@ const SpendCard = ({ item, index }) => {
 };
 
 const CardWrapper = styled.div`
-  margin-top: ${({ index }) => `${(index + 1) * 60}px`};
+  margin-top: ${({ index }) => index===0 ?  '50px' : `${(index + 1) * 60}px`};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ const CardWrapper = styled.div`
   }
 
    @media (max-width: 360px) {
-    width: 28rem;
+    width: 29rem;
 
     img {
       width: 100%;
