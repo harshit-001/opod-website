@@ -61,7 +61,7 @@ height: 120px;
 
     div{
       flex-direction:column;
-      align-items: center;
+      align-items: center !important;
       flex-wrap: nowrap !important;
 
       div: first-child{
