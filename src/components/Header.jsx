@@ -77,12 +77,11 @@ const HeaderWrapper = styled.header`
     }
 
     @media (max-width : ${({ theme }) => theme.media.tab}){
-      height: 7vh;
+      height: 8vh;
     }
 
     @media (max-width : ${({ theme }) => theme.media.mobile}){
-      height: 5vh;
-
+      
       .hidden{
         display: none;
       }
