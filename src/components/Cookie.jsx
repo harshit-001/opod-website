@@ -62,6 +62,11 @@ height: 120px;
     div{
       flex-direction:column;
       align-items: center;
+
+      div: first-child{
+        flex: auto;
+        margin : 8px;
+      }
     }
 }
 `
