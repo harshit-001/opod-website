@@ -62,10 +62,11 @@ height: 120px;
     div{
       flex-direction:column;
       align-items: center;
+      flex-wrap: nowrap !important;
 
       div: first-child{
-        flex: auto;
-        margin : 8px;
+        flex: auto !important;
+        margin : 8px !important;
       }
     }
 }
