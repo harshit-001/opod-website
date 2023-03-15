@@ -197,7 +197,7 @@ const BlogRight = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex: auto;
-    height: 100rem;
+    height:fit-content;
     margin-bottom: 6rem;
   }
 `;
