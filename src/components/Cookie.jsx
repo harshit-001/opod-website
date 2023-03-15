@@ -15,17 +15,17 @@ const Cookie = () => {
         display: "flex",
         backgroundColor: "white",
         color: "black",
-        height: "100px",
+        height: "inherit",
         fontSize: "2.6rem",
         padding: "1rem",
-        paddingBottom: "3rem",
+        paddingBottom: "1rem",
       }}
       buttonStyle={{
         backgroundColor: "#2F1562",
         padding: "1rem 3rem",
         color: "white",
         fontWeight: 500,
-        fontSize: "1.4rem",
+        fontSize: "2rem",
         borderRadius: "2rem",
         border: "none",
         width: "fit-content",
@@ -35,7 +35,7 @@ const Cookie = () => {
         padding: "1rem 3rem",
         color: "white",
         fontWeight: 500,
-        fontSize: "1.4rem",
+        fontSize: "2rem",
         borderRadius: "2rem",
         border: "none",
         width: "fit-content",
@@ -53,9 +53,16 @@ const Cookie = () => {
 
 const CookieWrapper = styled.div`
 padding: 3rem;
+height: 120px;
+
 
 @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding-bottom : 12rem 0rem ;
-  }
+
+    div{
+      flex-direction:column;
+      align-items: center;
+    }
+}
 `
 export default Cookie;
