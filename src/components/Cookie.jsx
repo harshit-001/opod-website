@@ -55,7 +55,7 @@ const CookieWrapper = styled.div`
 padding: 3rem;
 
 @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding: 6rem 0rem ;
+    padding-bottom : 12rem 0rem ;
   }
 `
 export default Cookie;
