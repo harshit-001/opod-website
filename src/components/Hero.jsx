@@ -125,11 +125,8 @@ const HeroLeftContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex-direction: column;
     gap: 1rem;
-    padding: 0 10rem;
-  }
-
-  @media (max-width: 360px) {
     padding: 0;
+    margin: auto;
   }
 `;
 
