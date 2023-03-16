@@ -1,6 +1,5 @@
 import React from "react";
 import CookieConsent from "react-cookie-consent";
-import styled from "styled-components";
 
 const Cookie = () => {
   return (
