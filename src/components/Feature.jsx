@@ -12,7 +12,11 @@ const Feature = () => {
   })
 
   const handleImageClick=(tag) =>{
-      tag==="first" ? setImage({first: true, second:false}) : setImage({first: false, second:true})
+    if(window.innerWidth > 768){
+      return
+    }
+
+    tag==="first" ? setImage({first: true, second:false}) : setImage({first: false, second:true})
   }
 
   return (
@@ -172,6 +176,7 @@ const FeatureListTitle = styled.p`
   font-size: 3.6rem;
   color: ${({ theme }) => theme.colors.text.white};
   text-transform: uppercase;
+  margin-bottom: 3rem;
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     font-size: 6.2rem;

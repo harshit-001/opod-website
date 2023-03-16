@@ -13,7 +13,7 @@ const DealCard = ({ item, index }) => {
           </li>
         ))}
       </DealList>
-      <Button textBold style={{width : '28rem'}}>{item.btnTitle}</Button>
+      <Button textBold style={{width : '28rem', position:'absolute', bottom : '8%'}}>{item.btnTitle}</Button>
       {index === 0 ? (
         <img
           className="img-rocket"
@@ -39,6 +39,7 @@ const DealCardWrapper = styled.div`
   border-radius: 38px;
   position: relative;
   align-items:center;
+  position: relative;
 
   .img-rocket {
     position: absolute;

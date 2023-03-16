@@ -153,7 +153,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </div>
-            <Button type="submit">Send</Button>
+            <Button type="submit" style={{height: '5.7rem', width: '15.5rem' ,fontSize: '2.6rem'}}>Send</Button>
           </form>
         </ContactLeft>
         <ContactRight>
@@ -178,6 +178,18 @@ const ContactContainer = styled.section`
 
   input {
     margin-right: 0.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding : 10rem;
+  }
+
+   @media (max-width: ${({ theme }) => theme.media.tab}) {
+   padding: 3rem;
+
+   input {
+    margin-right: 0.2rem;
+   }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -246,9 +258,14 @@ const RadioWrapper = styled.div`
     flex-direction: row;
   }
 
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    form {
+     gap: 2rem;
+   }
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
-
     form {
       gap: 1rem;
       flex-direction: column;
