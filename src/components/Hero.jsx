@@ -39,7 +39,7 @@ const Hero = () => {
         </HeroDownload>
       </HeroLeftContainer>
       <HeroRightContainer>
-        <img className="foreImage" src="./images/Hero_Img.svg" alt="Mobile" />
+        <img className="foreImage" src="./images/Hero_Img.png" alt="Mobile" />
       </HeroRightContainer>
       <img className="swipe" src="./images/swipe.svg" alt="Mobile" />
       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
