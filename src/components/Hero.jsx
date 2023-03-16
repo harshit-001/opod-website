@@ -145,6 +145,10 @@ const HeroSubHeading = styled.h3`
   font-weight: ${({ theme }) => theme.weight.bold};
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
+   @media (max-width: ${({ theme }) => theme.media.tab}) {
+    width: 100%;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding-bottom: 2rem;
   }
@@ -200,6 +204,13 @@ const HeroDownloadLink = styled.div`
 
   img {
     width: 150px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    justify-content: center;
+    img {
+      width: 130px;
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
