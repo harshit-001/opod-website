@@ -153,7 +153,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </div>
-            <Button type="submit" style={{height: '5.7rem', width: '15.5rem' ,fontSize: '2.6rem'}}>Send</Button>
+            <Button type="submit" style={{height: '5.7rem', width: '15.5rem' ,fontSize: '2.6rem', padding: '0'}}>Send</Button>
           </form>
         </ContactLeft>
         <ContactRight>
