@@ -109,6 +109,13 @@ const HeroWrapper = styled.section`
       margin-top: 2rem;
     }
   }
+
+    @media (max-width: 300px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 8rem 0;
+    margin: auto;
+  }
 `;
 const HeroLeftContainer = styled.div`
   display: flex;
@@ -128,6 +135,8 @@ const HeroLeftContainer = styled.div`
     padding: 0;
     margin: auto;
   }
+
+ 
 `;
 
 const HeroHeading = styled.h1`

@@ -43,7 +43,7 @@ const CardWrapper = styled.div`
   }
 
    @media (max-width: 360px) {
-    width: 29rem;
+    width: 28rem;
 
     img {
       width: 100%;

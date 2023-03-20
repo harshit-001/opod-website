@@ -130,7 +130,12 @@ const BlogWrapper = styled.section`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     flex-direction: column;
+    padding-top : 10rem;
     gap: 10rem;
+
+    .leftpod, .rightpod{
+      display:none;
+    }
   }
 `;
 
@@ -165,6 +170,8 @@ const BlogLeft = styled.div`
     .lang-image {
       width: 100%;
       left: 0;
+      bottom: -3%;
+      opacity:0.2;
     }
   }
 `;
@@ -255,6 +262,8 @@ const BlogFormWrapper = styled.form`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     margin: auto;
+    gap:4rem;
+    margin-top : 8rem;
   }
 `;
 

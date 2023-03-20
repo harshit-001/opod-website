@@ -50,6 +50,10 @@ const OfferPara = styled(SpendPara)`
   color: ${({ theme }) => theme.colors.text.white};
   font-weight: ${({ theme }) => theme.weight.normal};
   text-transform: lowercase;
+
+  @media (max-width: 360px) {
+    width: 80%;
+  }
 `;
 
 export default OfferCard;

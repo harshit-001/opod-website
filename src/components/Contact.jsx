@@ -153,7 +153,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </div>
-            <Button type="submit" style={{height: '5.7rem', width: '15.5rem' ,fontSize: '2.6rem', padding: '0'}}>Send</Button>
+            <ContactButton type="submit" >Send</ContactButton>
           </form>
         </ContactLeft>
         <ContactRight>
@@ -316,6 +316,24 @@ const ContactRight = styled.div`
     img {
       width: 60%;
     }
+  }
+`;
+
+const ContactButton = styled.button`
+  height: 5.7rem;
+  width: 15.5rem;
+  fontSize: 2.6rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background: ${({ theme }) => theme.colors.btnBackground};
+  color: ${({ theme }) => theme.colors.text.white};
+  font-weight: 500;
+  border: none;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
   }
 `;
 

@@ -53,8 +53,9 @@ const SpendWrapper = styled.section`
       "title title"
       "image1 image2"
       "image3 image4";
-    gap: 3rem 0;
-    padding-bottom: 3rem;
+    gap: 8rem 0;
+    padding-top: 6rem;
+    padding-bottom : 15rem;
   }
 `;
 
