@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Blogs } from "../assets/utils";
 import { Span } from "../GlobalStyle";
-import Blog from "./Blog";
+import BlogList from "./BlogList";
 import Modal from "./Modal";
 
 const BlogPage = () => {
@@ -11,6 +11,8 @@ const BlogPage = () => {
     name: "",
     email: "",
   });
+
+  //const [blogs,setBlogs]= useState([])
 
   useEffect(() => {
     console.log("first");
@@ -26,7 +28,7 @@ const BlogPage = () => {
       },
     });
     const result = await data.json();
-    console.log(result);
+    console.log(result)
   };
 
   const handleChange = (e) => {
@@ -104,7 +106,7 @@ const BlogPage = () => {
       <BlogRight>
         <BlogListWrapper>
           {Blogs.map((blog, index) => (
-            <Blog blog={blog} key={index} />
+            <BlogList blog={blog} key={index} />
           ))}
         </BlogListWrapper>
       </BlogRight>
@@ -174,6 +176,10 @@ const BlogLeft = styled.div`
       opacity:0.2;
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    width:100%;
+  }
 `;
 
 const BlogRight = styled.div`
@@ -230,9 +236,12 @@ const Input = styled.input`
   padding: 1rem;
   border: none;
   background: white;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding: 3rem;
+  
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+   border: 1px solid ${({ theme }) => theme.colors.text.light_purple};
+   border-radius: 1rem;
+   padding: 2rem;
+   margin-top: 5px;
   }
 `;
 
@@ -288,6 +297,7 @@ const BlogButton = styled.button`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 100%;
+    padding: 2rem 4rem;
   }
 `;
 

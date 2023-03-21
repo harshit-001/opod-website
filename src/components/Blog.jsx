@@ -1,97 +1,65 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-const Blog = ({ blog }) => {
+const Blog = ({blogImage, writerImage, title, content, name}) => {
   return (
-    <BlogContainer>
-      <BlogImage>
-        <img src={blog.blogImage} alt="pic" />
-      </BlogImage>
-      <BlogContent>
-        <BlogHeading>{blog.blogHeading}</BlogHeading>
-        <BlogSubHeading>{blog.blogContent}</BlogSubHeading>
-        <WriterDetailWrapper>
-          <img src={blog.writerImage} alt="picwriter" />
-          <p>{blog.name}</p>
-        </WriterDetailWrapper>
-      </BlogContent>
-    </BlogContainer>
-  );
-};
+    <BlogWrapper>
+        <BlogHeader>
+            <BlogHeaderLeft>
+                <BlogTitle>
+                    {title}
+                </BlogTitle>
+                <BlogWriterContent>
+                    <WriterImage src={writerImage} alt='writer' />
+                    <WriterName>{name}</WriterName>
+                </BlogWriterContent>
+            </BlogHeaderLeft>
+            <BlogHeaderRight>
+                <img src={blogImage} alt='image' />
+            </BlogHeaderRight>
+        </BlogHeader>
+        <BlogContent>
 
-const BlogContainer = styled.div`
-  display: flex;
-  align-items: center;
+        </BlogContent>
+    </BlogWrapper>
+  )
+}
 
-  img {
-    width: fit-content;
-    height: auto;
-  }
+const BlogWrapper= styled.section`
+padding : 10rem;
+`;
+const BlogHeader= styled.div`
+display:flex;
+justify-content: space-around;
 `;
 
-const BlogImage = styled.div`
-  flex: 0.25;
- 
+const BlogHeaderLeft = styled.div`
+flex: 0.5;
+`
 
-  img {
-    border-radius: 20%;
-  }
+const BlogHeaderRight = styled.div`
+flex: 0.5;
+`
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-     margin: 0;
-    img {
-      padding: 3rem;
-    }
-  }
+const BlogContent= styled.div`
+padding : 3rem 5rem;;
 `;
 
-const BlogContent = styled.div`
-  flex: 0.4;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-
-  @media (max-width: 1200px) {
-    gap: 2rem;
-    flex:1;
-  }
+const BlogTitle= styled.h1`
+font-size: 3rem;
 `;
 
-const BlogHeading = styled.p`
-  font-size: 2.6rem;
-  font-weight: 400;
+const BlogWriterContent = styled.div`
+display:flex;
+gap: 2rem;
+`
+const WriterImage= styled.img`
+border-radius: 50%;
+width: 100%;
+height: auto;`
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 4rem;
-  }
-`;
+const WriterName = styled.h5`
+font-size: 1.5rem;`
 
-const BlogSubHeading = styled.p`
-  font-size: 1.4rem;
-  font-weight: 400;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 2rem;
-  }
-`;
-
-const WriterDetailWrapper = styled.div`
-  display: flex;
-  justify-content: start;
-  gap: 1rem;
-  align-items: center;
-
-  img {
-    border-radius: 50%;
-  }
-
-  p {
-    font-size: 1.6rem;
-
-    @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      font-size: 2.4rem;
-    }
-  }
-`;
-
-export default Blog;
+export default Blog

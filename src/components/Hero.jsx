@@ -41,7 +41,7 @@ const Hero = () => {
       <HeroRightContainer>
         <img className="foreImage" src="./images/Hero_Img.png" alt="Mobile" />
       </HeroRightContainer>
-      <img className="swipe" src="./images/swipe.svg" alt="Mobile" />
+      <img className="swipe" onClick={() => window.scrollTo(0, window.innerHeight-80)} src="./images/swipe.svg" alt="Mobile" />
       <img className="leftpod" src="./images/leftPod.svg" alt="Mobile" />
       <img className="rightpod" src="./images/rightPod.svg" alt="Mobile" />
     </HeroWrapper>

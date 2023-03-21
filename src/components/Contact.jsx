@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Title } from "../GlobalStyle";
-import { Button } from "../GlobalStyle";
 import Modal from "./Modal";
 
 const Contact = () => {
@@ -291,6 +290,9 @@ const Input = styled.input`
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.text.purple};
+  }
+  &::placeholder{
+    font-size: 10px;
   }
 `;
 

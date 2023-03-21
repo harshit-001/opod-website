@@ -42,8 +42,8 @@ const FeatureListContent = styled.p`
   width: ${({ isSecond }) => (isSecond ? "10rem" : "13rem")};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 1.6rem;
-    width: ${({ isSecond }) => (isSecond ? "8rem" : "11rem")};
+    font-size: 2rem;
+    width: ${({ isSecond }) => (isSecond ? "8rem" : "13rem")};
     padding-top: 1rem;
   }
 `;

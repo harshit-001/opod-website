@@ -125,65 +125,31 @@ export const FaqList = [
 export const Blogs = [
   {
     blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
+    blogTitle: "The Daily Scoop",
     blogContent: "Emma Johnson writes about the latest happenings in the .",
     writerImage: "./images/writer.png",
     name: "Emma Johnson",
+    message:'As of 2023, there are over 7000 languages spoken around the world. In today’s globalized world, where businesses are expanding their reach beyond borders, multilingual ads have become essential for effective marketing. A survey conducted by Common Sense Advisory reveals that 75% of consumers prefer to buy products in their native language. They also found that 90% of consumers are more likely to make a purchase if the website is available in their native language.'
   },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
-  {
-    blogImage: "./images/blog-image.png",
-    blogHeading: "The Daily Scoop",
-    blogContent: "Emma Johnson writes about the latest happenings in the .",
-    writerImage: "./images/writer.png",
-    name: "Emma Johnson",
-  },
+ 
 ];
+
+export function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "IOS";
+    }
+
+    return "unknown";
+}

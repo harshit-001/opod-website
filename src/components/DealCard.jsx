@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getMobileOperatingSystem } from "../assets/utils";
 import { Button } from "../GlobalStyle";
 
 const DealCard = ({ item, index }) => {
+  const [device, setDevice] = useState("")
+  useEffect(() => {
+    setDevice(getMobileOperatingSystem())
+  })
+
+  const handleClick=(action) =>{
+     if(action === 'Download Now'){
+       if(device === 'Android'){
+        window.location.href = '';
+       }
+     }
+  }
+
   return (
     <DealCardWrapper index={index}>
       <DealTitle>{item.title}</DealTitle>
@@ -13,7 +27,8 @@ const DealCard = ({ item, index }) => {
           </li>
         ))}
       </DealList>
-      <Button textBold style={{width : '28rem', position:'absolute', bottom : '8%'}}>{item.btnTitle}</Button>
+      <Button textBold style={{width : '28rem', position:'absolute', bottom : '8%'}} 
+       onClick={()=> handleClick(item.btnTitle)} >{item.btnTitle}</Button>
       {index === 0 ? (
         <img
           className="img-rocket"

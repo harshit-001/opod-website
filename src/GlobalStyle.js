@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing : border-box;
     font-family : 'Anek Latin', sans-serif;
     background-size:cover;
+    scroll-behavior: smooth;
   }
 
   ::-webkit-scrollbar {

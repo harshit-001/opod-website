@@ -14,8 +14,8 @@ const Footer = () => {
           <h3>Company</h3>
           <LinkWrapper>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/">Blog</NavLink>
-            <NavLink to="/">Contact Us</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
           </LinkWrapper>
         </Company>
         <Supported>
