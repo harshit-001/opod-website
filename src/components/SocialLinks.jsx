@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const SocialLinks = ({ isFooter = false }) => {
+const SocialLinks = ({isFooter = false}) => {
   return (
     <nav>
       <div>
@@ -21,7 +21,7 @@ const SocialLinks = ({ isFooter = false }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img width='18px' height='18px' src="./images/facebook.svg" alt="twt" />
+              <img width='18px' height='18px' src={"./images/facebook.svg"} alt="twt" />
             </a>
           </li>
           <li>
@@ -51,7 +51,7 @@ const SocialLinks = ({ isFooter = false }) => {
 const SocialList = styled.ul`
   display: flex;
   gap: 2rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text.yellow};
   justify-content: center;
   align-items: center;
   li {
@@ -64,9 +64,10 @@ const SocialList = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 3rem;
     img {
-      width: ${({ isFooter }) => (isFooter ? "1.4rem" : "3rem")};
-      height: ${({ isFooter }) => (isFooter ? "1.4rem" : "3rem")};
+      width: ${({ isFooter }) => (isFooter ? "1.8rem" : "3rem")};
+      height: ${({ isFooter }) => (isFooter ? "1.8rem" : "3rem")};
     }
   }
 `;

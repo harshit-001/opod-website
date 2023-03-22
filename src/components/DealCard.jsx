@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getMobileOperatingSystem } from "../assets/utils";
 import { Button } from "../GlobalStyle";
 
 const DealCard = ({ item, index }) => {
   const [device, setDevice] = useState("")
+  const navigate = useNavigate()
   useEffect(() => {
     setDevice(getMobileOperatingSystem())
   },[device])
 
   const handleClick=(action) =>{
      if(action === 'Download Now'){
+       console.log(device)
        if(device === 'Android'){
-        window.location.href = '';
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.opod.news';
+       }else{
+        window.location.href = 'https://apps.apple.com/us/app/opod-audio/id1669008780'
        }
+     }else{
+      navigate("/contact")
      }
   }
 

@@ -146,6 +146,7 @@ const FeatureImage = styled.div`
 
 const FeatureContent = styled(Title)`
   font-size: 2.6rem;
+  font-weight:${({ theme }) => theme.weight.normal}
 `;
 const FeatureSpan = styled(Span)`
   font-size: 2.6rem;

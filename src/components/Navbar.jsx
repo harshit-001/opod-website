@@ -10,7 +10,7 @@ const Navbar = ({ setOpenMenu, openMenu }) => {
           <li>
             <NavLink
               className="nav-link"
-              activeClassName="active"
+              activeclassname="active"
               onClick={() => setOpenMenu(!openMenu)}
               to="/"
             >
@@ -20,7 +20,7 @@ const Navbar = ({ setOpenMenu, openMenu }) => {
           <li>
             <NavLink
               className="nav-link"
-              activeClassName="active"
+              activeclassname="active"
               onClick={() => setOpenMenu(!openMenu)}
               to="/blog"
             >
@@ -30,7 +30,7 @@ const Navbar = ({ setOpenMenu, openMenu }) => {
           <li>
             <NavLink
               className="nav-link"
-              activeClassName="active"
+              activeclassname="active"
               onClick={() => setOpenMenu(!openMenu)}
               to="/contact"
             >
@@ -50,12 +50,17 @@ const NavbarList = styled.ul`
   font-size: 2rem;
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    width: 100%;
+    a:hover::after, .active::after{
+      display:none;
+    }
+  }
+
   li {
     position: relative;
-    padding-bottom: 1px;
-
-    a:hover::after,
-    .active::after {
+    padding-bottom: 3px;
+    a:hover::after {
       content: "";
       font-weight: ${({ theme }) => theme.weight.bolder};
       position: absolute;
@@ -67,8 +72,24 @@ const NavbarList = styled.ul`
       background-color: ${({ theme }) => theme.colors.text.yellow};
     }
 
+    .active{
+       font-weight: ${({ theme }) => theme.weight.bold};
+     }
+
+    .active::after{
+      content: "•";
+      color: ${({ theme }) => theme.colors.text.yellow};
+      position: absolute;
+      bottom: -15px;
+      left:50%;
+    }
+
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      width: 50%;
       text-align: center;
+      border-bottom: 1px solid white;
+      padding-bottom: 8px;
+      margin: auto;
       .active::after {
         width: -webkit-fill-available;
       }

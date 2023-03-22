@@ -69,7 +69,7 @@ const SwipeAnimation = keyframes`
 
 const HeroWrapper = styled.section`
   display: flex;
-  justify-content: center;
+  justify-content:center;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`} fixed;
   background-size: cover;
   height: 90vh;
@@ -119,10 +119,11 @@ const HeroWrapper = styled.section`
 `;
 const HeroLeftContainer = styled.div`
   display: flex;
+  flex : 0.5;
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
-  margin-right: 15rem;
+  margin-left: 15rem;
 
    @media (max-width: 1200px) {
     margin-right:0;
@@ -164,7 +165,7 @@ const HeroSubHeading = styled.h3`
 `;
 
 const HeroPara = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: ${({ theme }) => theme.weight.normal};
   font-family: ${({ theme }) => theme.fontFamily.devnagri};
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -174,12 +175,14 @@ const HeroPara = styled.p`
 
 const HeroRightContainer = styled.div`
   display: flex;
+  flex: 0.5;
   justify-content: start;
   padding-bottom: 5rem;
 
   img {
     width: 95%;
     height: auto;
+    max-width: 52rem;
 
      @media (max-width: 1200px) {
     width:85%;

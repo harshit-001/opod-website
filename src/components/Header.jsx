@@ -20,7 +20,7 @@ const Header = () => {
       <div className={openMenu ? "" : "hidden"}>
         <NavWrapper className={openMenu ? "active" : ""}>
           <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <SocialLinks />
+          <SocialLinks inBlog />
         </NavWrapper>
       </div>
       <div className="mobile-btn">
@@ -51,6 +51,23 @@ gap: 10rem;
 
 @media (max-width : ${({ theme }) => theme.media.mobile}){
   display: none;
+
+  nav:first-child{
+    div{
+      ul{
+       flex-direction: column;
+      }
+    }
+  }
+
+  nav:last-child{
+    div{
+      ul{
+        gap: 5rem;
+      }
+    }
+  }
+  
 }
 
 }
@@ -87,27 +104,34 @@ const HeaderWrapper = styled.header`
       }
 
       ${NavWrapper}{
-       width: 100vw;
-       height: 100vh;
+       width: 360px;
+       height: 220px;
        position: absolute;
-       top:0;
-       left:0;
-       background-color: ${({ theme }) => theme.colors.text.purple};
+       top:50px;
+       right:0;
+       background-color: ${({ theme }) => theme.colors.text.light_purple};
        transform: translateX(100%);
        display:flex;
        flex-direction: column;
        gap: 3rem;
-       padding-top: 30rem;
+       padding: 3rem;
        justify-content: start;
        visibility: hidden;
        opacity:0;
 
+       nav{
+        width: 100%;
+         
+        div{
+          width: 100%;
+        }
+       }
+
        ul{
         display:flex;
-        flex-direction: column;
         align-content: center;
         font-size: 4rem;
-       }  
+       }
       }
 
       .desktop-logo{

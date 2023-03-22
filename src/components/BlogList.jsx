@@ -1,18 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const BlogList = ({ blog }) => {
+const BlogList = ({ blog,id }) => {
+ const navigate= useNavigate()
+  
+ const handleBlogClick = (id) =>{
+  navigate(`/blog/${id}`)
+ }
+
   return (
-    <BlogContainer>
+    <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        <img src={blog.blogImage} alt="pic" />
+        <img src={blog.blog_img} alt="pic" />
       </BlogImage>
       <BlogContent>
-        <BlogHeading>{blog.blogHeading}</BlogHeading>
-        <BlogSubHeading>{blog.blogContent}</BlogSubHeading>
+        <BlogHeading>{blog.title}</BlogHeading>
+        <BlogSubHeading>{blog.description}</BlogSubHeading>
         <WriterDetailWrapper>
-          <img src={blog.writerImage} alt="picwriter" />
-          <p>{blog.name}</p>
+          <img src={blog.writer_img} alt="picwriter" />
+          <p>{blog.writer_name}</p>
         </WriterDetailWrapper>
       </BlogContent>
     </BlogContainer>
@@ -22,10 +29,18 @@ const BlogList = ({ blog }) => {
 const BlogContainer = styled.div`
   display: flex;
   align-items: center;
+  gap:2rem;
 
+  &:hover{
+    cursor:pointer;
+  }
   img {
     width: fit-content;
     height: auto;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 4rem;
   }
 `;
 
@@ -35,18 +50,20 @@ const BlogImage = styled.div`
 
   img {
     border-radius: 20%;
+    width: 12rem;
+    height: 12rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
      margin: 0;
     img {
-      padding: 3rem;
+      width:20rem;
+      height: 20rem;
     }
   }
 `;
 
 const BlogContent = styled.div`
-  flex: 0.4;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -62,7 +79,7 @@ const BlogHeading = styled.p`
   font-weight: 400;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 `;
 
@@ -83,6 +100,13 @@ const WriterDetailWrapper = styled.div`
 
   img {
     border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+
+     @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 
   p {

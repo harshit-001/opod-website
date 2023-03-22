@@ -13,7 +13,20 @@ export const GlobalStyle = createGlobalStyle`
 
   ::-webkit-scrollbar {
   display: none;
-}
+  }
+
+  img:hover{
+    cursor:pointer;
+  }
+
+  input::placeholder, textarea::placeholder{
+    color: grey;
+    font-size: 14px;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: 12px;
+  }
+  }
 
   html{
     font-size: 62.5%;
@@ -46,6 +59,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 25rem;
     top: 2rem;
     left: 5rem;
+    max-width: 12rem;
   }
 
    .rightpod{

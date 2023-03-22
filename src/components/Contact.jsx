@@ -273,11 +273,15 @@ const RadioWrapper = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 500;
 
   &::after {
     content: ${({ required }) => (required ? "*" : "")};
+  }
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: 2.4rem;
   }
 `;
 
@@ -287,12 +291,10 @@ const Input = styled.input`
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 5px;
+  font-size: 15px;
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.text.purple};
-  }
-  &::placeholder{
-    font-size: 10px;
   }
 `;
 
@@ -302,6 +304,7 @@ const TextArea = styled.textarea`
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 5px;
+  font-size: 15px;
 `;
 const ContactRight = styled.div`
   flex: 0.5;
@@ -322,10 +325,10 @@ const ContactRight = styled.div`
 `;
 
 const ContactButton = styled.button`
-  height: 5.7rem;
+  align-self:end;
   width: 15.5rem;
-  fontSize: 2.6rem;
-  padding: 2rem;
+  font-size: 2.2rem;
+  padding: 1.1rem 4rem;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.btnBackground};
   color: ${({ theme }) => theme.colors.text.white};
@@ -334,6 +337,8 @@ const ContactButton = styled.button`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 100%;
+    height: 5.7rem;
+    font-size: 2.4rem;
     padding: 0;
     margin-top: 10px;
   }

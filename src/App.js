@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
+import Blog from "./components/Blog";
 import BlogPage from "./components/BlogPage";
 import Contact from "./components/Contact";
 import Cookie from "./components/Cookie";
@@ -19,6 +20,7 @@ function App() {
         purple: "#2F1562",
         light_purple: "#533097",
         yellow: "#FBD362",
+        blogTitle: '#0E004E'
       },
       white: "#fff",
       black: "#000000",
@@ -27,6 +29,7 @@ function App() {
       helper: "#8490ff",
       bg: "#533097",
       footer_bg: "#533097",
+      blog_bg: '#F5F5FC',
       btn: "rgb(98 84 243)",
       border: "rgba(98, 84, 243, 0.5)",
       hr: "#ffffff",
@@ -61,6 +64,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<Blog />} />
         </Routes>
         <Footer />
         <Cookie />

@@ -54,7 +54,10 @@ const Footer = () => {
                 <img src="./images/app_store.svg" alt="app store" />
               </a>
             </DownloadLeft>
+            <DownloadRight>
             <img src="./images/QRcode.svg" alt="app store" />
+            <img src="./images/AppleQR.svg" alt="app store" />
+            </DownloadRight>
           </DownloadLinkContainer>
         </Download>
       </TopContainer>
@@ -97,7 +100,7 @@ const Footer = () => {
       </LinkContainer>
       <SocialLinks isFooter={true} />
       <Hr />
-      <Rights>©2022 HWO MEDIA Pvt. Ltd. All Rights Reserved</Rights>
+      <Rights>©2023 HWO MEDIA Pvt. Ltd. All Rights Reserved</Rights>
     </FooterWrapper>
   );
 };
@@ -121,6 +124,7 @@ const FooterWrapper = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    text-align: center;
     background-color: ${({ theme }) => theme.colors.text.purple};
     h3:first-child {
       font-size: 4rem;
@@ -142,6 +146,11 @@ const TopContainer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+
+    .logo{
+      width: 24rem;
+    }
+
     flex-direction: column;
     div:nth-child(3),
     div:nth-child(2),
@@ -164,15 +173,21 @@ const LinkWrapper = styled.div`
   gap: 1rem;
 
   a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.text.yellow};
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    a{
+      font-size: 2.5rem;
+    }
   }
 `;
 
 const SupportImageContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 0.5rem;
+  gap: 1rem;
   width: fit-content;
 
   img {
@@ -184,6 +199,15 @@ const SupportImageContainer = styled.div`
     border-radius: 50%;
     display:flex;
     align-items: center;
+    justify-content: center;
+  }
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    grid-template-columns : repeat(6,auto);
+
+    img {
+    width: 6rem;
+  }
   }
 `;
 
@@ -192,9 +216,9 @@ const Supported = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    align-items: start;
+  
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 2rem;
   }
 `;
 
@@ -202,6 +226,10 @@ const Download = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 3rem;
+  }
 `;
 
 const DownloadTitle = styled.h4`
@@ -216,28 +244,53 @@ const DownloadTitle = styled.h4`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 4rem;
-    text-align: start;
   }
 `;
 
 const DownloadLinkContainer = styled.div`
   display: flex;
   gap: 2rem;
+  flex-direction:column;
   align-items: center;
-
-  img {
-    width: 9.3rem;
+  
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 2rem;
   }
 `;
 
 const DownloadLeft = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  gap: 4rem;
+  justify-content:space-between;
 
   img {
     width: 12rem;
   }
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    justify-content : center;
+    gap:2rem;
+    img {
+    width: 20rem;
+   }
+  }
+`;
+
+const DownloadRight = styled.div`
+  display: flex;
+  gap: 4rem;
+
+  img{
+    width: 12rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    img {
+    width: 23rem;
+   }
+  }
+
+   
 `;
 
 const LinkContainer = styled.div`
@@ -246,6 +299,14 @@ const LinkContainer = styled.div`
 
   p {
     font-size: 1.6rem;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: 2.2rem;
+  }
+  }
+
+  p:hover{
+    color: ${({ theme }) => theme.colors.text.yellow}
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -254,13 +315,17 @@ const LinkContainer = styled.div`
   }
 `;
 const Hr = styled.hr`
-  color: ${({ theme }) => theme.colors.text.white};
+  border: 1px solid ${({ theme }) => theme.colors.text.yellow};
 `;
 
 const Rights = styled.p`
   color: ${({ theme }) => theme.colors.text.yellow};
   font-weight: 400;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: 2rem;
+  }
 `;
 
 export default Footer;
