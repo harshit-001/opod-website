@@ -7,7 +7,7 @@ const DealCard = ({ item, index }) => {
   const [device, setDevice] = useState("")
   useEffect(() => {
     setDevice(getMobileOperatingSystem())
-  })
+  },[device])
 
   const handleClick=(action) =>{
      if(action === 'Download Now'){
