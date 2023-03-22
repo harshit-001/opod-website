@@ -183,6 +183,7 @@ const HeroRightContainer = styled.div`
     width: 95%;
     height: auto;
     max-width: 52rem;
+    max-height: 52rem;
 
      @media (max-width: 1200px) {
     width:85%;
