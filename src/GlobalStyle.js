@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html{
     font-size: 62.5%;
+    background: ${({ theme }) => theme.colors.text.purple}
 
      @media (max-width : 1200px){
       font-size : 50%;
@@ -46,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   
   a{
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.text.white}
+    color: ${({ theme }) => theme.colors.text.white};
   }
 
   ul{

@@ -60,7 +60,9 @@ const NavbarList = styled.ul`
   li {
     position: relative;
     padding-bottom: 3px;
-    a:hover::after {
+
+    @media (min-width: 1025px) {
+      a:hover::after {
       content: "";
       font-weight: ${({ theme }) => theme.weight.bolder};
       position: absolute;
@@ -71,6 +73,8 @@ const NavbarList = styled.ul`
       left: -1px;
       background-color: ${({ theme }) => theme.colors.text.yellow};
     }
+    }
+   
 
     .active{
        font-weight: ${({ theme }) => theme.weight.bold};

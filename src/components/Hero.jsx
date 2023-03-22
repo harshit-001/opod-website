@@ -185,9 +185,13 @@ const HeroRightContainer = styled.div`
     max-width: 505px;
     max-height: 515px;
 
-     @media (max-width: 1200px) {
+    @media (max-width: 1024px) {
+    width:110%;
+    }
+
+    @media (max-width: 768px) {
     width:85%;
-  }
+    }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

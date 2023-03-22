@@ -150,6 +150,10 @@ const BlogWrapper = styled.section`
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
   background-color: ${({ theme }) => theme.colors.text.purple};
 
+  @media (max-width:1024px) {
+    gap: 3rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     height: fit-content;
   }
@@ -185,7 +189,7 @@ const BlogLeft = styled.div`
     z-index: -2;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.tab}) {
+  @media (max-width:1024px) {
     padding: 0;
     margin: auto;
   }

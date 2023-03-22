@@ -242,7 +242,11 @@ const RadioWrapper = styled.div`
       vertical-align: middle;
     }
 
-    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+     @media (max-width: 1024px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.media.tab}) {
       font-size: 1.3rem;
     }
 
