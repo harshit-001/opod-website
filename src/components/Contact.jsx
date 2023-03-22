@@ -156,7 +156,7 @@ const Contact = () => {
           </form>
         </ContactLeft>
         <ContactRight>
-          <img src="./images/Contact.png" alt="contact" />
+          <img src="./images/Contact.svg" alt="contact" />
         </ContactRight>
       </ContentWrapper>
       <Modal show={show} />
@@ -313,7 +313,7 @@ const ContactRight = styled.div`
   justify-content: center;
 
   img {
-    width: fit-content;
+    width: 70%;
     height: auto;
   }
 
