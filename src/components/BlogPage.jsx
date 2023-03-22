@@ -264,6 +264,7 @@ export const Input = styled.input`
   padding: 1rem;
   border: none;
   background: white;
+  font-size: 1.6rem;
 
   &::placeholder {
     color: grey;
@@ -274,6 +275,7 @@ export const Input = styled.input`
     border-radius: 1rem;
     padding: 2rem;
     margin-top: 5px;
+    font-size: 3rem;
   }
 `;
 
@@ -321,7 +323,7 @@ const BlogListWrapper = styled.div`
 
 export const BlogButton = styled.button`
   align-self: end;
-  padding: 0.75rem 4rem;
+  padding: 0.95rem 4rem;
   font-size: 18px;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.btnBackground};

@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
 
   input::placeholder, textarea::placeholder{
     color: grey;
-    font-size: 14px;
+    font-size: 15px;
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 12px;
