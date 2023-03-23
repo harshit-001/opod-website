@@ -115,7 +115,7 @@ const BlogPage = ({ inBlog = false }) => {
       }
       <BlogRight>
         <BlogListWrapper inBlog={inBlog}>
-          {blogs.length > 0 ? (
+          {blogs.length < 0 ? (
             blogs.map(({ attributes, id }, index) => (
               <BlogList blog={attributes} key={index} id={id} />
             ))
@@ -320,8 +320,17 @@ const BlogListWrapper = styled.div`
   gap: 2rem;
   justify-content: center;
 
+  h1{
+    font-size: 2.5rem;
+
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      font-size: 3rem;
+    }
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 4rem;
+    margin:auto;
   }
 `;
 
