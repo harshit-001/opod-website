@@ -15,7 +15,7 @@ const Hero = () => {
         </HeroSubHeading>
         <HeroPara>
           With OPOD's short insightful audio content,
-          <br /> you can stay up-to-date with the latest news and detailed
+          <br />stay up-to-date with the latest news and detailed
           analysis, on the go!
         </HeroPara>
         <HeroDownload>

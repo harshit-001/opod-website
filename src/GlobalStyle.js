@@ -71,6 +71,10 @@ export const GlobalStyle = createGlobalStyle`
     right: 5rem;
   }
 
+  .button-wrapper{
+    margin:auto;
+  }
+
 `;
 
 export const Title = styled.h2`
