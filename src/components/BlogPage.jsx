@@ -349,7 +349,6 @@ export const BlogButton = styled.button`
   border: none;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    width: 100%;
     padding: 1rem 4rem;
   }
 `;

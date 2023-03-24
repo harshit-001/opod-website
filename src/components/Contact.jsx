@@ -349,10 +349,10 @@ const ContactRight = styled.div`
 `;
 
 const ContactButton = styled.button`
-  align-self:end;
-  width: 15.5rem;
-  font-size: 2.2rem;
-  padding: 1.1rem 4rem;
+ 
+  align-self: end;
+  padding: 0.95rem 4rem;
+  font-size: 18px;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.btnBackground};
   color: ${({ theme }) => theme.colors.text.white};
@@ -360,13 +360,28 @@ const ContactButton = styled.button`
   border: none;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    width: 100%;
-    height: 5.7rem;
-    font-size: 2.4rem;
-    padding: 0;
-    margin-top: 10px;
+    padding: 1rem 4rem;
+    margin-top:10px;
     margin-bottom: 20px;
   }
 `;
+
+//  align-self:end;
+//   width: 15.5rem;
+//   font-size: 2.2rem;
+//   padding: 1.1rem 4rem;
+//   border-radius: 10px;
+//   background: ${({ theme }) => theme.colors.btnBackground};
+//   color: ${({ theme }) => theme.colors.text.white};
+//   font-weight: 500;
+//   border: none;
+
+//   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+//     height: 5.7rem;
+//     font-size: 2.4rem;
+//     padding: 0;
+//     margin-top: 10px;
+//     margin-bottom: 20px;
+//   }
 
 export default Contact;
