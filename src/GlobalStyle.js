@@ -75,6 +75,14 @@ export const GlobalStyle = createGlobalStyle`
     transform : scale(0.98);
   }
 
+  input,
+textarea,
+button,
+select,
+a,img {
+    -webkit-tap-highlight-color: transparent;
+}
+
   .button-wrapper{
     margin:auto;
   }
@@ -111,6 +119,7 @@ export const Button = styled.button`
   border: none;
   width: fit-content;
   text-transform: uppercase;
+  z-index:3;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 100%;

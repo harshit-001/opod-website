@@ -125,6 +125,10 @@ const SocialList = styled.ul`
       height: 3rem;
     }
   }
+
+   @media (max-width: 360px) {
+    gap: 5rem;
+  }
 `;
 
 export default SocialLinks;
