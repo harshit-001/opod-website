@@ -75,6 +75,7 @@ const FeatureWrapper = styled.section`
   flex-direction: column;
   gap: 6rem;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
+  background-repeat: repeat;
   padding: 5rem 3rem;
   position: relative;
 

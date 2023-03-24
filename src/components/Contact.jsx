@@ -242,8 +242,28 @@ const RadioWrapper = styled.div`
       vertical-align: middle;
     }
 
-     @media (max-width: 1024px) {
+    @media (max-width: 1303px) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 1213px) {
       font-size: 1.1rem;
+    }
+
+    @media (max-width: 1122px) {
+      font-size: 1rem;
+    }
+
+     @media (max-width: 1077px){
+       font-size: 0.9rem
+    }
+
+    @media (max-width: 1033px){
+       font-size: 0.8rem
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 1rem;
     }
 
     @media (max-width: ${({ theme }) => theme.media.tab}) {

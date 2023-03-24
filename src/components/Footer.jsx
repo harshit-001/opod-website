@@ -21,16 +21,52 @@ const Footer = () => {
         <Supported>
           <h3>Supported By</h3>
           <SupportImageContainer>
-            <img src="./images/Supporter1.svg" alt="1" />
-            <img src="./images/Supporter2.svg" alt="2" />
-            <img src="./images/Supporter3.svg" alt="3" />
-            <img src="./images/Supporter4.svg" alt="4" />
-            <div className="support-div">
-              <img src="./images/Supporter5.png" alt="5" />
-            </div>
-            <div className="support-div">
-               <img src="./images/Supporter6.png" alt="6" />
-            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/Supporter1.svg" alt="1" />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/Supporter2.svg" alt="2" />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/Supporter3.svg" alt="3" />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/Supporter4.svg" alt="4" />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="support-div">
+                <img src="./images/Supporter5.png" className="fifth" alt="5" />
+              </div>
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="support-div">
+                <img src="./images/Supporter6.png" alt="6" />
+              </div>
+            </a>
           </SupportImageContainer>
         </Supported>
         <Download>
@@ -55,8 +91,8 @@ const Footer = () => {
               </a>
             </DownloadLeft>
             <DownloadRight>
-            <img src="./images/QRcode.svg" alt="app store" />
-            <img src="./images/AppleQR.svg" alt="app store" />
+              <img src="./images/QRcode.svg" alt="app store" />
+              <img src="./images/AppleQR.svg" alt="app store" />
             </DownloadRight>
           </DownloadLinkContainer>
         </Download>
@@ -118,7 +154,7 @@ const FooterWrapper = styled.section`
     font-weight: 500;
   }
 
-   @media (max-width: ${({ theme }) => theme.media.tab}) {
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
     padding: 4rem 12rem;
     gap: 4rem;
   }
@@ -146,8 +182,7 @@ const TopContainer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-
-    .logo{
+    .logo {
       width: 24rem;
     }
 
@@ -178,7 +213,7 @@ const LinkWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    a{
+    a {
       font-size: 2.5rem;
     }
   }
@@ -194,20 +229,30 @@ const SupportImageContainer = styled.div`
     width: 4.4rem;
   }
 
-  .support-div{
-    background: white;
-    border-radius: 50%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+  a{
+    .support-div {
+     width: 100%;
+     height: 100%;
+     background: white;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    }
+
+    .fifth{
+       border-radius: 50%;
+    }
   }
 
-   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    grid-template-columns : repeat(6,auto);
+  
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    grid-template-columns: repeat(6, auto);
 
     img {
-    width: 6rem;
-  }
+      width: 6rem;
+    }
   }
 `;
 
@@ -216,8 +261,8 @@ const Supported = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
-   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
   }
 `;
@@ -250,9 +295,9 @@ const DownloadTitle = styled.h4`
 const DownloadLinkContainer = styled.div`
   display: flex;
   gap: 2rem;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
-  
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
   }
@@ -261,18 +306,18 @@ const DownloadLinkContainer = styled.div`
 const DownloadLeft = styled.div`
   display: flex;
   gap: 4rem;
-  justify-content:space-between;
+  justify-content: space-between;
 
   img {
     width: 12rem;
   }
 
-   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    justify-content : center;
-    gap:2rem;
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    justify-content: center;
+    gap: 2rem;
     img {
-    width: 20rem;
-   }
+      width: 20rem;
+    }
   }
 `;
 
@@ -280,17 +325,15 @@ const DownloadRight = styled.div`
   display: flex;
   gap: 4rem;
 
-  img{
+  img {
     width: 12rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     img {
-    width: 23rem;
-   }
+      width: 23rem;
+    }
   }
-
-   
 `;
 
 const LinkContainer = styled.div`
@@ -301,12 +344,12 @@ const LinkContainer = styled.div`
     font-size: 1.6rem;
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 2.2rem;
-  }
+      font-size: 2.2rem;
+    }
   }
 
-  p:hover{
-    color: ${({ theme }) => theme.colors.text.yellow}
+  p:hover {
+    color: ${({ theme }) => theme.colors.text.yellow};
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

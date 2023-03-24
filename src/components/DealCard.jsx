@@ -84,9 +84,9 @@ const DealCardWrapper = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
+   @media (max-width: 1112px) {
     width: 37rem;
-  }
+   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     width: 40rem;
