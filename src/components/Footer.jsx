@@ -22,35 +22,35 @@ const Footer = () => {
           <h3>Supported By</h3>
           <SupportImageContainer>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://blog.google/intl/en-in/introducing-the-inaugural-class-of-the-google-for-startups-accelerator-india-women-founders/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="./images/Supporter1.svg" alt="1" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://timesofindia.indiatimes.com/city/kolkata/us-consulate-holds-boot-camp-for-women-entrepreneurs-in-kolkata/articleshow/87675089.cms"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="./images/Supporter2.svg" alt="2" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://nsrcel.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="./images/Supporter3.svg" alt="3" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://www.startupnexus.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="./images/Supporter4.svg" alt="4" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://aicbanasthali.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -59,7 +59,7 @@ const Footer = () => {
               </div>
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.opod.news"
+              href="https://cradle-edii.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
