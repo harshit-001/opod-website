@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   display: none;
   }
 
-  img:hover{
+  img:hover, button:hover{
     cursor:pointer;
   }
 
@@ -69,6 +69,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 15rem;
     bottom: 0;
     right: 5rem;
+  }
+
+  button:active, img:active{
+    transform : scale(0.98);
   }
 
   .button-wrapper{

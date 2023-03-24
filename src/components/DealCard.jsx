@@ -15,9 +15,9 @@ const DealCard = ({ item, index }) => {
      if(action === 'Download Now'){
        console.log(device)
        if(device === 'Android'){
-        window.location.href = 'https://play.google.com/store/apps/details?id=com.opod.news';
+        window.open('https://play.google.com/store/apps/details?id=com.opod.news', '_blank')
        }else{
-        window.location.href = 'https://apps.apple.com/us/app/opod-audio/id1669008780'
+        window.open('https://apps.apple.com/us/app/opod-audio/id1669008780', '_blank')
        }
      }else{
       navigate("/contact")
@@ -100,7 +100,7 @@ const DealCardWrapper = styled.div`
     .img-girl {
       position: absolute;
       width: 132px;
-      bottom: -19%;
+      bottom: -20%;
       right: -26%;
     }
   }
@@ -114,7 +114,7 @@ const DealCardWrapper = styled.div`
     .img-rocket {
       position: absolute;
       width: 60rem;
-      bottom: -14%;
+      bottom: -15%;
       left:-65%;
     }
     .img-girl {
@@ -134,7 +134,7 @@ const DealCardWrapper = styled.div`
     .img-rocket {
       position: absolute;
       width: 60rem;
-      bottom: -14%;
+      bottom: -15%;
       left:-78%;
     }
     .img-girl {
