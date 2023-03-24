@@ -68,11 +68,13 @@ const DealCardWrapper = styled.div`
     height: 40rem;
     bottom: -25%;
     left: -65%;
+    pointer-events:none;
   }
   .img-girl {
     position: absolute;
     bottom: -19%;
     right: -39%;
+    pointer-events:none;
   }
 
    @media (max-width: 1200px) {
