@@ -1,18 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 
-const SocialLinks = ({isFooter = false}) => {
+const SocialLinks = ({ isFooter = false, inBlog = false }) => {
   return (
     <nav>
       <div>
-        <SocialList isFooter={isFooter}>
+        <SocialList isFooter={isFooter} inBlog={inBlog}>
           <li>
             <a
               href="https://twitter.com/AudioOpod"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img width='18px' height='18px' src="./images/twitter.svg" alt="twt" />
+              {inBlog ? (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/twitterBlog.svg"
+                  alt="twt"
+                />
+              ) : (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/twitter.svg"
+                  alt="twt"
+                />
+              )}
             </a>
           </li>
           <li>
@@ -21,7 +35,21 @@ const SocialLinks = ({isFooter = false}) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img width='18px' height='18px' src={"./images/facebook.svg"} alt="twt" />
+              {inBlog ? (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/facebookBlog.svg"
+                  alt="twt"
+                />
+              ) : (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/facebook.svg"
+                  alt="twt"
+                />
+              )}
             </a>
           </li>
           <li>
@@ -30,7 +58,21 @@ const SocialLinks = ({isFooter = false}) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/linkidin.svg" alt="twt" />
+              {inBlog ? (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/linkedinBlog.svg"
+                  alt="twt"
+                />
+              ) : (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/linkidin.svg"
+                  alt="twt"
+                />
+              )}
             </a>
           </li>
           <li>
@@ -39,7 +81,21 @@ const SocialLinks = ({isFooter = false}) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/insta.svg" alt="twt" />
+              {inBlog ? (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/instaBlog.svg"
+                  alt="twt"
+                />
+              ) : (
+                <img
+                  width="18px"
+                  height="18px"
+                  src="./images/Insta.svg"
+                  alt="twt"
+                />
+              )}
             </a>
           </li>
         </SocialList>
@@ -51,7 +107,6 @@ const SocialLinks = ({isFooter = false}) => {
 const SocialList = styled.ul`
   display: flex;
   gap: 2rem;
-  color: ${({ theme }) => theme.colors.text.yellow};
   justify-content: center;
   align-items: center;
   li {
@@ -59,15 +114,15 @@ const SocialList = styled.ul`
     border-radius: 20%;
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors.text.purple};
+      background-color: ${({ theme ,inBlog}) =>inBlog ?  theme.colors.text.yellow : theme.colors.text.purple};
     }
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    gap: 3rem;
+    gap: 8rem;
     img {
-      width: ${({ isFooter }) => (isFooter ? "1.8rem" : "3rem")};
-      height: ${({ isFooter }) => (isFooter ? "1.8rem" : "3rem")};
+      width: 3rem;
+      height: 3rem;
     }
   }
 `;

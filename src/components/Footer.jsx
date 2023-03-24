@@ -47,16 +47,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/Supporter4.svg" alt="4" />
+              <img src="./images/Supporter4.png" className="round-image" alt="4" />
             </a>
             <a
               href="https://aicbanasthali.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="support-div">
-                <img src="./images/Supporter5.png" className="fifth" alt="5" />
-              </div>
+                <img src="./images/Supporter5.jpg" className="round-image" alt="5" />
             </a>
             <a
               href="https://cradle-edii.in/"
@@ -232,15 +230,16 @@ const SupportImageContainer = styled.div`
   a{
     .support-div {
      width: 100%;
-     height: 100%;
+     height: 92%;
      background: white;
      border-radius: 50%;
      display: flex;
      align-items: center;
      justify-content: center;
+     margin-top:1px;
     }
 
-    .fifth{
+    .round-image{
        border-radius: 50%;
     }
   }
@@ -248,6 +247,7 @@ const SupportImageContainer = styled.div`
   
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 2rem;
     grid-template-columns: repeat(6, auto);
 
     img {

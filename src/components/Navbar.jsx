@@ -89,7 +89,7 @@ const NavbarList = styled.ul`
     }
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      width: 50%;
+      width: 35%;
       text-align: center;
       border-bottom: 1px solid white;
       padding-bottom: 8px;

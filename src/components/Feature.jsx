@@ -7,8 +7,8 @@ import FeatureCard from "./FeatureCard";
 const Feature = () => {
 
   const [image, setImage] = useState({
-    first: false,
-    second: true
+    first: true,
+    second: false
   })
 
   const handleImageClick=(tag) =>{

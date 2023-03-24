@@ -37,7 +37,7 @@ const Blog = () => {
           <p>The Blog</p>
           <BlogContent>{data.content}</BlogContent>
         </ContentWrapper>
-        <SocialLinks />
+        <SocialLinks inBlog/>
       </BlogContentWrapper>
       <BlogPage inBlog style={{textAlign:'center'}}/>
     </BlogWrapper>
@@ -47,6 +47,14 @@ const Blog = () => {
 const BlogWrapper = styled.section`
   padding: 7rem 25rem;
   background: ${({ theme }) => theme.colors.blog_bg};
+
+  @media (max-width: 1024px) {
+    padding: 5rem 10rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    padding: 5rem 10rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 0;
@@ -62,7 +70,6 @@ const BlogHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 10rem;
   gap: 3rem;
   flex-direction: column;
 `;
@@ -70,6 +77,7 @@ const BlogHeader = styled.div`
 const BlogImage = styled.img`
   width: 70rem;
   height: 40rem;
+  max-width: 100%;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 60rem;

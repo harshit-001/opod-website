@@ -365,6 +365,7 @@ const ContactButton = styled.button`
     font-size: 2.4rem;
     padding: 0;
     margin-top: 10px;
+    margin-bottom: 20px;
   }
 `;
 

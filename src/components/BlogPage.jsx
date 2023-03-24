@@ -332,6 +332,10 @@ const BlogListWrapper = styled.div`
     padding: 4rem;
     margin:auto;
   }
+
+   @media (max-width: 360px) {
+    padding: 0;
+  }
 `;
 
 export const BlogButton = styled.button`

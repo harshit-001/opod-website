@@ -20,7 +20,7 @@ const Header = () => {
       <div className={openMenu ? "" : "hidden"}>
         <NavWrapper className={openMenu ? "active" : ""}>
           <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <SocialLinks inBlog />
+          <SocialLinks />
         </NavWrapper>
       </div>
       <div className="mobile-btn">

@@ -27,6 +27,7 @@ const FeatureCardWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 17rem;
+    margin-bottom: 3rem;
 
     img {
       width: 13rem;

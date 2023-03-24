@@ -68,7 +68,7 @@ const BlogContent = styled.div`
   flex-direction: column;
   gap: 0.8rem;
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;
     flex:1;
   }
