@@ -115,7 +115,7 @@ const BlogPage = ({ inBlog = false }) => {
       }
       <BlogRight>
         <BlogListWrapper inBlog={inBlog}>
-          {blogs.length > 0 ? (
+          {blogs?.length > 0 ? (
             blogs.map(({ attributes, id }, index) => (
               <BlogList blog={attributes} key={index} id={id} />
             ))
