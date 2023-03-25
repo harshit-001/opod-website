@@ -50,7 +50,7 @@ function App() {
     },
     media: { mobile: "767px", tab: "998px" },
     bgimage: {
-      purple: process.env.PUBLIC_URL+ "/images/Hero_BG.svg",
+      purple: process.env.PUBLIC_URL+ "/images/HERO_BG.svg",
       white: "./images/White_Bg.svg",
     },
   };
