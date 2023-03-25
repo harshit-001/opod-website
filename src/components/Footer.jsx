@@ -47,14 +47,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/Supporter4.png" className="round-image" alt="4" />
+              <img src={process.env.PUBLIC_URL + "/images/Supporter4.png"} className="round-image" alt="4" />
             </a>
             <a
               href="https://aicbanasthali.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
-                <img src="./images/Supporter5.jpg" className="round-image" alt="5" />
+                <img src={process.env.PUBLIC_URL + "/images/Supporter5.png"} className="round-image" alt="5" />
             </a>
             <a
               href="https://cradle-edii.in/"
@@ -62,7 +62,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <div className="support-div">
-                <img src="./images/Supporter6.png" alt="6" />
+                <img src={process.env.PUBLIC_URL + "/images/Supporter6.png"} alt="6" />
               </div>
             </a>
           </SupportImageContainer>
