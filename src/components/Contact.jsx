@@ -3,22 +3,21 @@ import styled from "styled-components";
 import { Title } from "../GlobalStyle";
 import Modal from "./Modal";
 
-const Contact = () => {
-  const [show,setShow] = useState(false);
-  const [formData, setFormData] = useState({
+const initialState = {
     reason: "Mobile App",
     name: "",
     email: "",
     number: "",
     message: "",
-  });
+  }
+
+const Contact = () => {
+  const [show,setShow] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   //https://script.google.com/macros/s/AKfycbzGUO_JvqplQO2qlATbaRe49p6hFTjWyWXLlBz307ekxTc2aApj1as0RahzovUB90T4fg/exec
 
   const handleChange = (e) => {
-    if (true) {
       setFormData({ ...formData, [e.target.name]: e.target.value });
-      console.log(formData);
-    }
   };
 
   const handleFormSubmit = (e) => {
@@ -54,7 +53,7 @@ const Contact = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-      
+      setFormData(...initialState)
   };
 
   return (
@@ -339,6 +338,7 @@ const ContactRight = styled.div`
   img {
     width: 70%;
     height: auto;
+    pointer-events: none;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

@@ -37,6 +37,7 @@ const CardWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 30rem;
     min-width: 150px;
+    max-width: 210px;
 
     img {
       width: 140%;

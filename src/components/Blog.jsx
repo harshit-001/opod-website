@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { transformText } from "../assets/utils";
 import BlogPage from "./BlogPage";
 import SocialLinks from "./SocialLinks";
 
 const Blog = () => {
   const [data, setData] = useState({});
 
+  const {id} = useParams();
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("http://localhost:1337/api/blogs/1", {
+     const data = await fetch(`http://65.0.176.32:1337/api/articles/${id}?populate=*`, {
       method: "GET",
       headers: {
         Authorization:
-          "bearer 4155c0d6663ebae86efc9b37c8ddc1337152d2abd009e22d657706fda03dd85a1607fa25d094a762534f11863a6edfc9ec3ee15fa89361eb6bdf3c8d5616ccbe060e3cfa857f7fb6a34c522d0355d6e6290ac0927bfde3e30a5677e61f8292f928b13e1ed9414b783782f163e167973947c86f92655b410b1de4f1d61463e25f",
+          "bearer bfd2f9cb76a5aecacc871850335fb51ce5b6d114cf7d4f8ac523c96719e469ca77fb853b44f3e30806ee7f8c7904cb1ad15ac9b258e413e7f6723b7bc6b2df7d0ca623e431d8e5f86375a3255bad6a87402e72c75ecfa0864e1812a60da7b044cce26b985ba37c3c0458851345b76f9531b0e24713cbce3bd0767e7f7f9ffe05",
       },
     });
-    const result = await data.json();
+    const result = await data?.json();
     console.log("data", result);
-    setData(result.data.attributes);
+    setData(result?.data.attributes);
   };
   return (
     <BlogWrapper>
@@ -29,13 +33,13 @@ const Blog = () => {
           <BlogPublished>
             Politics/{data?.publishedAt?.substring(0, 10)}
           </BlogPublished>
-          <BlogTitle>{data.title}</BlogTitle>
-          <BlogImage src={data.blog_img} alt="blog" />
-          <BlogDescription>{data.description}</BlogDescription>
+          <BlogTitle>{data?.title}</BlogTitle>
+          <BlogImage src={data?.image?.data?.attributes.url} alt="blog" />
+          <BlogDescription>{data?.description}</BlogDescription>
         </BlogHeader>
         <ContentWrapper>
           <p>The Blog</p>
-          <BlogContent>{data.content}</BlogContent>
+          <BlogContent>{data?.content}</BlogContent>
         </ContentWrapper>
         <SocialLinks inBlog/>
       </BlogContentWrapper>
@@ -101,6 +105,7 @@ const ContentWrapper = styled.div`
 `;
 
 const BlogContent = styled.div`
+  white-space: pre-wrap;
   font-size: 2rem;
   padding: 4rem 5rem;
 `;

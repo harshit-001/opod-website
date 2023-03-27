@@ -17,27 +17,16 @@ const Header = () => {
           alt="logo"
         />
       </NavLink>
-      <div className={openMenu ? "" : "hidden"}>
-        <NavWrapper className={openMenu ? "active" : ""}>
-          <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <SocialLinks />
-        </NavWrapper>
-      </div>
+      <NavWrapper className={openMenu ? "activeDiv" : "hiddenDiv"}>
+        <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <SocialLinks />
+      </NavWrapper>
       <div className="mobile-btn">
-        {openMenu ? (
-          <img
-            src="./images/Close.png"
-            alt="close"
-            className={openMenu ? "activeBtn" : ""}
-            onClick={() => setOpenMenu(!openMenu)}
-          />
-        ) : (
-          <img
-            src="./images/HamBurger.svg"
-            alt="burger"
-            onClick={() => setOpenMenu(!openMenu)}
-          />
-        )}
+         <div className="icon" onClick={() => setOpenMenu(!openMenu)} >
+          <span className={openMenu ? "activeIcon" : ""} ></span>
+          <span className={openMenu ? "activeIcon" : ""} ></span>
+          <span className={openMenu ? "activeIcon" : ""} ></span>
+         </div>
       </div>
     </HeaderWrapper>
   );
@@ -50,7 +39,43 @@ align-items : center;
 gap: 10rem;
 
 @media (max-width : ${({ theme }) => theme.media.mobile}){
-  display: none;
+  width: 360px;
+  height: 220px;
+  position: fixed;
+  top:50px;
+  right:0;
+  transition :transform 0.5s ease-in-out;
+  background-color: ${({ theme }) => theme.colors.text.light_purple};
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+  justify-content: start;
+  z-index:20;
+
+  &.hiddenDiv{
+    transform: translateX(100%);
+  }
+
+  &.activeDiv{
+    display:flex;
+    transform: translateX(0);
+  }
+
+
+
+  nav{
+   width: 100%;
+  } 
+
+  div{
+     width: 100%;
+  }
+
+  ul{
+   display:flex;
+   align-content: center;
+   font-size: 4rem;
+  }
 
   nav:first-child{
     div{
@@ -69,7 +94,6 @@ gap: 10rem;
   }
   
 }
-
 }
 `;
 
@@ -99,41 +123,6 @@ const HeaderWrapper = styled.header`
 
     @media (max-width : ${({ theme }) => theme.media.mobile}){
       
-      .hidden{
-        display: none;
-      }
-
-      ${NavWrapper}{
-       width: 360px;
-       height: 220px;
-       position: absolute;
-       top:50px;
-       right:0;
-       background-color: ${({ theme }) => theme.colors.text.light_purple};
-       transform: translateX(100%);
-       display:flex;
-       flex-direction: column;
-       gap: 3rem;
-       padding: 3rem;
-       justify-content: start;
-       visibility: hidden;
-       opacity:0;
-
-       nav{
-        width: 100%;
-         
-        div{
-          width: 100%;
-        }
-       }
-
-       ul{
-        display:flex;
-        align-content: center;
-        font-size: 4rem;
-       }
-      }
-
       .desktop-logo{
         display: none;
       }
@@ -141,31 +130,60 @@ const HeaderWrapper = styled.header`
       .mobile-logo{
         display:block;
       }
-
       .mobile-btn{
         display:block;
-        img{
-          width: 4.4rem;
-          display:inline-block;
+        
+        .icon{
+           width: 30px;
+           height: 45px;
+           position: relative;
+           margin: auto 2px;
+           transform: rotate(0deg);
+           transition: .5s ease-in-out;
+           cursor: pointer;
+
+           span{
+             display: block;
+             position: absolute;
+             height: 2.5px;
+             width: 80%;
+             background: #fff;
+             border-radius: 1px;
+             opacity: 1;
+             right: 0;
+             transform: rotate(0deg);
+             transition: .25s ease-in-out;
+           }
+
+           span:nth-child(1) {
+             top: 12px;
+
+             &.activeIcon{
+               top: 20px;
+               transform: rotate(135deg);
+             }
+           }
+
+           span:nth-child(2){
+             top:20px;
+
+              &.activeIcon{
+                opacity:0;
+                right: 40px;
+              }
+           }
+
+           span:nth-child(3) {
+             top: 28px;
+
+              &.activeIcon{
+               top:20px;
+               transform: rotate(-135deg);
+             }
+           }
         }
       }
-
-      .active{
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-        z-index:10;
-      }
-
-      .activeBtn{
-        position: absolute;
-        top: 4rem;
-        right: 6rem;
-        z-index: 1200;
-      }
     }
-    
-    
  }
 `;
 

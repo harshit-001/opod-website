@@ -181,6 +181,7 @@ const TopContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .logo {
+      max-width: 120px;
       width: 24rem;
     }
 
@@ -317,6 +318,7 @@ const DownloadLeft = styled.div`
     gap: 2rem;
     img {
       width: 20rem;
+      max-width: 100px;
     }
   }
 `;
@@ -331,6 +333,7 @@ const DownloadRight = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     img {
+      max-width: 115px;
       width: 23rem;
     }
   }

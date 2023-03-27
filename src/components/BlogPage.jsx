@@ -18,14 +18,15 @@ const BlogPage = ({ inBlog = false }) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("http://localhost:1337/api/blogs", {
+    const data = await fetch("http://65.0.176.32:1337/api/articles?populate=*", {
       method: "GET",
       headers: {
         Authorization:
-          "bearer 4155c0d6663ebae86efc9b37c8ddc1337152d2abd009e22d657706fda03dd85a1607fa25d094a762534f11863a6edfc9ec3ee15fa89361eb6bdf3c8d5616ccbe060e3cfa857f7fb6a34c522d0355d6e6290ac0927bfde3e30a5677e61f8292f928b13e1ed9414b783782f163e167973947c86f92655b410b1de4f1d61463e25f",
+          "bearer bfd2f9cb76a5aecacc871850335fb51ce5b6d114cf7d4f8ac523c96719e469ca77fb853b44f3e30806ee7f8c7904cb1ad15ac9b258e413e7f6723b7bc6b2df7d0ca623e431d8e5f86375a3255bad6a87402e72c75ecfa0864e1812a60da7b044cce26b985ba37c3c0458851345b76f9531b0e24713cbce3bd0767e7f7f9ffe05",
       },
     });
     const result = await data.json();
+    console.log(result)
     setBlogs(result?.data);
   };
 
@@ -186,7 +187,7 @@ const BlogLeft = styled.div`
     opacity: 0.1;
     top: -12rem;
     left: 1rem;
-    z-index: -2;
+    z-index: -3;
   }
 
   @media (max-width:1024px) {
@@ -213,10 +214,10 @@ const BlogLeft = styled.div`
 
 const BlogRight = styled.div`
   flex: 0.5;
-  overflow-y: scroll;
+  overflow: scroll;
   height: 52rem;
   display: flex;
-  align-items: center;
+  z-index:10;
   color: ${({ theme }) => theme.colors.text.white};
 
   ::-webkit-scrollbar {
@@ -318,7 +319,7 @@ const BlogListWrapper = styled.div`
   display: flex;
   flex-direction: ${({ inBlog }) => inBlog ? 'row' : 'column'};
   gap: 2rem;
-  justify-content: center;
+  overflow:scroll;
 
   h1{
     font-size: 2.5rem;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { truncate } from "../assets/utils";
 
 const BlogList = ({ blog,id }) => {
  const navigate= useNavigate()
@@ -12,11 +13,11 @@ const BlogList = ({ blog,id }) => {
   return (
     <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        <img src={blog.blog_img} alt="pic" />
+        <img src={blog.image.data.attributes.url} alt="pic" />
       </BlogImage>
       <BlogContent>
-        <BlogHeading>{blog.title}</BlogHeading>
-        <BlogSubHeading>{blog.description}</BlogSubHeading>
+        <BlogHeading>{truncate(blog?.Title, 25)}</BlogHeading>
+        <BlogSubHeading>{truncate(blog.sub_heading, 50)}</BlogSubHeading>
         <WriterDetailWrapper>
           <img src={blog.writer_img} alt="picwriter" />
           <p>{blog.writer_name}</p>

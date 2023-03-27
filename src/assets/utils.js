@@ -153,3 +153,8 @@ export function getMobileOperatingSystem() {
 
     return "unknown";
 }
+
+export const truncate = (text, charSize) => {
+  return text?.substring(0,charSize) + (text?.length > charSize ? "..." : "" );
+}
+

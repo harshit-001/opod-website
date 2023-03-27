@@ -79,7 +79,7 @@ export const GlobalStyle = createGlobalStyle`
 textarea,
 button,
 select,
-a,img {
+a,img,div,span {
     -webkit-tap-highlight-color: transparent;
 }
 

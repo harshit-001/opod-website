@@ -28,7 +28,7 @@ const Feature = () => {
         <div className="first-image">
           <div className="opod-image">
              <img className="o-image" src="./images/o-selected.svg" alt="feature" />
-              <img src="./images/pod-unselected.svg" alt="feature" />
+              <img className="pod-image"src="./images/pod-unselected.svg" alt="feature" />
           </div>
          
           <FeatureContent isWhiteBg={false}>
@@ -113,8 +113,16 @@ const FeatureImage = styled.div`
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       gap:0;
 
+      .o-image{
+        max-width: 40px;
+      }
+
+      .pod-image{
+        max-width: 135px;
+      }
+
       img {
-      width: 27rem;
+        width: 27rem;
       }
     }
   }

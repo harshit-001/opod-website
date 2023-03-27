@@ -184,6 +184,7 @@ const HeroRightContainer = styled.div`
     height: auto;
     max-width: 505px;
     max-height: 515px;
+    pointer-events: none;
 
     @media (max-width: 1024px) {
     width:110%;

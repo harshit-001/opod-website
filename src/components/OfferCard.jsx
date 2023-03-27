@@ -34,6 +34,7 @@ const OfferCardWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 27rem;
     gap: 2rem;
+    max-width: 130px;
 
     img {
       width: 26rem;
