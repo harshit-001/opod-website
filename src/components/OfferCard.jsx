@@ -61,12 +61,12 @@ const OfferCardWrapper = styled.div`
 
 
    @supports (-webkit-touch-callout: none) {
-     width: 27rem;
+     width: 186px;
      gap: 2rem;
     
     img {
-      width: 26rem;
-      height: 26rem;
+      width: 130px;
+      height: 130px;
       max-width: 100%;
     }
   }
@@ -76,7 +76,7 @@ const OfferCardWrapper = styled.div`
     gap: 10px;
     
     img {
-      width: 100%;
+      width: 130px;
       height: auto;
     }
   }
@@ -89,7 +89,7 @@ const OfferCardWrapper = styled.div`
            gap: 10px;
     
            img {
-            width: 100%;
+            width: 130px;
             height: auto;
            }
         }
