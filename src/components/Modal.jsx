@@ -57,12 +57,13 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   border-radius: 10px;
 
-  img {
-    width: 60%;
-  }
 
   h3 {
     font-size: 3rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    height: 40rem;
   }
 `;
 
