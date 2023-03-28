@@ -40,8 +40,8 @@ const CardWrapper = styled.div`
     
 
     img {
-      width: 140%;
-      max-width: 210px;
+      width: 100%;
+      max-width: 100%;
     }
   }
 

@@ -39,7 +39,7 @@ const OfferCardWrapper = styled.div`
     img {
       width: 26rem;
       height: 26rem;
-      max-width: 130px;
+      max-width: 100%;
     }
   }
 
