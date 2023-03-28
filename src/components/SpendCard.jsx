@@ -64,12 +64,31 @@ const CardWrapper = styled.div`
   }
 
   @supports (-webkit-touch-callout: none) {
-     width: 28rem;
+     width: 150px;
 
     img {
       width: 100%;
     }
   }
+
+  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+      width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+   @media only screen 
+        and (device-width: 428px) 
+        and (device-height: 926px) 
+        and (-webkit-device-pixel-ratio: 3) { 
+           width: 150px;
+
+           img {
+            width: 100%;
+           }
+     }
 `;
 
 export const SpendPara = styled.p`

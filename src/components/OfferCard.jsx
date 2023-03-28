@@ -43,10 +43,6 @@ const OfferCardWrapper = styled.div`
     }
   }
 
-   @media (max-width: 360px) {
-    width: 60%;
-  }
-
   @media only screen and (max-device-width: 480px){
     width: 27rem;
     gap: 2rem;
@@ -58,6 +54,12 @@ const OfferCardWrapper = styled.div`
     }
   }
 
+   @media (max-width: 360px) {
+    width: 60%;
+   }
+
+
+
    @supports (-webkit-touch-callout: none) {
      width: 27rem;
      gap: 2rem;
@@ -68,6 +70,29 @@ const OfferCardWrapper = styled.div`
       max-width: 100%;
     }
   }
+
+  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    width: 186px;
+    gap: 10px;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+    @media only screen 
+        and (device-width: 428px) 
+        and (device-height: 926px) 
+        and (-webkit-device-pixel-ratio: 3) { 
+           width: 186px;
+           gap: 10px;
+    
+           img {
+            width: 100%;
+            height: auto;
+           }
+        }
 `;
 
 const OfferTitle = styled.p`
