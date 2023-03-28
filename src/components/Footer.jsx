@@ -167,6 +167,10 @@ const FooterWrapper = styled.section`
       font-size: 2.4rem;
     }
   }
+
+  @media only screen and (max-device-width: 480px){
+    padding : 40px 20px; 
+  }
 `;
 
 const TopContainer = styled.div`
