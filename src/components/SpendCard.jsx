@@ -52,6 +52,16 @@ const CardWrapper = styled.div`
       width: 100%;
     }
   }
+
+  @media only screen and (max-device-width: 480px){
+    width: 30rem;
+    min-width: 150px;
+    
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 `;
 
 export const SpendPara = styled.p`

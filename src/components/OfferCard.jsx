@@ -46,6 +46,17 @@ const OfferCardWrapper = styled.div`
    @media (max-width: 360px) {
     width: 60%;
   }
+
+  @media only screen and (max-device-width: 480px){
+    width: 27rem;
+    gap: 2rem;
+    
+    img {
+      width: 26rem;
+      height: 26rem;
+      max-width: 100%;
+    }
+  }
 `;
 
 const OfferTitle = styled.p`
