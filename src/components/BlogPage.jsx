@@ -82,10 +82,10 @@ const BlogPage = ({ inBlog = false }) => {
           </BlogSubHeading>
         ) : (
           <>
-            <BlogHeading>OPOD AUDIO</BlogHeading>
+            <BlogHeading>STAY CONNECTED</BlogHeading>
             <BlogSubHeading>
-              <Span>Subscribe </Span> to our blog to get <br />
-              <Span>updates from us</Span>
+              <Span>Join us </Span> to get trending audio insights directly <br />
+              <Span>to your inbox</Span>
             </BlogSubHeading>
           </>
         )}
@@ -114,7 +114,7 @@ const BlogPage = ({ inBlog = false }) => {
             />
           </div>
           <BlogButton type="submit">
-            {loading ? <Loader className="spinner" /> : "Send"}
+            {loading ? <Loader className="spinner" /> : "Subscribe"}
           </BlogButton>
         </BlogFormWrapper>
         <img className="lang-image" src="./images/language.svg" alt="lang" />
@@ -356,6 +356,7 @@ export const BlogButton = styled.button`
   border: none;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    align-self:center;
     padding: 1rem 4rem;
   }
 `;

@@ -61,8 +61,6 @@ gap: 10rem;
     transform: translateX(0);
   }
 
-
-
   nav{
    width: 100%;
   } 
@@ -92,8 +90,11 @@ gap: 10rem;
       }
     }
   }
-  
-}
+ }
+
+  @media (max-width : 350px){
+       width: 320px;
+  }
 }
 `;
 

@@ -26,18 +26,7 @@ const Feature = () => {
       </Title>
       <FeatureImage>
         <div className="first-image">
-          <div className="opod-image">
-             <img className="o-image" src="./images/o-selected.svg" alt="feature" />
-              <img className="pod-image"src="./images/pod-unselected.svg" alt="feature" />
-          </div>
-         
-          <FeatureContent isWhiteBg={false}>
-            Optimising your digital{" "}
-            <FeatureSpan isWhiteBg={false}>consumption </FeatureSpan>
-          </FeatureContent>
-        </div>
-        <hr />
-        <div className="sec-image">
+
           <div className="opod-image">
                <img className="o-image" src={`./images/o-${image.first ? "selected" : "unselected"}.svg`} alt="feature" 
                onClick={()=> handleImageClick("first")
@@ -53,7 +42,19 @@ const Feature = () => {
              Short audio snippets of <br/><FeatureSpan>10-30 secs</FeatureSpan>
           </FeatureContent>)
           }
-        
+
+        </div>
+        <hr />
+        <div className="sec-image">
+          <div className="opod-image">
+             <img className="o-image" src="./images/o-unselected.svg" alt="feature" />
+              <img className="pod-image"src="./images/pod-selected.svg" alt="feature" />
+          </div>
+         
+          <FeatureContent isWhiteBg={false}>
+            Optimising your digital{" "}
+            <FeatureSpan isWhiteBg={false}>consumption </FeatureSpan>
+          </FeatureContent>
         </div>
       </FeatureImage>
       <FeatureListContainer>
@@ -140,11 +141,11 @@ const FeatureImage = styled.div`
       display: none;
     }
 
-    .first-image {
+    .sec-image {
       display: none;
     }
 
-    .sec-image {
+    .first-image {
       width: 70%;
       display: flex;
       flex-direction: column;

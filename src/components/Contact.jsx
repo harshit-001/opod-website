@@ -368,25 +368,8 @@ const ContactButton = styled.button`
     padding: 1rem 4rem;
     margin-top:10px;
     margin-bottom: 20px;
+    align-self:center;
   }
 `;
-
-//  align-self:end;
-//   width: 15.5rem;
-//   font-size: 2.2rem;
-//   padding: 1.1rem 4rem;
-//   border-radius: 10px;
-//   background: ${({ theme }) => theme.colors.btnBackground};
-//   color: ${({ theme }) => theme.colors.text.white};
-//   font-weight: 500;
-//   border: none;
-
-//   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-//     height: 5.7rem;
-//     font-size: 2.4rem;
-//     padding: 0;
-//     margin-top: 10px;
-//     margin-bottom: 20px;
-//   }
 
 export default Contact;
