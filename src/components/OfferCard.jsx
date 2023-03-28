@@ -57,6 +57,17 @@ const OfferCardWrapper = styled.div`
       max-width: 100%;
     }
   }
+
+   @supports (-webkit-touch-callout: none) {
+     width: 27rem;
+     gap: 2rem;
+    
+    img {
+      width: 26rem;
+      height: 26rem;
+      max-width: 100%;
+    }
+  }
 `;
 
 const OfferTitle = styled.p`

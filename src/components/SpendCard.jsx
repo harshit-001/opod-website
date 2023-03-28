@@ -62,6 +62,14 @@ const CardWrapper = styled.div`
       max-width: 100%;
     }
   }
+
+  @supports (-webkit-touch-callout: none) {
+     width: 28rem;
+
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 export const SpendPara = styled.p`
