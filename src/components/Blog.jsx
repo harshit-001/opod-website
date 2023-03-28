@@ -10,10 +10,7 @@ const Blog = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
+    const fetchData = async () => {
      const data = await fetch(`http://65.0.176.32:1337/api/articles/${id}?populate=*`, {
       method: "GET",
       headers: {
@@ -25,6 +22,10 @@ const Blog = () => {
     console.log("data", result);
     setData(result?.data.attributes);
   };
+    fetchData();
+  }, [id]);
+
+  
   return (
     <BlogWrapper>
       <BlogContentWrapper>
