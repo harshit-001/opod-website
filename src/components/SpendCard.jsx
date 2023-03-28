@@ -46,12 +46,10 @@ const CardWrapper = styled.div`
   }
 
    @media only screen and (max-device-width: 480px){
-    width: 150px;
-    min-width: 150px;
+    width: 180px;
     
     img {
-      width: 100%;
-      max-width: 100%;
+      width: 120%;
     }
   }
 
@@ -62,33 +60,6 @@ const CardWrapper = styled.div`
       width: 100%;
     }
   }
-
-  @supports (-webkit-touch-callout: none) {
-     width: 150px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-      width: 150px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-   @media only screen 
-        and (device-width: 428px) 
-        and (device-height: 926px) 
-        and (-webkit-device-pixel-ratio: 3) { 
-           width: 150px;
-
-           img {
-            width: 100%;
-           }
-     }
 `;
 
 export const SpendPara = styled.p`
