@@ -3,38 +3,40 @@ import styled from "styled-components";
 import { Span } from "../GlobalStyle";
 import BlogList from "./BlogList";
 import Modal from "./Modal";
-import { ReactComponent as Loader } from '../assets/loader.svg';
+import { ReactComponent as Loader } from "../assets/loader.svg";
 
-const initialState= {
-    name: "",
-    email: ""
-}
+const initialState = {
+  name: "",
+  email: "",
+};
 
 const BlogPage = ({ inBlog = false }) => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState(initialState);
-  
+
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(
+        "http://65.0.176.32:1337/api/articles?populate=*",
+        {
+          method: "GET",
+          headers: {
+            Authorization:
+              "bearer bfd2f9cb76a5aecacc871850335fb51ce5b6d114cf7d4f8ac523c96719e469ca77fb853b44f3e30806ee7f8c7904cb1ad15ac9b258e413e7f6723b7bc6b2df7d0ca623e431d8e5f86375a3255bad6a87402e72c75ecfa0864e1812a60da7b044cce26b985ba37c3c0458851345b76f9531b0e24713cbce3bd0767e7f7f9ffe05",
+          },
+        }
+      );
+      const result = await data.json();
+      setBlogs(result?.data);
+    };
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch("http://65.0.176.32:1337/api/articles?populate=*", {
-      method: "GET",
-      headers: {
-        Authorization:
-          "bearer bfd2f9cb76a5aecacc871850335fb51ce5b6d114cf7d4f8ac523c96719e469ca77fb853b44f3e30806ee7f8c7904cb1ad15ac9b258e413e7f6723b7bc6b2df7d0ca623e431d8e5f86375a3255bad6a87402e72c75ecfa0864e1812a60da7b044cce26b985ba37c3c0458851345b76f9531b0e24713cbce3bd0767e7f7f9ffe05",
-      },
-    });
-    const result = await data.json();
-    setBlogs(result?.data);
-  };
-
   const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleFormSubmit = (e) => {
@@ -61,7 +63,7 @@ const BlogPage = ({ inBlog = false }) => {
       .then((data) => {
         setTimeout(() => {
           setLoading(false);
-          setFormData({...initialState})
+          setFormData({ ...initialState });
           setShow(false);
         }, 3000);
       })
@@ -111,21 +113,21 @@ const BlogPage = ({ inBlog = false }) => {
               onChange={handleChange}
             />
           </div>
-          <BlogButton type="submit">{loading ? <Loader className="spinner" /> : 'Send'}</BlogButton>
+          <BlogButton type="submit">
+            {loading ? <Loader className="spinner" /> : "Send"}
+          </BlogButton>
         </BlogFormWrapper>
         <img className="lang-image" src="./images/language.svg" alt="lang" />
       </BlogLeft>
-      {
-        inBlog ? (<SuggestionText>Our Suggestions for you</SuggestionText>) : null
-      }
+      {inBlog ? <SuggestionText>Our Suggestions for you</SuggestionText> : null}
       <BlogRight>
         <BlogListWrapper inBlog={inBlog}>
-          {blogs?.length >0 ?(
+          {blogs?.length > 0 ? (
             blogs.map(({ attributes, id }, index) => (
               <BlogList blog={attributes} key={index} id={id} />
             ))
           ) : (
-            <h1 style={{margin:'auto'}}>No Blogs to show !</h1>
+            <h1 style={{ margin: "auto" }}>No Blogs to show !</h1>
           )}
         </BlogListWrapper>
       </BlogRight>
@@ -150,12 +152,12 @@ const BlogWrapper = styled.section`
   display: flex;
   align-items: center;
   padding: 5rem;
-  flex-direction : ${({ inBlog }) => inBlog ? 'column' : 'row'};
+  flex-direction: ${({ inBlog }) => (inBlog ? "column" : "row")};
   position: relative;
   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
   background-color: ${({ theme }) => theme.colors.text.purple};
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     gap: 3rem;
   }
 
@@ -180,7 +182,7 @@ const BlogLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  gap: ${({ inBlog }) => inBlog ? '3rem' : '2rem'};
+  gap: ${({ inBlog }) => (inBlog ? "3rem" : "2rem")};
   padding: 0 7rem 5rem 15rem;
   position: relative;
   z-index: 5;
@@ -194,7 +196,7 @@ const BlogLeft = styled.div`
     z-index: -3;
   }
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     padding: 0;
     margin: auto;
   }
@@ -221,7 +223,7 @@ const BlogRight = styled.div`
   overflow: scroll;
   height: 52rem;
   display: flex;
-  z-index:10;
+  z-index: 10;
   color: ${({ theme }) => theme.colors.text.white};
 
   ::-webkit-scrollbar {
@@ -250,7 +252,7 @@ const BlogSubHeading = styled.h3`
   font-size: 2.6rem;
   font-weight: ${({ theme }) => theme.weight.normal};
   font-family: ${({ theme }) => theme.fontFamily.latin};
-  text-align: ${({ inBlog }) => inBlog ? 'center' : 'start'};
+  text-align: ${({ inBlog }) => (inBlog ? "center" : "start")};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding-bottom: 2rem;
@@ -321,11 +323,11 @@ const BlogFormWrapper = styled.form`
 
 const BlogListWrapper = styled.div`
   display: flex;
-  flex-direction: ${({ inBlog }) => inBlog ? 'row' : 'column'};
+  flex-direction: ${({ inBlog }) => (inBlog ? "row" : "column")};
   gap: 2rem;
-  overflow:scroll;
+  overflow: scroll;
 
-  h1{
+  h1 {
     font-size: 2.5rem;
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -335,10 +337,10 @@ const BlogListWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 4rem;
-    margin:auto;
+    margin: auto;
   }
 
-   @media (max-width: 360px) {
+  @media (max-width: 360px) {
     padding: 0;
   }
 `;
@@ -359,9 +361,10 @@ export const BlogButton = styled.button`
 `;
 
 const SuggestionText = styled.p`
-font-size: 2.6rem;
-color: ${({ theme }) => theme.colors.white};
-font-weight: ${({ theme }) => theme.weight.normal};
-margin-bottom: 4rem;`
+  font-size: 2.6rem;
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.weight.normal};
+  margin-bottom: 4rem;
+`;
 
 export default BlogPage;
