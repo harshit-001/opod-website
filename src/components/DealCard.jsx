@@ -130,20 +130,20 @@ const DealCardWrapper = styled.div`
   }
 
   @media only screen and (max-device-width: 480px){
-    margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
+    margin-right: ${({ index }) => `${(index + 1) * 15}px`};
     max-width: 75%;
-    height: 56rem;
-    padding: 5rem;
+    height: 280px;
+    padding: 25px;
 
     .img-rocket {
       position: absolute;
-      width: 60rem;
+      width: 300px;
       bottom: -15%;
       left:-78%;
     }
     .img-girl {
       position: absolute;
-      width: 24rem;
+      width: 120px;
       bottom: -18%;
       right: -35%;
     }
@@ -168,49 +168,6 @@ const DealCardWrapper = styled.div`
       right: -35%;
     }
   }
-
-  @supports (-webkit-touch-callout: none) {
-     margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
-    max-width: 75%;
-    height: 56rem;
-    padding: 5rem;
-
-    .img-rocket {
-      position: absolute;
-      width: 60rem;
-      bottom: -15%;
-      left:-78%;
-    }
-    .img-girl {
-      position: absolute;
-      width: 24rem;
-      bottom: -18%;
-      right: -35%;
-    }
-  }
-
-    @media only screen 
-        and (device-width: 428px) 
-        and (device-height: 926px) 
-        and (-webkit-device-pixel-ratio: 3) { 
-           margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
-    max-width: 75%;
-    height: 280px;
-    padding: 25px;
-
-    .img-rocket {
-      position: absolute;
-      width: 300px;
-      bottom: -15%;
-      left:-78%;
-    }
-    .img-girl {
-      position: absolute;
-      width: 120px;
-      bottom: -18%;
-      right: -35%;
-    }
-        }
 `;
 const DealTitle = styled.h4`
   font-size: 3.6rem;
