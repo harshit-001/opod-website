@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Title } from "../GlobalStyle";
 import Modal from "./Modal";
+import { ReactComponent as Loader } from '../assets/loader.svg';
 
 const initialState = {
     reason: "Mobile App",
@@ -14,8 +15,7 @@ const initialState = {
 const Contact = () => {
   const [show,setShow] = useState(false);
   const [formData, setFormData] = useState(initialState);
-  //https://script.google.com/macros/s/AKfycbzGUO_JvqplQO2qlATbaRe49p6hFTjWyWXLlBz307ekxTc2aApj1as0RahzovUB90T4fg/exec
-
+  const [loading, setLoading] = useState(false)
   const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -31,8 +31,8 @@ const Contact = () => {
       message: formData.message,
       number: formData.number,
     };
-    var url =
-      "https://sheet2api.com/v1/fHyAsFHfRPf7/web-analytics/Contact%20Us";
+    var url = "https://sheet2api.com/v1/fHyAsFHfRPf7/web-analytics/Contact%20Us";
+    setLoading(true)
     fetch(url, {
       method: "POST",
       headers: {
@@ -45,15 +45,16 @@ const Contact = () => {
         setShow(true)
       })
       .then((data) => {
-        console.log("Success:", data);
         setTimeout(() => {
-        setShow(false)
+         setFormData({...initialState})
+         setLoading(false)
+         setShow(false)
       },3000)
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-      setFormData(...initialState)
+      
   };
 
   return (
@@ -118,6 +119,7 @@ const Contact = () => {
                 type={"text"}
                 name="message"
                 required
+                value={formData.message}
                 onChange={handleChange}
               />
             </div>
@@ -127,6 +129,7 @@ const Contact = () => {
                 placeholder="John Doe"
                 name="name"
                 type={"text"}
+                value={formData.name}
                 required
                 onChange={handleChange}
               />
@@ -137,6 +140,7 @@ const Contact = () => {
                 placeholder="welovelistening@abcd.in"
                 type={"email"}
                 name="email"
+                value={formData.email}
                 required
                 onChange={handleChange}
               />
@@ -147,11 +151,12 @@ const Contact = () => {
                 placeholder="9994443332"
                 type={"text"}
                 name="number"
+                value={formData.number}
                 required
                 onChange={handleChange}
               />
             </div>
-            <ContactButton type="submit" >Send</ContactButton>
+            <ContactButton type="submit" >{loading ? <Loader className='spinner'/> : 'Send'}</ContactButton>
           </form>
         </ContactLeft>
         <ContactRight>

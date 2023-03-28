@@ -3,15 +3,19 @@ import styled from "styled-components";
 import { Span } from "../GlobalStyle";
 import BlogList from "./BlogList";
 import Modal from "./Modal";
+import { ReactComponent as Loader } from '../assets/loader.svg';
+
+const initialState= {
+    name: "",
+    email: ""
+}
 
 const BlogPage = ({ inBlog = false }) => {
   const [show, setShow] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-  });
-  console.log(inBlog)
+  const [formData, setFormData] = useState(initialState);
+  
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -26,15 +30,11 @@ const BlogPage = ({ inBlog = false }) => {
       },
     });
     const result = await data.json();
-    console.log(result)
     setBlogs(result?.data);
   };
 
   const handleChange = (e) => {
-    if (true) {
       setFormData({ ...formData, [e.target.name]: e.target.value });
-      console.log(formData);
-    }
   };
 
   const handleFormSubmit = (e) => {
@@ -46,6 +46,7 @@ const BlogPage = ({ inBlog = false }) => {
     };
     var url =
       "https://sheet2api.com/v1/fHyAsFHfRPf7/web-analytics/Website%20Emails";
+    setLoading(true);
     fetch(url, {
       method: "POST",
       headers: {
@@ -58,8 +59,9 @@ const BlogPage = ({ inBlog = false }) => {
         setShow(true);
       })
       .then((data) => {
-        console.log("Success:", data);
         setTimeout(() => {
+          setLoading(false);
+          setFormData({...initialState})
           setShow(false);
         }, 3000);
       })
@@ -94,6 +96,7 @@ const BlogPage = ({ inBlog = false }) => {
               type={"text"}
               name="name"
               required
+              value={formData.name}
               onChange={handleChange}
             />
           </div>
@@ -103,11 +106,12 @@ const BlogPage = ({ inBlog = false }) => {
               placeholder="welovelistening@abcd.in"
               type={"email"}
               name="email"
+              value={formData.email}
               required
               onChange={handleChange}
             />
           </div>
-          <BlogButton type="submit">Send</BlogButton>
+          <BlogButton type="submit">{loading ? <Loader className="spinner" /> : 'Send'}</BlogButton>
         </BlogFormWrapper>
         <img className="lang-image" src="./images/language.svg" alt="lang" />
       </BlogLeft>
