@@ -259,6 +259,14 @@ const SupportImageContainer = styled.div`
       width: 6rem;
     }
   }
+
+  @media only screen and (max-device-width: 480px){
+    gap : 8px;
+
+    img{
+      width: 30px;
+    }
+  }
 `;
 
 const Supported = styled.div`

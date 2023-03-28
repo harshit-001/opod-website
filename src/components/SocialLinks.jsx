@@ -126,6 +126,14 @@ const SocialList = styled.ul`
     }
   }
 
+  @media only screen and (max-device-width: 480px){
+    gap : 15px;
+    img {
+      width: 19px;
+      max-width: auto;
+    }
+  }
+
    @media (max-width: 360px) {
     gap: 5rem;
   }
