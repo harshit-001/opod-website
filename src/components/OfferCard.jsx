@@ -44,12 +44,12 @@ const OfferCardWrapper = styled.div`
   }
 
   @media only screen and (max-device-width: 480px){
-    width: 27rem;
+    width: 186px;
     gap: 2rem;
     
     img {
-      width: 26rem;
-      height: 26rem;
+      width: 130px;
+      height: 130px;
       max-width: 100%;
     }
   }

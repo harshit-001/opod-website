@@ -45,21 +45,21 @@ const CardWrapper = styled.div`
     }
   }
 
-   @media (max-width: 360px) {
-    width: 28rem;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  @media only screen and (max-device-width: 480px){
-    width: 30rem;
+   @media only screen and (max-device-width: 480px){
+    width: 150px;
     min-width: 150px;
     
     img {
       width: 100%;
       max-width: 100%;
+    }
+  }
+
+   @media (max-width: 360px) {
+    width: 28rem;
+
+    img {
+      width: 100%;
     }
   }
 
