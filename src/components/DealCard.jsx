@@ -149,7 +149,7 @@ const DealCardWrapper = styled.div`
     }
 
     ${Button}{
-      width: 80px;
+      width: 50px;
     }
   }
 
