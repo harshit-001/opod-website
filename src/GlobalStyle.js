@@ -194,8 +194,9 @@ export const Button = styled.button`
   }
 
   @media only screen and (max-device-width: 480px){
-     width: 10px;
+     width: 7px;
      margin:auto;
+     padding: 2rem 20px;
   }
 
    @media (max-width: 360px) {
