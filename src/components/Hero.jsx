@@ -193,6 +193,20 @@ const HeroRightContainer = styled.div`
     @media (max-width: 768px) {
     width:85%;
     }
+
+    
+   @media only screen and (max-device-width: 480px ){
+    width: 100%;
+   }
+
+    @media (max-width : 350px){
+       width: 85%;
+   }
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 10rem 0rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -228,13 +242,6 @@ const HeroDownloadLink = styled.div`
     justify-content: center;
     img {
       width: 130px;
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    justify-content: center;
-    img {
-      width: 120px;
     }
   }
 `;
