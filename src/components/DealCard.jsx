@@ -134,7 +134,6 @@ const DealCardWrapper = styled.div`
     height: fit-content;
     padding: 15px;
     padding-bottom: 80px;
-    height: 400px;
 
     .img-rocket {
       position: absolute;
@@ -186,7 +185,7 @@ const DealTitle = styled.h4`
   text-align: center;
 
    @media only screen and (max-device-width: 480px ){
-     line-height: 17px;
+     line-height: 22px;
    }
 
    @media (max-width: 360px) {
@@ -224,7 +223,7 @@ const DealList = styled.ul`
   }
 
    @media only screen and (max-device-width: 480px ){
-     line-height: 15px;
+     line-height: 20px;
    }
 
    @media (max-width: 360px) {
