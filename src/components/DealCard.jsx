@@ -143,7 +143,7 @@ const DealCardWrapper = styled.div`
     }
     .img-girl {
       position: absolute;
-      width: 150px;
+      width: 120px;
       bottom: -30%;
       right: -35%;
     }
