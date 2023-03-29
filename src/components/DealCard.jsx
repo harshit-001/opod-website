@@ -113,7 +113,6 @@ const DealCardWrapper = styled.div`
     height: 56rem;
     padding: 6rem;
     max-width: 250px;
-    max-height: 280px;
 
     .img-rocket {
       position: absolute;
