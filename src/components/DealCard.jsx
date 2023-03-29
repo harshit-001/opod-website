@@ -150,7 +150,7 @@ const DealCardWrapper = styled.div`
     }
 
     ${Button}{
-      width: 110px;
+      width: 80px;
     }
   }
 
@@ -184,6 +184,16 @@ const DealTitle = styled.h4`
   font-weight: ${({ theme }) => theme.weight.bolder};
   color: ${({ theme }) => theme.colors.text.purple};
   text-align: center;
+
+   @media only screen and (max-device-width: 480px ){
+     line-height: 17px;
+   }
+
+   @media (max-width: 360px) {
+     line-height: 4rem;
+   }
+
+
 `;
 
 const DealList = styled.ul`
@@ -205,17 +215,20 @@ const DealList = styled.ul`
     left: -10px;
   }
   line-height: 3rem;
-    margin-left: 2rem;
+  margin-left: 2rem;
 
   @media (min-width: ${({ theme }) => theme.media.mobile}) {
-    
     li::before {
       left: -20px;
     }
   }
 
-   @media only screen and (max-device-width: 480px ) and (min-device-width: 360px){
-    line-height: 10px;
+   @media only screen and (max-device-width: 480px ){
+     line-height: 15px;
+   }
+
+   @media (max-width: 360px) {
+     line-height: 3rem;
    }
 `;
 
