@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 import { SpendPara } from "./SpendCard";
 
 const OfferCard = ({ item }) => {
+  const device= useDevice()
+  console.log(device)
   return (
-    <OfferCardWrapper>
+    <OfferCardWrapper device={device}>
       <img src={item.image} alt="index" />
       <OfferTitle>{item.title}</OfferTitle>
       <OfferPara>{item.content}</OfferPara>
@@ -44,7 +47,7 @@ const OfferCardWrapper = styled.div`
   }
 
   @media only screen and (max-device-width: 480px){
-    width: 186px;
+    width: ${({ device }) => device==='Android' ? '150px' : '186px'};
     gap: 7px;
     
     img {

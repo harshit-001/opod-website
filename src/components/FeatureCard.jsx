@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 
 const FeatureCard = ({ item, index }) => {
+  const device= useDevice()
   return (
     <FeatureCardWrapper>
       <img src={item.image} alt="fearue" />
-      <FeatureListContent isSecond={index === 1 || index === 4}>
+      <FeatureListContent isSecond={index === 1 || index === 4} device={device}>
         {item.content}
       </FeatureListContent>
     </FeatureCardWrapper>
@@ -48,12 +50,9 @@ const FeatureListContent = styled.p`
     padding-top: 1rem;
   }
 
-   @media only screen and (max-device-width: 480px){
-    font-size: 12px;
+  @media only screen and (max-device-width: 480px){
+    font-size: ${({ device }) => device==='Android' ? '2rem' : '12px'};
   }
-  @media (max-width: 360px) {
-    font-size: 2rem;
-   }
 `;
 
 export default FeatureCard;

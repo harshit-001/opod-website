@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { getMobileOperatingSystem } from "../assets/utils";
+import { useDevice } from "../assets/UseDevice";
 import { Button } from "../GlobalStyle";
 
 const DealCard = ({ item, index }) => {
-  const [device, setDevice] = useState("")
+  const device= useDevice()
   const navigate = useNavigate()
-  useEffect(() => {
-    setDevice(getMobileOperatingSystem())
-  },[device])
+  
 
   const handleClick=(action) =>{
      if(action === 'Download Now'){
@@ -25,7 +23,7 @@ const DealCard = ({ item, index }) => {
   }
 
   return (
-    <DealCardWrapper index={index}>
+    <DealCardWrapper index={index} device={device}>
       <DealTitle>{item.title}</DealTitle>
       <DealList>
         {item.offerList.map((item, index) => (
@@ -137,13 +135,13 @@ const DealCardWrapper = styled.div`
     .img-rocket {
       position: absolute;
       width: 300px;
-      bottom: -40%;
+      bottom: ${({ device }) => device==='Android' ? '-12%' : '-40%'};
       left:-75%;
     }
     .img-girl {
       position: absolute;
       width: 120px;
-      bottom: -28%;
+      bottom: ${({ device }) => device==='Android' ? '-15%' : '-28%'};
       right: -35%;
     }
 
@@ -152,13 +150,14 @@ const DealCardWrapper = styled.div`
    @media (max-width:360px) {
     margin-right: ${({ index }) => `${(index + 1) * 3}rem`};
     max-width: 75%;
-    height: 56rem;
+    height: 340px;
     padding: 5rem;
+    max-height: 280px;
 
     .img-rocket {
       position: absolute;
       width: 60rem;
-      bottom: -15%;
+      bottom:  -15%;
       left:-78%;
     }
     .img-girl {
