@@ -57,42 +57,6 @@ const OfferCardWrapper = styled.div`
    @media (max-width: 360px) {
     width: 60%;
    }
-
-
-
-   @supports (-webkit-touch-callout: none) {
-     width: 186px;
-     gap: 2rem;
-    
-    img {
-      width: 130px;
-      height: 130px;
-      max-width: 100%;
-    }
-  }
-
-  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-    width: 186px;
-    gap: 10px;
-    
-    img {
-      width: 130px;
-      height: auto;
-    }
-  }
-
-    @media only screen 
-        and (device-width: 428px) 
-        and (device-height: 926px) 
-        and (-webkit-device-pixel-ratio: 3) { 
-           width: 186px;
-           gap: 10px;
-    
-           img {
-            width: 130px;
-            height: auto;
-           }
-        }
 `;
 
 const OfferTitle = styled.p`

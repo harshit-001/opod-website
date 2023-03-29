@@ -51,6 +51,9 @@ const FeatureListContent = styled.p`
    @media only screen and (max-device-width: 480px){
     font-size: 12px;
   }
+  @media (max-width: 360px) {
+    font-size: 2rem;
+   }
 `;
 
 export default FeatureCard;

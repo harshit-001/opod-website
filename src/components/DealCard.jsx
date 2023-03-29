@@ -147,9 +147,6 @@ const DealCardWrapper = styled.div`
       right: -35%;
     }
 
-    ${Button}{
-      width: 50px;
-    }
   }
 
    @media (max-width:360px) {
@@ -171,9 +168,6 @@ const DealCardWrapper = styled.div`
       right: -35%;
     }
 
-    ${Button}{
-      width: 28rem;
-    }
   }
 `;
 const DealTitle = styled.h4`
