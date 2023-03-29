@@ -132,7 +132,7 @@ const DealCardWrapper = styled.div`
     margin-right: ${({ index }) => `${(index + 1) * 15}px`};
     padding: 20px;
     padding-bottom: 80px;
-    height: 320px;
+    height: 340px;
 
     .img-rocket {
       position: absolute;
@@ -143,7 +143,7 @@ const DealCardWrapper = styled.div`
     .img-girl {
       position: absolute;
       width: 120px;
-      bottom: -30%;
+      bottom: -28%;
       right: -35%;
     }
 
