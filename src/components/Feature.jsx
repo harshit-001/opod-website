@@ -115,7 +115,7 @@ const FeatureImage = styled.div`
       gap:0;
 
       .o-image{
-        max-width: 40px;
+        max-width: 60px;
       }
 
       .pod-image{
@@ -126,6 +126,12 @@ const FeatureImage = styled.div`
         width: 27rem;
       }
     }
+
+    @media only screen and (max-device-width: 480px ){
+      .o-image{
+
+      }
+    }
   }
 
   .first-image,.sec-image {
@@ -133,6 +139,10 @@ const FeatureImage = styled.div`
     
     @media (max-width: ${({ theme }) => theme.media.tab}) {
       width: 32%;
+    }
+
+    @media only screen and (max-device-width: 480px ){
+      width : 
     }
   }
 
