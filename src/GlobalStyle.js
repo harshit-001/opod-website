@@ -194,12 +194,13 @@ export const Button = styled.button`
   }
 
   @media only screen and (max-device-width: 480px){
-     width: 7px;
+     width: fit-content;
      margin:auto;
-     padding: 2rem 20px;
+     padding: 2rem 5px;
   }
 
    @media (max-width: 360px) {
     width: 100%;
+    padding: 2rem 4rem;
   }
 `;
