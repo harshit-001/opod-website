@@ -141,7 +141,7 @@ const FeatureImage = styled.div`
     }
 
     @media only screen and (max-device-width: 480px ){
-      width : 
+      margin-left : 20px;
     }
   }
 
