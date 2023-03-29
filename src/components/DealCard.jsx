@@ -32,7 +32,7 @@ const DealCard = ({ item, index }) => {
           </li>
         ))}
       </DealList>
-      <Button textBold style={{width : '28rem', position:'absolute', bottom : '8%'}} 
+      <Button textBold style={{ position:'absolute', bottom : '8%'}} 
        onClick={()=> handleClick(item.btnTitle)} >{item.btnTitle}</Button>
       {index === 0 ? (
         <img

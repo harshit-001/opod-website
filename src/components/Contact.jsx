@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Title } from "../GlobalStyle";
 import Modal from "./Modal";
 import { ReactComponent as Loader } from '../assets/loader.svg';
+import { useDevice } from "../assets/UseDevice";
 
 const initialState = {
     reason: "Mobile App",
@@ -13,6 +14,7 @@ const initialState = {
   }
 
 const Contact = () => {
+  const device= useDevice()
   const [show,setShow] = useState(false);
   const [formData, setFormData] = useState(initialState);
   const [loading, setLoading] = useState(false)
@@ -113,7 +115,7 @@ const Contact = () => {
           </RadioWrapper>
           <form onSubmit={handleFormSubmit}>
             <div>
-              <Label required={true}>My message</Label>
+              <Label required={true} device={device}>My message</Label>
               <TextArea
                 placeholder="your message...."
                 type={"text"}
@@ -228,7 +230,7 @@ const ContactTitle = styled(Title)`
 `;
 
 const Heading = styled.p`
-  font-size: 2.6rem;
+  font-size: ${({ device }) => device==='Android' ? '2.6rem' : '15px'};
   font-weight: 450;
 `;
 
@@ -308,8 +310,8 @@ const Label = styled.label`
     content: ${({ required }) => (required ? "*" : "")};
   }
 
-   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 2.4rem;
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: ${({ device }) => device==='Android' ? '2.4rem' : '14px'};;
   }
 `;
 

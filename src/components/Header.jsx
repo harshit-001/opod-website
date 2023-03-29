@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 import Navbar from "./Navbar";
 import SocialLinks from "./SocialLinks";
 
 const Header = () => {
+  const device = useDevice()
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper device={device}>
       <NavLink to="/">
         <img className="desktop-logo" src="./images/Logo.svg" alt="logo" />
         <img
@@ -162,16 +164,16 @@ const HeaderWrapper = styled.header`
            }
 
            span:nth-child(1) {
-             top: 12px;
+             top: ${({ device }) => device==='Android' ? '12px' : '14px'};
 
              &.activeIcon{
-               top: 20px;
+               top: ${({ device }) => device==='Android' ? '20px' : '22px'};
                transform: rotate(135deg);
              }
            }
 
            span:nth-child(2){
-             top:20px;
+             top:${({ device }) => device==='Android' ? '20px' : '22px'};
 
               &.activeIcon{
                 opacity:0;
@@ -180,10 +182,10 @@ const HeaderWrapper = styled.header`
            }
 
            span:nth-child(3) {
-             top: 28px;
+             top: ${({ device }) => device==='Android' ? '28px' : '30px'};
 
               &.activeIcon{
-               top:20px;
+               top:${({ device }) => device==='Android' ? '20px' : '22px'};;
                transform: rotate(-135deg);
              }
            }

@@ -24,8 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 15px;
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    font-size: 12px;
-  }
+    font-size: ${({ device }) => device==='Android' ? '12px' : '13px'};
+   }
   }
 
   html{
@@ -61,6 +61,10 @@ export const GlobalStyle = createGlobalStyle`
     top: 2rem;
     left: 5rem;
     max-width: 12rem;
+
+    @media only screen and (max-device-width: 480px){
+      height: ${({ device }) => device==='Android' ? '22rem' : '60px'};
+    }
   }
 
    .rightpod{
@@ -184,7 +188,7 @@ export const Button = styled.button`
   font-size: 2.6rem;
   border-radius: 2rem;
   border: none;
-  width: fit-content;
+  width: 28rem;
   text-transform: uppercase;
   z-index:3;
 
@@ -194,9 +198,9 @@ export const Button = styled.button`
   }
 
   @media only screen and (max-device-width: 480px){
-     width: fit-content;
+     width: 80%;
      margin:auto;
-     padding: 2rem 5px;
+     padding: ${({ device }) => device==='Android' ? '2rem 4rem' : '2rem 10px'};;
   }
 
    @media (max-width: 360px) {

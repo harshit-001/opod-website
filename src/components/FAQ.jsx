@@ -33,10 +33,6 @@ const FaqWrapper = styled.section`
   align-items: center;
   padding: 5rem 8rem 10rem;
 
-  @media (max-width: ${({ theme }) => theme.media.tab}) {
-  }
-  
-
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 2rem 8rem;
   }
@@ -58,6 +54,10 @@ const FaqListWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+  }
+
+  @media only screen and (max-device-width: 480px){
+    padding: ${({ device }) => device==='Android' ? '2rem 0' : '5px 0'};
   }
 `;
 

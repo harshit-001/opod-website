@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
+import { useDevice } from "./assets/UseDevice";
 import Blog from "./components/Blog";
 import BlogPage from "./components/BlogPage";
 import Contact from "./components/Contact";
@@ -12,6 +13,7 @@ import Home from "./components/Home";
 import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
+  const device= useDevice()
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -58,7 +60,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
+        <GlobalStyle device={device} />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

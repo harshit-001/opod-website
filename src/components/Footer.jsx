@@ -327,7 +327,6 @@ const DownloadLeft = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     justify-content: center;
-    gap: 2rem;
     img {
       width: 20rem;
       max-width: 100px;
@@ -359,7 +358,7 @@ const LinkContainer = styled.div`
     font-size: 1.6rem;
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      font-size: 2.2rem;
+      font-size: ${({ device }) => device==='Android' ? '2.2rem' : '13px'};
     }
   }
 

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 import { featureArray } from "../assets/utils";
 import { Span, Title } from "../GlobalStyle";
 import FeatureCard from "./FeatureCard";
 
 const Feature = () => {
-
+  const device = useDevice()
   const [image, setImage] = useState({
     first: true,
     second: false
@@ -57,7 +58,7 @@ const Feature = () => {
           </FeatureContent>
         </div>
       </FeatureImage>
-      <FeatureListContainer>
+      <FeatureListContainer device={device}>
         <FeatureListTitle>Features</FeatureListTitle>
         <div className="list-wrapper">
           {featureArray.map((item, index) => (
@@ -184,9 +185,14 @@ const FeatureListContainer = styled.div`
     display: flex;
     gap: 2rem;
     justify-content: center;
+
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       gap: 0.5rem;
       flex-wrap: wrap;
+    }
+
+    @media only screen and (max-device-width: 480px){
+      gap : ${({ device }) => device==='Android' ? '0.5rem' : '3px'};
     }
   }
 `;
