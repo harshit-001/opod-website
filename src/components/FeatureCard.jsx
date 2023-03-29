@@ -47,6 +47,10 @@ const FeatureListContent = styled.p`
     width: ${({ isSecond }) => (isSecond ? "8rem" : "13rem")};
     padding-top: 1rem;
   }
+
+   @media only screen and (max-device-width: 480px){
+    font-size: 12px;
+  }
 `;
 
 export default FeatureCard;

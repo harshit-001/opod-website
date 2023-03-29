@@ -45,7 +45,7 @@ const OfferCardWrapper = styled.div`
 
   @media only screen and (max-device-width: 480px){
     width: 186px;
-    gap: 2rem;
+    gap: 10px;
     
     img {
       width: 130px;

@@ -192,4 +192,9 @@ export const Button = styled.button`
     width: 100%;
     padding: 2rem 4rem;
   }
+
+  @media only screen and (max-device-width: 480px){
+     width: 80%;
+     margin:auto;
+  }
 `;
