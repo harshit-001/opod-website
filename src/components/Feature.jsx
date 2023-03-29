@@ -128,9 +128,7 @@ const FeatureImage = styled.div`
     }
 
     @media only screen and (max-device-width: 480px ){
-      .o-image{
-
-      }
+      
     }
   }
 

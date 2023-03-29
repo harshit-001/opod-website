@@ -131,20 +131,20 @@ const DealCardWrapper = styled.div`
 
   @media only screen and (max-device-width: 480px){
     margin-right: ${({ index }) => `${(index + 1) * 15}px`};
-    height: fit-content;
     padding: 15px;
     padding-bottom: 80px;
+    height: 400px;
 
     .img-rocket {
       position: absolute;
       width: 300px;
-      bottom: -20%;
+      bottom: -40%;
       left:-78%;
     }
     .img-girl {
       position: absolute;
-      width: 120px;
-      bottom: -18%;
+      width: 150px;
+      bottom: -30%;
       right: -35%;
     }
 
