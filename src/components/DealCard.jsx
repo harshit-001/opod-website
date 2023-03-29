@@ -131,7 +131,7 @@ const DealCardWrapper = styled.div`
 
   @media only screen and (max-device-width: 480px){
     margin-right: ${({ index }) => `${(index + 1) * 15}px`};
-    padding: 15px;
+    padding: 18px;
     padding-bottom: 80px;
     height: 480px;
 
