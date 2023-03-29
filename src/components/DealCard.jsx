@@ -137,7 +137,7 @@ const DealCardWrapper = styled.div`
     .img-rocket {
       position: absolute;
       width: 300px;
-      bottom: -38%;
+      bottom: -40%;
       left:-75%;
     }
     .img-girl {

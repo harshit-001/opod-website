@@ -194,7 +194,7 @@ export const Button = styled.button`
   }
 
   @media only screen and (max-device-width: 480px){
-     width: 70px;
+     width: 10px;
      margin:auto;
   }
 
