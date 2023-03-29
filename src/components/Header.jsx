@@ -92,6 +92,11 @@ gap: 10rem;
   }
  }
 
+ @media only screen and (max-device-width: 480px ){
+  height: fit-content;
+  padding-bottom: 15px;
+ }
+
   @media (max-width : 350px){
        width: 320px;
   }

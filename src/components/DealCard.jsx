@@ -131,8 +131,9 @@ const DealCardWrapper = styled.div`
 
   @media only screen and (max-device-width: 480px){
     margin-right: ${({ index }) => `${(index + 1) * 15}px`};
-    height: 400px;
-    padding: 25px;
+    height: fit-content;
+    padding: 15px;
+    padding-bottom: 80px;
     height: 400px;
 
     .img-rocket {
@@ -146,6 +147,10 @@ const DealCardWrapper = styled.div`
       width: 120px;
       bottom: -18%;
       right: -35%;
+    }
+
+    ${Button}{
+      width: 110px;
     }
   }
 
@@ -166,6 +171,10 @@ const DealCardWrapper = styled.div`
       width: 24rem;
       bottom: -18%;
       right: -35%;
+    }
+
+    ${Button}{
+      width: 28rem;
     }
   }
 `;
@@ -204,6 +213,10 @@ const DealList = styled.ul`
       left: -20px;
     }
   }
+
+   @media only screen and (max-device-width: 480px ) and (min-device-width: 360px){
+    line-height: 10px;
+   }
 `;
 
 export default DealCard;

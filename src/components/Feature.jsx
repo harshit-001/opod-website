@@ -176,9 +176,8 @@ const FeatureListContainer = styled.div`
     gap: 2rem;
     justify-content: center;
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      display:grid;
-      grid-template-columns : auto auto;
-      gap: 20px;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
   }
 `;
