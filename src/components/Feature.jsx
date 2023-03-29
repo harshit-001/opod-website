@@ -101,6 +101,7 @@ const FeatureImage = styled.div`
     display:flex;
     gap: 2rem;
     margin-bottom: 2rem;
+    z-index: 10;
 
     img {
       width: 33rem;
