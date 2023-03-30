@@ -21,6 +21,7 @@ const Blog = () => {
     const result = await data?.json();
     console.log("data", result);
     setData(result?.data.attributes);
+    console.log(result?.data.attributes)
   };
     fetchData();
   }, [id]);

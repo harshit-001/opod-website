@@ -13,7 +13,6 @@ const initialState = {
 const BlogPage = ({ inBlog = false }) => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState(initialState);
-
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -183,7 +182,7 @@ const BlogLeft = styled.div`
   flex-direction: column;
   align-self: center;
   gap: ${({ inBlog }) => (inBlog ? "3rem" : "2rem")};
-  padding: 0 7rem 5rem 15rem;
+  padding: ${({ inBlog }) => inBlog ? '0 7rem 5rem 7rem' : '0 7rem 5rem 15rem'};
   position: relative;
   z-index: 5;
   color: ${({ theme }) => theme.colors.text.white};
@@ -194,6 +193,7 @@ const BlogLeft = styled.div`
     top: -12rem;
     left: 1rem;
     z-index: -3;
+    pointer-events:none;
   }
 
   @media (max-width: 1024px) {

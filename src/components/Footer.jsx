@@ -320,6 +320,7 @@ const DownloadLeft = styled.div`
   display: flex;
   gap: 4rem;
   justify-content: space-between;
+  
 
   img {
     width: 12rem;
@@ -337,6 +338,7 @@ const DownloadLeft = styled.div`
 const DownloadRight = styled.div`
   display: flex;
   gap: 4rem;
+  pointer-events:none;
 
   img {
     width: 12rem;
