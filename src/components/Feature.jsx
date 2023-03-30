@@ -84,6 +84,10 @@ const FeatureWrapper = styled.section`
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     padding: 5rem 8rem;
   }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 6rem 15rem;
+  }
 `;
 
 const FeatureImage = styled.div`

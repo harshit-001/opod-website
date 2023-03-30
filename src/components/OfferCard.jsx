@@ -25,6 +25,7 @@ const OfferCardWrapper = styled.div`
   img {
     width: 20rem;
     height: 20rem;
+    pointer-events: none;
   }
 
    @media (max-width: 1024px){

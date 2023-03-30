@@ -35,6 +35,9 @@ const OfferWrapper = styled.section`
     height: fit-content;
     padding:5rem 1rem 10rem;
   }
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding: 6rem 1rem 15rem;
+  }
 `;
 const OfferListContainer = styled.div`
   display: flex;
@@ -48,7 +51,7 @@ const OfferListContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 10rem 1rem;
+    gap: 10rem 0rem;
   }
 
   @media (max-width: 360px) {

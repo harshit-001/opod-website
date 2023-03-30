@@ -144,7 +144,7 @@ const FooterWrapper = styled.section`
   flex-direction: column;
   gap: 3rem;
   padding: 4rem 8rem;
-  background: ${({ theme }) => theme.colors.footer_bg};
+  background-color: ${({ theme }) => theme.colors.footer_bg};
   color: ${({ theme }) => theme.colors.text.white};
 
   h3 {
@@ -159,7 +159,7 @@ const FooterWrapper = styled.section`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     text-align: center;
-    background-color: ${({ theme }) => theme.colors.text.purple};
+    background: ${({ theme }) => theme.colors.text.purple};
     h3:first-child {
       font-size: 4rem;
     }

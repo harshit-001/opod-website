@@ -22,6 +22,7 @@ const CardWrapper = styled.div`
     width: 90%;
     height: auto;
     overflow:overlay;
+    pointer-events: none;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {

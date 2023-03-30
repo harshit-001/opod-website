@@ -23,6 +23,7 @@ const FeatureCardWrapper = styled.div`
   align-items: center;
 
   img {
+    pointer-events:none;
     width: 12.8rem;
     height: 12.8rem;
   }
