@@ -340,7 +340,7 @@ const BlogListWrapper = styled.div`
     padding: 4rem;
     margin: auto;
     flex-direction: column;
-    min-width: 500px;
+    min-width: fit-content;
   }
 
   @media (max-width: 360px) {

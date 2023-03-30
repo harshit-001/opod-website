@@ -46,9 +46,7 @@ const BlogContainer = styled.div`
 `;
 
 const BlogImage = styled.div`
-  flex: 0.25;
- 
-
+  
   img {
     border-radius: 20%;
     width: 12rem;
