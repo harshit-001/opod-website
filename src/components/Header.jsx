@@ -41,7 +41,7 @@ align-items : center;
 gap: 10rem;
 
 @media (max-width : ${({ theme }) => theme.media.mobile}){
-  width: 360px;
+  width: 100vw;
   height: 220px;
   position: fixed;
   top:50px;

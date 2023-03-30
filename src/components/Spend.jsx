@@ -24,7 +24,7 @@ const SpendContent = styled(Title)`
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     position: static;
-    margin: 4rem 0;
+    margin: 3rem 0;
     grid-area: title;
   }
 `;

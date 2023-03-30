@@ -155,6 +155,7 @@ export function getMobileOperatingSystem() {
 }
 
 export const truncate = (text, charSize) => {
-  return text?.substring(0,charSize) + (text?.length > charSize ? "..." : "" );
+  if(text === '') return null;
+  return text?.substring(0,charSize) + (text?.length > charSize ? "..." : "" ) ;
 }
 

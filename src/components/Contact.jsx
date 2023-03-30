@@ -277,7 +277,7 @@ const RadioWrapper = styled.div`
     }
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   }
 

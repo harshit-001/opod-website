@@ -1,20 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 import { FaqList } from "../assets/utils";
 import { Title } from "../GlobalStyle";
 
 const FAQ = () => {
-  // const [showAns, setShowAns] = useState(FaqList.map(_ => false));
-  // var updatedList=[]
-  // const handleClick= (index) => {
-  //     updatedList= [...showAns]
-  //     updatedList[index] = !updatedList[index]
-  //     setShowAns([...updatedList])
-  // }
+ const device= useDevice()
   return (
-    <FaqWrapper>
+    <FaqWrapper device={device}>
       <Title isWhiteBg={true}>FAQ</Title>
-      <FaqListWrapper>
+      <FaqListWrapper device={device}>
         {FaqList.map((item, index) => (
           <QuesWrapper key={index}>
             <QuesPara>{item.ques}</QuesPara>
@@ -29,7 +24,7 @@ const FAQ = () => {
 const FaqWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: ${({ device }) => device==='Android' ? '5rem' : '25px'};
   align-items: center;
   padding: 5rem 8rem 10rem;
 

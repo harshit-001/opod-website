@@ -17,10 +17,10 @@ const BlogList = ({ blog,id }) => {
       </BlogImage>
       <BlogContent>
         <BlogHeading>{truncate(blog?.Title, 25)}</BlogHeading>
-        <BlogSubHeading>{truncate(blog.sub_heading, 50)}</BlogSubHeading>
+        <BlogSubHeading>{truncate(blog.sub_heading, 50) || 'To be Added'}</BlogSubHeading>
         <WriterDetailWrapper>
-          <img src={blog.writer_img} alt="picwriter" />
-          <p>{blog.writer_name}</p>
+          <img src={blog.writer_img || './images/writer.png' } alt="picwriter" />
+          <p>{blog.writer_name || "OPOD Audio"}</p>
         </WriterDetailWrapper>
       </BlogContent>
     </BlogContainer>

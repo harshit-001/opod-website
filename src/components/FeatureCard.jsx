@@ -51,7 +51,7 @@ const FeatureListContent = styled.p`
   }
 
   @media only screen and (max-device-width: 480px){
-    font-size: ${({ device }) => device==='Android' ? '2rem' : '11px'};
+    font-size: ${({ device }) => device==='Android' ? '2rem' : '13px'};
   }
 `;
 
