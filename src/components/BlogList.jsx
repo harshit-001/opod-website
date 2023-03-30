@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { truncate } from "../assets/utils";
 
-const BlogList = ({ blog,id }) => {
+const BlogList = ({ blog,id,inBlog }) => {
  const navigate= useNavigate()
   
  const handleBlogClick = (id) =>{
@@ -13,11 +13,11 @@ const BlogList = ({ blog,id }) => {
   return (
     <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        <img src={blog.image.data.attributes.url} alt="pic" />
+        <img src={blog.image.data.attributes.formats.thumbnail.url} alt="pic" />
       </BlogImage>
-      <BlogContent>
+      <BlogContent inBlog={inBlog}>
         <BlogHeading>{truncate(blog?.Title, 25)}</BlogHeading>
-        <BlogSubHeading>{truncate(blog.sub_heading, 50) || 'To be Added'}</BlogSubHeading>
+        <BlogSubHeading>{blog?.sub_heading?.split('.')[0] || 'Will be updated shortly'}</BlogSubHeading>
         <WriterDetailWrapper>
           <img src={blog.writer_img || './images/writer.png' } alt="picwriter" />
           <p>{blog.writer_name || "OPOD Audio"}</p>
@@ -68,6 +68,7 @@ const BlogContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  width: ${({ inBlog }) => inBlog ? '300px' : 'max-content'};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     gap: 2rem;

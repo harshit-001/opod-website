@@ -124,7 +124,7 @@ const BlogPage = ({ inBlog = false }) => {
         <BlogListWrapper inBlog={inBlog}>
           {blogs?.length > 0 ? (
             blogs.map(({ attributes, id }, index) => (
-              <BlogList blog={attributes} key={index} id={id} />
+              <BlogList blog={attributes} key={index} id={id} inBlog={inBlog}/>
             ))
           ) : (
             <h1 style={{ margin: "auto" }}>No Blogs to show !</h1>
@@ -225,6 +225,7 @@ const BlogRight = styled.div`
   display: flex;
   z-index: 10;
   color: ${({ theme }) => theme.colors.text.white};
+  width: 100%;
 
   ::-webkit-scrollbar {
     display: none;
@@ -338,6 +339,8 @@ const BlogListWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 4rem;
     margin: auto;
+    flex-direction: column;
+    min-width: 500px;
   }
 
   @media (max-width: 360px) {

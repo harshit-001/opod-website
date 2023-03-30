@@ -33,9 +33,9 @@ const Blog = () => {
           <BlogPublished>
             Politics/{data?.publishedAt?.substring(0, 10)}
           </BlogPublished>
-          <BlogTitle>{data?.title}</BlogTitle>
+          <BlogTitle>{data?.Title}</BlogTitle>
           <BlogImage src={data?.image?.data?.attributes.url} alt="blog" />
-          <BlogDescription>{data?.description}</BlogDescription>
+          <BlogDescription>{data?.sub_heading|| 'Will be updated shortly'}</BlogDescription>
         </BlogHeader>
         <ContentWrapper>
           <p>The Blog</p>
@@ -89,7 +89,7 @@ const BlogImage = styled.img`
 `;
 
 const BlogDescription = styled.p`
-  font-size: 2.6rem;
+  font-size: 2rem;
   font-weight: 400;
   text-align: start;
 `;
@@ -111,9 +111,10 @@ const BlogContent = styled.div`
 `;
 
 const BlogTitle = styled.h1`
-  font-size: 5.2rem;
+  font-size: 3.2rem;
   color: ${({ theme }) => theme.colors.text.blogTitle};
   text-transform: capitalize;
+  font-weight: 600;
 `;
 
 // const BlogWriterContent = styled.div`
