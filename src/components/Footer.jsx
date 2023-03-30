@@ -90,7 +90,7 @@ const Footer = () => {
             </DownloadLeft>
             <DownloadRight>
               <img src="./images/QRcode.svg" alt="app store" />
-              <img src="./images/AppleQR.svg" alt="app store" />
+              <img src="./images/AppleQR.png" alt="app store" />
             </DownloadRight>
           </DownloadLinkContainer>
         </Download>
