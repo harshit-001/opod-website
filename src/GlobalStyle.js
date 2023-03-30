@@ -200,7 +200,7 @@ export const Button = styled.button`
   @media only screen and (max-device-width: 480px){
      width: 80%;
      margin:auto;
-     padding: ${({ device }) => device==='Android' ? '2rem 4rem' : '2rem 10px'};;
+     padding: ${({ device }) => device==='Android' ? '2rem 4rem' : '2rem 10px'};
   }
 
    @media (max-width: 360px) {

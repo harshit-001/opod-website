@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useDevice } from "../assets/UseDevice";
 import { spendArray } from "../assets/utils";
 import { Span, Title } from "../GlobalStyle";
 import SpendCard from "./SpendCard";
 
 const Spend = () => {
+  const device = useDevice()
   return (
     <SpendWrapper>
-      <SpendContent isWhiteBg={true}>
+      <SpendContent isWhiteBg={true} device={device}>
         Spend 5 mins with <Span isWhiteBg={true}>OPOD...</Span>
       </SpendContent>
       {spendArray.map((item, index) => (
@@ -24,7 +26,7 @@ const SpendContent = styled(Title)`
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     position: static;
-    margin: 3rem 0;
+    margin: ${({ device }) => device==='Android' ? '3rem 0' : '1.5rem 0'}
     grid-area: title;
   }
 `;
