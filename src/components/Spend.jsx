@@ -26,7 +26,7 @@ const SpendContent = styled(Title)`
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
     position: static;
-    margin: ${({ device }) => device==='Android' ? '3rem 0' : '1.5rem 0'}
+    margin: ${({ device }) => device==='Android' ? '3rem 0' : '1.5rem 0'};
     grid-area: title;
   }
 `;
