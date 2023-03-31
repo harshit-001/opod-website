@@ -13,14 +13,14 @@ const BlogList = ({ blog,id,inBlog }) => {
   return (
     <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        <img src={blog.thumbnail.data.attributes.url} alt="pic" />
+        <img src={blog?.thumbnail?.data?.attributes?.url} alt="pic" />
       </BlogImage>
       <BlogContent inBlog={inBlog}>
         <BlogHeading>{truncate(blog?.title, 25)}</BlogHeading>
         <BlogSubHeading>{blog?.sub_heading?.split('.')[0] || 'Will be updated shortly'}</BlogSubHeading>
         <WriterDetailWrapper>
-          <img src={blog.writer_img || './images/writer.png' } alt="picwriter" />
-          <p>{blog.writer_name || "OPOD Audio"}</p>
+          <img src={blog?.writer_img || './images/writer.png' } alt="picwriter" />
+          <p>{blog?.writer_name || "OPOD Audio"}</p>
         </WriterDetailWrapper>
       </BlogContent>
     </BlogContainer>

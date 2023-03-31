@@ -175,7 +175,7 @@ const months = {
 }
 
 export const getFormatDate= (dateArray)=>{
-  if(dateArray.length ==0){
+  if(dateArray?.length === 0){
     return
   }
   return `${dateArray[0]} ${months[dateArray[1]]} ${dateArray[2]}`
