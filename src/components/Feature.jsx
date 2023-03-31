@@ -53,8 +53,7 @@ const Feature = () => {
           </div>
          
           <FeatureContent isWhiteBg={false}>
-            Optimising your digital{" "}
-            <FeatureSpan isWhiteBg={false}>consumption </FeatureSpan>
+             Short audio snippets of <br/><FeatureSpan>10-30 secs</FeatureSpan>
           </FeatureContent>
         </div>
       </FeatureImage>

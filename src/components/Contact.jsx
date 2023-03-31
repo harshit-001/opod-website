@@ -240,7 +240,7 @@ const RadioWrapper = styled.div`
   gap: 2rem;
 
   label {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: ${({ theme }) => theme.fontFamily.devnagri};
     font-weight: 500;
 
@@ -249,7 +249,7 @@ const RadioWrapper = styled.div`
     }
 
     @media (max-width: 1303px) {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     @media (max-width: 1213px) {
@@ -356,10 +356,9 @@ const ContactRight = styled.div`
 `;
 
 const ContactButton = styled.button`
- 
-  align-self: end;
-  padding: 0.95rem 4rem;
-  font-size: 18px;
+  align-self: center;
+  padding: 1rem 8rem;
+  font-size: 22px;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.btnBackground};
   color: ${({ theme }) => theme.colors.text.white};
@@ -367,10 +366,9 @@ const ContactButton = styled.button`
   border: none;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding: 1rem 4rem;
+    padding: 1rem 10rem;
     margin-top:10px;
     margin-bottom: 20px;
-    align-self:center;
   }
 `;
 

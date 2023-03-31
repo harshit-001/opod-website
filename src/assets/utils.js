@@ -159,3 +159,25 @@ export const truncate = (text, charSize) => {
   return text?.substring(0,charSize) + (text?.length > charSize ? "..." : "" ) ;
 }
 
+const months = {
+  "01" : "January",
+  "02": "February",
+  "03" : "March",
+  "04": "April",
+  "05":"May",
+  "06" :"June",
+  "07": "July",
+  "08":"August",
+  "09":"September",
+  "10":"October",
+  "11":"November",
+  "12":"December"
+}
+
+export const getFormatDate= (dateArray)=>{
+  if(dateArray.length ==0){
+    return
+  }
+  return `${dateArray[0]} ${months[dateArray[1]]} ${dateArray[2]}`
+}
+

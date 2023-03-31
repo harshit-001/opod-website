@@ -29,6 +29,7 @@ const BlogPage = ({ inBlog = false }) => {
         }
       );
       const result = await data.json();
+      console.log(result?.data)
       setBlogs(result?.data);
     };
     fetchData();

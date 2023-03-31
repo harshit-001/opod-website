@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { getFormatDate } from "../assets/utils";
 import BlogPage from "./BlogPage";
 import SocialLinks from "./SocialLinks";
 
@@ -26,24 +27,36 @@ const Blog = () => {
     fetchData();
   }, [id]);
 
+
   
   return (
     <BlogWrapper>
       <BlogContentWrapper>
+        <div>
         <BlogHeader>
-          <BlogPublished>
-            Politics/{data?.publishedAt?.substring(0, 10)}
-          </BlogPublished>
-          <BlogTitle>{data?.Title}</BlogTitle>
           <BlogImage src={data?.image?.data?.attributes.url} alt="blog" />
-          <BlogDescription>{data?.sub_heading|| 'Will be updated shortly'}</BlogDescription>
+          <BlogCaption>
+            {data?.image_caption}
+          </BlogCaption>
+          <BlogPublished>
+            {data?.genre} / {data?.publishedAt && getFormatDate(data?.publishedAt?.substring(0, 10).split("-")?.reverse())}
+          </BlogPublished>
+          <BlogWriterContent>
+            <WriterImage src={data?.writer_img || './images/writer.png' } alt="picwriter" />
+            <WriterName>
+              Anurag Bisht
+            </WriterName>
+          </BlogWriterContent>
         </BlogHeader>
         <ContentWrapper>
-          <p>The Blog</p>
+          <BlogTitle>{data?.title}</BlogTitle>
+          <BlogDescription>{data?.sub_heading|| 'Will be updated shortly'}</BlogDescription>
           <BlogContent>{data?.content}</BlogContent>
         </ContentWrapper>
         <SocialLinks inBlog/>
+        </div>
       </BlogContentWrapper>
+      
       <BlogPage inBlog style={{textAlign:'center'}}/>
     </BlogWrapper>
   );
@@ -68,21 +81,35 @@ const BlogWrapper = styled.section`
 
 const BlogContentWrapper = styled.div`
   background: ${({ theme }) => theme.colors.white};
-  padding: 5rem 10rem;
+  padding: 5rem 6rem;
+  width:fit-content;
+  text-align: start;
+  display:flex;
+  justify-content:center;
+
+  &>div{
+    width: 80%;
+    margin:auto;
+  }
 `;
 
 const BlogHeader = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 3rem;
+  align-items: start;
+  gap: 2rem;
   flex-direction: column;
 `;
 
+const BlogCaption = styled.p`
+font-size : 2.6rem;
+font-weight: 500;`
+
 const BlogImage = styled.img`
   width: 70rem;
-  height: 40rem;
+  height: 35rem;
   max-width: 100%;
+  pointer-events:none;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 60rem;
@@ -91,16 +118,14 @@ const BlogImage = styled.img`
 
 const BlogDescription = styled.p`
   font-size: 2rem;
-  font-weight: 400;
-  text-align: start;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.text.light_purple};
 `;
 
 const ContentWrapper = styled.div`
-  p {
-    font-size: 3.5rem;
-    color: ${({ theme }) => theme.colors.text.blogTitle};
-    weight: 700;
-  }
+  display:flex;
+  flex-direction:column;
+  gap: 2rem;
   padding: 5rem 0;
   font-size: 2rem;
 `;
@@ -108,56 +133,35 @@ const ContentWrapper = styled.div`
 const BlogContent = styled.div`
   white-space: pre-wrap;
   font-size: 2rem;
-  padding: 4rem 5rem;
 `;
 
 const BlogTitle = styled.h1`
-  font-size: 3.2rem;
-  color: ${({ theme }) => theme.colors.text.blogTitle};
+  font-size: 5.4rem;
+  color: ${({ theme }) => theme.colors.text.light_purple};
   text-transform: capitalize;
   font-weight: 600;
 `;
 
-// const BlogWriterContent = styled.div`
-//   display: flex;
-//   gap: 2rem;
-//   align-items: center;
-// `;
-// const WriterImage = styled.img`
-//   border-radius: 50%;
-//   width: 5rem;
-//   height: 5rem;
-// `;
-
-// const WriterName = styled.h5`
-//   font-size: 1.5rem;
-// `;
-
-const BlogPublished = styled.p`
-  font-size: 2rem;
+const BlogWriterContent = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+`;
+const WriterImage = styled.img`
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
 `;
 
-// const BlogRecommend = styled.div`
-//   background: ${({ theme }) => `url(${theme.bgimage.purple})`};
-// `;
+const WriterName = styled.h5`
+  font-size: 2.6rem;
+  text-transform : capitalize;
+`;
 
-// const Title = styled.p`
-//   font-size: 2.8rem;
-//   font-weight: ${({ theme }) => theme.weight.normal};
-// `;
+const BlogPublished = styled.p`
+  font-size: 1.8rem;
+  font-weight: 500;
+`;
 
-// const FormWrapper = styled.form`
-// display:flex;
-// gap: 1rem;
-
-// div{
-//     display:flex;
-//     flex-direction:column;
-//     gap: 1rem;
-// }`
-
-// const BlogListWrapper = styled.div`
-// display:flex;
-// gap: 2rem;`
 
 export default Blog;

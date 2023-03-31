@@ -13,10 +13,10 @@ const BlogList = ({ blog,id,inBlog }) => {
   return (
     <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        <img src={blog.image.data.attributes.formats.thumbnail.url} alt="pic" />
+        <img src={blog.thumbnail.data.attributes.url} alt="pic" />
       </BlogImage>
       <BlogContent inBlog={inBlog}>
-        <BlogHeading>{truncate(blog?.Title, 25)}</BlogHeading>
+        <BlogHeading>{truncate(blog?.title, 25)}</BlogHeading>
         <BlogSubHeading>{blog?.sub_heading?.split('.')[0] || 'Will be updated shortly'}</BlogSubHeading>
         <WriterDetailWrapper>
           <img src={blog.writer_img || './images/writer.png' } alt="picwriter" />
@@ -48,16 +48,16 @@ const BlogContainer = styled.div`
 const BlogImage = styled.div`
   
   img {
-    border-radius: 20%;
-    width: 12rem;
-    height: 12rem;
+    border-radius: 10px;
+    width: 20rem;
+    height: 10rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
      margin: 0;
     img {
-      width:20rem;
-      height: 20rem;
+      width:24rem;
+      height: 12rem;
     }
   }
 `;
