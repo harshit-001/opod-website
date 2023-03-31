@@ -5,7 +5,6 @@ import BlogList from "./BlogList";
 import Modal from "./Modal";
 import { ReactComponent as Loader } from "../assets/loader.svg";
 import axios from "axios";
-import https from 'https';
 
 const initialState = {
   name: "",
@@ -18,12 +17,7 @@ const BlogPage = ({ inBlog = false }) => {
   const [formData, setFormData] = useState(initialState);
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const agent = new https.Agent({
-   rejectUnauthorized: false,
-   requestCert: false,
-   agent: false,
-});
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(
