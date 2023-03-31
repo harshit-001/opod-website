@@ -5,7 +5,6 @@ import { SpendPara } from "./SpendCard";
 
 const OfferCard = ({ item }) => {
   const device= useDevice()
-  console.log(device)
   return (
     <OfferCardWrapper device={device}>
       <img src={item.image} alt="index" />
