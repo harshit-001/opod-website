@@ -7,7 +7,7 @@ const BlogList = ({ blog,id,inBlog }) => {
  const navigate= useNavigate()
   
  const handleBlogClick = (id) =>{
-  navigate(`/blog/${id}`)
+  navigate(`/blogs/${id}`)
  }
 
   return (

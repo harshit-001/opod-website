@@ -21,7 +21,7 @@ const BlogPage = ({ inBlog = false }) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(
-        "http://opod.in/blog/api/articles?populate=*",
+        "https://opod.in/blog/api/articles?populate=*",
         {
           headers: {
             Authorization:

@@ -13,7 +13,7 @@ const Blog = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-     const data = await axios.get(`http://opod.in/blog/api/articles/${id}?populate=*`, {
+     const data = await axios.get(`https://opod.in/blog/api/articles/${id}?populate=*`, {
       headers: {
         Authorization:
           "bearer bfd2f9cb76a5aecacc871850335fb51ce5b6d114cf7d4f8ac523c96719e469ca77fb853b44f3e30806ee7f8c7904cb1ad15ac9b258e413e7f6723b7bc6b2df7d0ca623e431d8e5f86375a3255bad6a87402e72c75ecfa0864e1812a60da7b044cce26b985ba37c3c0458851345b76f9531b0e24713cbce3bd0767e7f7f9ffe05",

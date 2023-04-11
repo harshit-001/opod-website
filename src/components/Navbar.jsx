@@ -22,7 +22,7 @@ const Navbar = ({ setOpenMenu, openMenu }) => {
               className="nav-link"
               activeclassname="active"
               onClick={() => setOpenMenu(!openMenu)}
-              to="/blog"
+              to="/blogs"
             >
               Blog
             </NavLink>

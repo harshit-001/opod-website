@@ -65,8 +65,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/blogs/:id" element={<Blog />} />
         </Routes>
         <Footer />
         <Cookie />
