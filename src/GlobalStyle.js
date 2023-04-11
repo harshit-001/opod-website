@@ -204,7 +204,7 @@ export const Button = styled.button`
   }
 
    @media (max-width: 360px) {
-    width: 100%;
+    width: 70%;
     padding: 2rem 4rem;
   }
 `;

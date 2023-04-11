@@ -135,13 +135,13 @@ const DealCardWrapper = styled.div`
     .img-rocket {
       position: absolute;
       width: 300px;
-      bottom: ${({ device }) => device==='Android' ? '-12%' : '-40%'};
+      bottom: ${({ device }) => device=== 'Android' ? '-12%' : '-40%'};
       left:-75%;
     }
     .img-girl {
       position: absolute;
       width: 120px;
-      bottom: ${({ device }) => device==='Android' ? '-15%' : '-28%'};
+      bottom: ${({ device }) => device=== 'Android' ? '-15%' : '-28%'};
       right: -35%;
     }
 
