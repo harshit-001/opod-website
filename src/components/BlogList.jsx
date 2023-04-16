@@ -89,30 +89,5 @@ const BlogSubHeading = styled.p`
   }
 `;
 
-const WriterDetailWrapper = styled.div`
-  display: flex;
-  justify-content: start;
-  gap: 1rem;
-  align-items: center;
-
-  img {
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-
-     @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      width: 6rem;
-      height: 6rem;
-    }
-  }
-
-  p {
-    font-size: 1.6rem;
-
-    @media (max-width: ${({ theme }) => theme.media.mobile}) {
-      font-size: 2.4rem;
-    }
-  }
-`;
 
 export default BlogList;

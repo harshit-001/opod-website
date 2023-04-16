@@ -33,7 +33,7 @@ const Blog = () => {
         <BlogHeader>
           <BlogImage src={data?.image?.data?.attributes.url} alt="blog" />
           <BlogCaption>
-            {data?.image_caption} dhskhdkashdkashdluhsalkjhjkshdkahdkhdiuashduhasjdhajkdhkjashdkjashdkjashdkajsdhsakjdhaskdhskadhsjkdhsakdhhkjkjhkjhkh
+            {data?.image_caption}
           </BlogCaption>
           <BlogPublished>
             {data?.genre} | {data?.publishedAt && getFormatDate(data?.publishedAt?.substring(0, 10).split("-")?.reverse())} | OPOD Originals
@@ -81,6 +81,10 @@ const BlogContentWrapper = styled.div`
   &>div{
     width: 80%;
     margin:auto;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    padding : 5rem 3rem;
   }
 `;
 
