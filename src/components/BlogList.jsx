@@ -13,7 +13,6 @@ const BlogList = ({ blog,id,inBlog }) => {
   return (
     <BlogContainer onClick={() => handleBlogClick(id)}>
       <BlogImage>
-        {/* <img src={blog?.thumbnail?.data?.attributes?.url} alt="pic" /> */}
         <img src={blog?.image?.data?.attributes.url} alt="pic" />
       </BlogImage>
       <BlogContent inBlog={inBlog}>

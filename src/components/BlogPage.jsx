@@ -29,7 +29,6 @@ const BlogPage = ({ inBlog = false }) => {
           },
         }
       );
-      console.log(data?.data?.data)
       setBlogs(data?.data?.data);
     };
     fetchData();

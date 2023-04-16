@@ -47,7 +47,6 @@ const Blog = () => {
         <SocialLinks inBlog/>
         </div>
       </BlogContentWrapper>
-      
       <BlogPage inBlog style={{textAlign:'center'}}/>
     </BlogWrapper>
   );

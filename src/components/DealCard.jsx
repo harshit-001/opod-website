@@ -11,7 +11,6 @@ const DealCard = ({ item, index }) => {
 
   const handleClick=(action) =>{
      if(action === 'Download Now'){
-       console.log(device)
        if(device === 'Android'){
         window.open('https://play.google.com/store/apps/details?id=com.opod.news', '_blank')
        }else{

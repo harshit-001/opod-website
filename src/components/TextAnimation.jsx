@@ -10,9 +10,6 @@ export const Animation = () => {
         3000,
         "with context",
         3000,
-        () => {
-          console.log("Done typing!");
-        },
       ]}
       speed={5}
       deletionSpeed={5}
