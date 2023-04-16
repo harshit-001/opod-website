@@ -33,21 +33,15 @@ const Blog = () => {
         <BlogHeader>
           <BlogImage src={data?.image?.data?.attributes.url} alt="blog" />
           <BlogCaption>
-            {data?.image_caption}
+            {data?.image_caption} dhskhdkashdkashdluhsalkjhjkshdkahdkhdiuashduhasjdhajkdhkjashdkjashdkjashdkajsdhsakjdhaskdhskadhsjkdhsakdhhkjkjhkjhkh
           </BlogCaption>
           <BlogPublished>
-            {data?.genre} / {data?.publishedAt && getFormatDate(data?.publishedAt?.substring(0, 10).split("-")?.reverse())}
+            {data?.genre} | {data?.publishedAt && getFormatDate(data?.publishedAt?.substring(0, 10).split("-")?.reverse())} | OPOD Originals
           </BlogPublished>
-          <BlogWriterContent>
-            <WriterImage src={data?.writer_img || './images/writer.png' } alt="picwriter" />
-            <WriterName>
-              Anurag Bisht
-            </WriterName>
-          </BlogWriterContent>
         </BlogHeader>
         <ContentWrapper>
           <BlogTitle>{data?.title}</BlogTitle>
-          <BlogDescription>{data?.sub_heading|| 'Will be updated shortly'}</BlogDescription>
+          <BlogDescription>{data?.sub_heading|| 'Will be updated shortly'}</BlogDescription><br />
           <BlogContent>{data?.content}</BlogContent>
         </ContentWrapper>
         <SocialLinks inBlog/>
@@ -60,7 +54,7 @@ const Blog = () => {
 };
 
 const BlogWrapper = styled.section`
-  padding: 7rem 25rem;
+  padding: 0 25rem;
   background: ${({ theme }) => theme.colors.blog_bg};
 
   @media (max-width: 1024px) {
@@ -94,19 +88,22 @@ const BlogHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 2rem;
+  gap: 0.5rem;
   flex-direction: column;
 `;
 
 const BlogCaption = styled.p`
-font-size : 2.6rem;
-font-weight: 500;`
+font-size : 1.8rem;
+font-weight: 500;
+color: ${({ theme }) => theme.colors.text.light_purple};
+overflow-wrap: anywhere;`
 
 const BlogImage = styled.img`
   width: 70rem;
   height: 35rem;
   max-width: 100%;
   pointer-events:none;
+  border-radius: 10px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     width: 60rem;
@@ -114,7 +111,7 @@ const BlogImage = styled.img`
 `;
 
 const BlogDescription = styled.p`
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.text.light_purple};
 `;
@@ -122,8 +119,8 @@ const BlogDescription = styled.p`
 const ContentWrapper = styled.div`
   display:flex;
   flex-direction:column;
-  gap: 2rem;
-  padding: 5rem 0;
+  gap: 1rem;
+  padding: 2rem 0 5rem;
   font-size: 2rem;
 `;
 
@@ -133,26 +130,10 @@ const BlogContent = styled.div`
 `;
 
 const BlogTitle = styled.h1`
-  font-size: 5.4rem;
+  font-size: 4.8rem;
   color: ${({ theme }) => theme.colors.text.light_purple};
   text-transform: capitalize;
-  font-weight: 600;
-`;
-
-const BlogWriterContent = styled.div`
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-`;
-const WriterImage = styled.img`
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-`;
-
-const WriterName = styled.h5`
-  font-size: 2.6rem;
-  text-transform : capitalize;
+  font-weight: 500;
 `;
 
 const BlogPublished = styled.p`

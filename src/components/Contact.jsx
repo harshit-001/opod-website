@@ -117,7 +117,7 @@ const Contact = () => {
             <div>
               <Label required={true} device={device}>My message</Label>
               <TextArea
-                placeholder="your message...."
+                placeholder="Add message here...."
                 type={"text"}
                 name="message"
                 required

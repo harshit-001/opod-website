@@ -121,7 +121,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p>End user agreement</p>
+          <p>End User Agreement</p>
         </a>
 
         <a
@@ -134,7 +134,7 @@ const Footer = () => {
       </LinkContainer>
       <SocialLinks isFooter={true} />
       <Hr />
-      <Rights>©2023 HWO MEDIA Pvt. Ltd. All Rights Reserved</Rights>
+      <Rights>©2023 HWO MEDIA PVT. LTD. All Rights Reserved</Rights>
     </FooterWrapper>
   );
 };

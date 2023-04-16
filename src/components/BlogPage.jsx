@@ -29,6 +29,7 @@ const BlogPage = ({ inBlog = false }) => {
           },
         }
       );
+      console.log(data?.data?.data)
       setBlogs(data?.data?.data);
     };
     fetchData();
@@ -182,7 +183,7 @@ const BlogLeft = styled.div`
   flex-direction: column;
   align-self: center;
   gap: ${({ inBlog }) => (inBlog ? "3rem" : "2rem")};
-  padding: ${({ inBlog }) => inBlog ? '0 7rem 5rem 7rem' : '0 7rem 5rem 15rem'};
+  padding: ${({ inBlog }) => inBlog ? '0 7rem 5rem 7rem' : '0 7rem 5rem 0rem'};
   position: relative;
   z-index: 5;
   color: ${({ theme }) => theme.colors.text.white};
@@ -243,6 +244,10 @@ const BlogHeading = styled.h1`
   font-weight: ${({ theme }) => theme.weight.bold};
   font-family: ${({ theme }) => theme.fontFamily.latin};
 
+  @media (max-width: 1220px) {
+    font-size: 5rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     font-size: 8rem;
     text-align: center;
@@ -282,6 +287,10 @@ export const Input = styled.input`
     color: grey;
   }
 
+  @media (max-width: 1220px) {
+     width: 100%;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     border: 1px solid ${({ theme }) => theme.colors.text.light_purple};
     border-radius: 1rem;
@@ -300,6 +309,10 @@ const BlogFormWrapper = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  @media (max-width: 1220px){
+    gap: 0.5rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.tab}) {
@@ -357,6 +370,10 @@ export const BlogButton = styled.button`
   color: ${({ theme }) => theme.colors.text.white};
   font-weight: 500;
   border: none;
+
+  @media (max-width: 1220px) {
+    padding : 0.95rem 2rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     align-self:center;
